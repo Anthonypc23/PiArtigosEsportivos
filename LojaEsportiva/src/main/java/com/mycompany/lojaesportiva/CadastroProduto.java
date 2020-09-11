@@ -77,6 +77,11 @@ public class CadastroProduto extends javax.swing.JFrame {
         jLabel2.setText("Tipo do Produto:");
 
         btnPesquisaNome.setIcon(new javax.swing.ImageIcon("C:\\Users\\k\\Documents\\NetBeansProjects\\Imagem\\pesquisar.png")); // NOI18N
+        btnPesquisaNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisaNomeActionPerformed(evt);
+            }
+        });
 
         btnPesquisaTipo.setIcon(new javax.swing.ImageIcon("C:\\Users\\k\\Documents\\NetBeansProjects\\Imagem\\pesquisar.png")); // NOI18N
         btnPesquisaTipo.addActionListener(new java.awt.event.ActionListener() {
@@ -208,6 +213,10 @@ public class CadastroProduto extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnPesquisaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPesquisaNomeActionPerformed
 
     /**
      * @param args the command line arguments

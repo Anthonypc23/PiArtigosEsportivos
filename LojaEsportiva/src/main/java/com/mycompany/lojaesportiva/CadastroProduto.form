@@ -164,6 +164,9 @@
           <Image iconType="2" name="C:\Users\k\Documents\NetBeansProjects\Imagem\pesquisar.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPesquisaNomeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnPesquisaTipo">
       <Properties>
