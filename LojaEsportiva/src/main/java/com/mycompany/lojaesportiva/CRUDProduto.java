@@ -12,12 +12,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author k
  */
-public class CadastroProduto extends javax.swing.JFrame {
+public class CRUDProduto extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroProduto
      */
-    public CadastroProduto() {
+    public CRUDProduto() {
         initComponents();
         this.setLocationRelativeTo(null);
         setExtendedState(MAXIMIZED_BOTH);
@@ -76,14 +76,12 @@ public class CadastroProduto extends javax.swing.JFrame {
 
         jLabel2.setText("Tipo do Produto:");
 
-        btnPesquisaNome.setIcon(new javax.swing.ImageIcon("C:\\Users\\k\\Documents\\NetBeansProjects\\Imagem\\pesquisar.png")); // NOI18N
         btnPesquisaNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPesquisaNomeActionPerformed(evt);
             }
         });
 
-        btnPesquisaTipo.setIcon(new javax.swing.ImageIcon("C:\\Users\\k\\Documents\\NetBeansProjects\\Imagem\\pesquisar.png")); // NOI18N
         btnPesquisaTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPesquisaTipoActionPerformed(evt);
@@ -171,7 +169,6 @@ public class CadastroProduto extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(8, 8, 8)))))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -235,20 +232,21 @@ public class CadastroProduto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRUDProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRUDProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRUDProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRUDProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroProduto().setVisible(true);
+                new CRUDProduto().setVisible(true);
             }
         });
     }
