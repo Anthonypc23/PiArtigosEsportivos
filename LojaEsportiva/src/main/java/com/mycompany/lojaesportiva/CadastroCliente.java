@@ -61,8 +61,10 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel2.setText("E-Mail:");
 
         jCheckBox1.setText("Masculino");
+        jCheckBox1.setToolTipText("");
 
         jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField1.setToolTipText("Digite seu Nome Completo");
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel8.setText("Nascimento:");
@@ -72,8 +74,10 @@ public class CadastroCliente extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextField1.setToolTipText("Digite seu telefone");
 
         jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField4.setToolTipText("Qual o seu Estado civil ?");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setText("CPF:");
@@ -83,6 +87,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextField2.setToolTipText("Informe o seu CPF");
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel5.setText("Sexo:");
@@ -91,8 +96,10 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel1.setText("Nome:");
 
         jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField3.setToolTipText("Digite seu endereço residencial");
 
         jTextField2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField2.setToolTipText("Digite seu E-Mail");
 
         jCheckBox2.setText("Feminino");
 
@@ -110,6 +117,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextField3.setToolTipText("Informe a sua data de nascimento");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
