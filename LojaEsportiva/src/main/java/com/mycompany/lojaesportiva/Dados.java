@@ -11,29 +11,29 @@ package com.mycompany.lojaesportiva;
  */
 public class Dados {
 
-    private String NomeCliente;
-    private String eMail;
+    private String Nome;
+    private String Email;
     private String CPF;
-    private int Nascimento;
+    private String Nascimento;
     private String Sexo;
     private String EstadoCivil;
-    private int Telefone;
+    private String Telefone;
     private String Endereço;
 
-    public String getNomeCliente() {
-        return NomeCliente;
+    public String getNome() {
+        return Nome;
     }
 
-    public void setNomeCliente(String NomeCliente) {
-        this.NomeCliente = NomeCliente;
+    public void setNome(String Nome) {
+        this.Nome = Nome;
     }
 
-    public String geteMail() {
-        return eMail;
+    public String getEmail() {
+        return Email;
     }
 
-    public void seteMail(String eMail) {
-        this.eMail = eMail;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 
     public String getCPF() {
@@ -44,11 +44,11 @@ public class Dados {
         this.CPF = CPF;
     }
 
-    public int getNascimento() {
+    public String getNascimento() {
         return Nascimento;
     }
 
-    public void setNascimento(int Nascimento) {
+    public void setNascimento(String Nascimento) {
         this.Nascimento = Nascimento;
     }
 
@@ -68,11 +68,11 @@ public class Dados {
         this.EstadoCivil = EstadoCivil;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return Telefone;
     }
 
-    public void setTelefone(int Telefone) {
+    public void setTelefone(String Telefone) {
         this.Telefone = Telefone;
     }
 
@@ -83,6 +83,8 @@ public class Dados {
     public void setEndereço(String Endereço) {
         this.Endereço = Endereço;
     }
+    
+    
     
     public static void main(String[] args) {
        
