@@ -326,7 +326,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         objCliente.setVisible(true);
         this.dispose();
         
-        System.out.println(dados.getSexo());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
