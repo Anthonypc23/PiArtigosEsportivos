@@ -83,9 +83,7 @@ public class Dados {
     public void setEndereço(String Endereço) {
         this.Endereço = Endereço;
     }
-    
-    
-    
+
     public static void main(String[] args) {
        
     }

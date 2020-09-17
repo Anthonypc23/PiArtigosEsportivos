@@ -36,15 +36,13 @@ public class CRUDProduto extends javax.swing.JFrame {
         btnExcluir = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblNomeProd = new javax.swing.JLabel();
+        lblTipoProd = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         txtTipo = new javax.swing.JTextField();
-        btnPesquisaNome = new javax.swing.JButton();
         btnPesquisaTipo = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaProduto = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Produtos");
@@ -72,16 +70,9 @@ public class CRUDProduto extends javax.swing.JFrame {
 
         btnConsultar.setText("Consultar");
 
-        jLabel1.setText("Nome do Produto:");
+        lblNomeProd.setText("Nome do Produto:");
 
-        jLabel2.setText("Tipo do Produto:");
-
-        btnPesquisaNome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pesquisar.png"))); // NOI18N
-        btnPesquisaNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPesquisaNomeActionPerformed(evt);
-            }
-        });
+        lblTipoProd.setText("Tipo do Produto:");
 
         btnPesquisaTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pesquisar.png"))); // NOI18N
         btnPesquisaTipo.addActionListener(new java.awt.event.ActionListener() {
@@ -100,13 +91,6 @@ public class CRUDProduto extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabelaProduto);
 
-        jButton1.setText("Implementar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,28 +99,22 @@ public class CRUDProduto extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnAlterar, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnExcluir, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnInserir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
+                            .addComponent(lblNomeProd)
+                            .addComponent(lblTipoProd))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNome)
                             .addComponent(txtTipo, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnPesquisaNome)
-                            .addComponent(btnPesquisaTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addComponent(btnPesquisaTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(111, 111, 111))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnAlterar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnExcluir, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnInserir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -144,32 +122,26 @@ public class CRUDProduto extends javax.swing.JFrame {
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtNome, txtTipo});
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnPesquisaNome, btnPesquisaTipo});
-
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
-                                .addComponent(jLabel1))
+                                .addComponent(lblNomeProd))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnPesquisaNome)
-                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(24, 24, 24)
+                                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2))
-                            .addComponent(btnPesquisaTipo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTipoProd)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(32, 32, 32)
+                        .addComponent(btnPesquisaTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,13 +157,12 @@ public class CRUDProduto extends javax.swing.JFrame {
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAlterar, btnConsultar, btnExcluir, btnInserir});
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnPesquisaNome, btnPesquisaTipo});
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPesquisaTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaTipoActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel modelo = (DefaultTableModel) tabelaProduto.getModel();
+        modelo.addRow(new Object[]{txtNome.getText(), txtTipo.getText()});
     }//GEN-LAST:event_btnPesquisaTipoActionPerformed
 
     private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
@@ -205,16 +176,15 @@ public class CRUDProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAlterarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        JOptionPane.showMessageDialog(this, "Dados excluídos com sucesso!");
+        if(tabelaProduto.getSelectedRow() != -1){
+            DefaultTableModel modelo = (DefaultTableModel) tabelaProduto.getModel();
+            int indiceLinha = tabelaProduto.getSelectedRow();
+            modelo.removeRow(indiceLinha);
+            JOptionPane.showMessageDialog(this, "Dados excluídos com sucesso!", "Alerta!", JOptionPane.WARNING_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(this, "Você não selecionou nenhuma linha da tabela!", "Erro!", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnExcluirActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void btnPesquisaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPesquisaNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,12 +227,10 @@ public class CRUDProduto extends javax.swing.JFrame {
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnInserir;
-    private javax.swing.JButton btnPesquisaNome;
     private javax.swing.JButton btnPesquisaTipo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblNomeProd;
+    private javax.swing.JLabel lblTipoProd;
     private javax.swing.JTable tabelaProduto;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtTipo;
