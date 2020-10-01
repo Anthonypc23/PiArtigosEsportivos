@@ -459,6 +459,8 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     private void txtEndereçoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEndereçoKeyReleased
         txtEndereço.setText(txtEndereço.getText().toUpperCase());
+        
+        
     }//GEN-LAST:event_txtEndereçoKeyReleased
 
     private void txtEstadoCivilFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEstadoCivilFocusGained
