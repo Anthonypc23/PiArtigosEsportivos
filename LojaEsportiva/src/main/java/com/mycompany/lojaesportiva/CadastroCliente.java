@@ -421,7 +421,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     private void txtCPFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCPFKeyTyped
        char c = evt.getKeyChar();
         if ( ((c < '0') || (c > '9')) && (c !=KeyEvent.VK_BACK_SPACE)){
-        evt.consume();
+        evt.consume(); 
           JOptionPane.showMessageDialog(this,"Digite Apenas numeros");}
     }//GEN-LAST:event_txtCPFKeyTyped
 
