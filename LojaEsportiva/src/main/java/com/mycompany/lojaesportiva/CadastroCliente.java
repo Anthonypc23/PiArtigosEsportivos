@@ -5,6 +5,11 @@
  */
 package com.mycompany.lojaesportiva;
 
+import java.awt.Color;
+import java.awt.event.KeyEvent;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author rrmat
@@ -37,7 +42,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         txtTelefone = new javax.swing.JFormattedTextField();
         txtEstadoCivil = new javax.swing.JTextField();
         lblCPF = new javax.swing.JLabel();
-        txtCPF = new javax.swing.JFormattedTextField();
         lblSexo = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
         txtEndereço = new javax.swing.JTextField();
@@ -49,6 +53,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         jrbMasculino = new javax.swing.JRadioButton();
         jrbFeminino = new javax.swing.JRadioButton();
         jrbOutros = new javax.swing.JRadioButton();
+        txtCPF = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         btnCancelar = new javax.swing.JButton();
         btnConfirmar = new javax.swing.JButton();
@@ -65,12 +70,23 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         txtNome.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtNome.setToolTipText("Digite seu Nome Completo");
+        txtNome.setName("Nome"); // NOI18N
+        txtNome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNomeFocusGained(evt);
+            }
+        });
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNomeKeyReleased(evt);
+            }
+        });
 
         lblNascimento.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblNascimento.setText("Nascimento:");
 
         try {
-            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-####")));
+            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -78,16 +94,19 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         txtEstadoCivil.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtEstadoCivil.setToolTipText("Qual o seu Estado civil ?");
+        txtEstadoCivil.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtEstadoCivilFocusGained(evt);
+            }
+        });
+        txtEstadoCivil.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEstadoCivilKeyReleased(evt);
+            }
+        });
 
         lblCPF.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblCPF.setText("CPF:");
-
-        try {
-            txtCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCPF.setToolTipText("Informe o seu CPF");
 
         lblSexo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblSexo.setText("Sexo:");
@@ -97,9 +116,26 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         txtEndereço.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtEndereço.setToolTipText("Digite seu endereço residencial");
+        txtEndereço.setName("Endereço"); // NOI18N
+        txtEndereço.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtEndereçoFocusGained(evt);
+            }
+        });
+        txtEndereço.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEndereçoKeyReleased(evt);
+            }
+        });
 
         txtEmail.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtEmail.setToolTipText("Digite seu E-Mail");
+        txtEmail.setName("E-mail"); // NOI18N
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtEmailFocusGained(evt);
+            }
+        });
 
         lblTelefone.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblTelefone.setText("Telefone:");
@@ -129,6 +165,19 @@ public class CadastroCliente extends javax.swing.JFrame {
         jrbOutros.setText("Outros");
         jrbOutros.setActionCommand("Outros");
 
+        txtCPF.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtCPF.setName("CPF"); // NOI18N
+        txtCPF.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtCPFFocusGained(evt);
+            }
+        });
+        txtCPF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCPFKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -152,12 +201,11 @@ public class CadastroCliente extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEmail)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(txtNome)
-                            .addComponent(txtEndereço))
+                            .addComponent(txtEndereço)
+                            .addComponent(txtCPF))
                         .addGap(10, 10, 10))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -181,7 +229,7 @@ public class CadastroCliente extends javax.swing.JFrame {
                                 .addContainerGap(20, Short.MAX_VALUE))))))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCPF, txtEstadoCivil, txtNascimento, txtTelefone});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtEstadoCivil, txtNascimento, txtTelefone});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,9 +243,9 @@ public class CadastroCliente extends javax.swing.JFrame {
                     .addComponent(lblEmail)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCPF))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCPF)
+                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -225,6 +273,8 @@ public class CadastroCliente extends javax.swing.JFrame {
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtNascimento, txtTelefone});
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCPF, txtEmail});
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -282,13 +332,12 @@ public class CadastroCliente extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(126, 126, 126))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32))))))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(134, 134, 134))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,24 +359,71 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-        Dados dados = new Dados();
-        dados.setNome(txtNome.getText());
-        dados.setCPF(txtCPF.getText());
-        dados.setEmail(txtEmail.getText());
-        dados.setNascimento(txtNascimento.getText());
-        dados.setEstadoCivil(txtEstadoCivil.getText());
-        dados.setTelefone(txtTelefone.getText());
-        dados.setEndereço(txtEndereço.getText());
-        dados.setEmail(txtEmail.getText());
-        dados.setEstadoCivil(txtEstadoCivil.getText());
-        dados.setEndereço(txtEndereço.getText());
-        dados.setSexo(GrupoSexo.getSelection().getActionCommand());
-        CRUDCliente objCliente = new CRUDCliente();
-        objCliente.setVisible(true);
+        ImageIcon icon = new ImageIcon("C:\\GitHub\\PiArtigosEsportivos\\LojaEsportiva\\src\\main\\resources\\imagens\\check.png");
         
-        this.dispose();
-        
+        Check valid = new Check();
+        valid.ValidVoid(txtNome);
+        valid.ValidVoid(txtEmail);
+        valid.ValidVoid(txtCPF);
+        valid.ValidSex(GrupoSexo);
+        valid.ValidVoid(txtEndereço);
+        if(valid.temErro()){
+            JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
+        }else{
+      int confirm = JOptionPane.showConfirmDialog(this, "Confirme os seus dados: " +"\n" 
+                                                         + "Nome: " + txtNome.getText() +  "\n"
+                                                         + "E-mail: " + txtEmail.getText() + "\n"
+                                                         + "CPF: " +txtCPF.getText() + "\n"
+                                                         + "Nascimento: " +txtNascimento.getText() + "\n"
+                                                         + "Sexo: " +GrupoSexo.getSelection().getActionCommand()+ "\n"
+                                                         + "Estado Civil: " +txtEstadoCivil.getText() + "\n"
+                                                         + "Telefone: " +txtTelefone.getText() + "\n"
+                                                         + "Endereço: " +txtEndereço.getText() + "\n","Atenção",JOptionPane.OK_CANCEL_OPTION);
+      if(confirm == 0){
+          JOptionPane.showMessageDialog(this, "Dados cadastrados com sucesso" ,"Aviso!",JOptionPane.INFORMATION_MESSAGE, icon);
+      }
+
+        }
     }//GEN-LAST:event_btnConfirmarActionPerformed
+
+    private void txtNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusGained
+       txtNome.setBackground(Color.white);
+    }//GEN-LAST:event_txtNomeFocusGained
+
+    private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
+        txtEmail.setBackground(Color.white);
+    }//GEN-LAST:event_txtEmailFocusGained
+
+    private void txtCPFFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCPFFocusGained
+        txtCPF.setBackground(Color.white);
+    }//GEN-LAST:event_txtCPFFocusGained
+
+    private void txtEndereçoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEndereçoFocusGained
+        txtEndereço.setBackground(Color.white);
+    }//GEN-LAST:event_txtEndereçoFocusGained
+
+    private void txtNomeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyReleased
+        txtNome.setText(txtNome.getText().toUpperCase());
+    }//GEN-LAST:event_txtNomeKeyReleased
+
+    private void txtEndereçoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEndereçoKeyReleased
+        txtEndereço.setText(txtEndereço.getText().toUpperCase());
+    }//GEN-LAST:event_txtEndereçoKeyReleased
+
+    private void txtEstadoCivilFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEstadoCivilFocusGained
+
+    }//GEN-LAST:event_txtEstadoCivilFocusGained
+
+    private void txtEstadoCivilKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoCivilKeyReleased
+        txtEstadoCivil.setText(txtEstadoCivil.getText().toUpperCase());
+    }//GEN-LAST:event_txtEstadoCivilKeyReleased
+
+    private void txtCPFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCPFKeyTyped
+       char c = evt.getKeyChar();
+        if ( ((c < '0') || (c > '9')) && (c !=KeyEvent.VK_BACK_SPACE)){
+        evt.consume(); 
+          JOptionPane.showMessageDialog(this,"Digite Apenas numeros");}
+    }//GEN-LAST:event_txtCPFKeyTyped
 
     /**
      * @param args the command line arguments
@@ -384,7 +480,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblSexo;
     private javax.swing.JLabel lblTelefone;
-    private javax.swing.JFormattedTextField txtCPF;
+    private javax.swing.JTextField txtCPF;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEndereço;
     private javax.swing.JTextField txtEstadoCivil;
