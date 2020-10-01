@@ -493,7 +493,8 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEndereçoMouseEntered
 
     private void txtExemploMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtExemploMouseExited
-       
+              
+        
     }//GEN-LAST:event_txtExemploMouseExited
 
     /**
