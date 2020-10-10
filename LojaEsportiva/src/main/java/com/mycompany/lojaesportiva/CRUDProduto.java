@@ -5,6 +5,7 @@
  */
 package com.mycompany.lojaesportiva;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,7 +21,6 @@ public class CRUDProduto extends javax.swing.JFrame {
     public CRUDProduto() {
         initComponents();
         this.setLocationRelativeTo(null);
-        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -35,7 +35,6 @@ public class CRUDProduto extends javax.swing.JFrame {
         btnInserir = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
-        btnConsultar = new javax.swing.JButton();
         lblNomeProd = new javax.swing.JLabel();
         lblTipoProd = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
@@ -43,16 +42,12 @@ public class CRUDProduto extends javax.swing.JFrame {
         btnPesquisaTipo = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaProduto = new javax.swing.JTable();
+        lblStatus = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Produtos");
 
         btnInserir.setText("Inserir");
-        btnInserir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInserirActionPerformed(evt);
-            }
-        });
 
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
@@ -62,17 +57,28 @@ public class CRUDProduto extends javax.swing.JFrame {
         });
 
         btnAlterar.setText("Alterar");
-        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarActionPerformed(evt);
-            }
-        });
-
-        btnConsultar.setText("Consultar");
 
         lblNomeProd.setText("Nome do Produto:");
 
         lblTipoProd.setText("Tipo do Produto:");
+
+        txtNome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNomeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNomeFocusLost(evt);
+            }
+        });
+
+        txtTipo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTipoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTipoFocusLost(evt);
+            }
+        });
 
         btnPesquisaTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pesquisar.png"))); // NOI18N
         btnPesquisaTipo.addActionListener(new java.awt.event.ActionListener() {
@@ -88,8 +94,18 @@ public class CRUDProduto extends javax.swing.JFrame {
             new String [] {
                 "Nome do Produto", "Tipo do Produto"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tabelaProduto);
+
+        lblStatus.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,7 +113,7 @@ public class CRUDProduto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblNomeProd)
@@ -105,20 +121,22 @@ public class CRUDProduto extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNome)
-                            .addComponent(txtTipo, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                        .addComponent(btnPesquisaTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(111, 111, 111))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtTipo, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAlterar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnExcluir, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnInserir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(btnExcluir)
+                    .addComponent(btnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAlterar)
+                    .addComponent(btnPesquisaTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAlterar, btnConsultar, btnExcluir, btnInserir});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAlterar, btnExcluir, btnInserir});
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtNome, txtTipo});
 
@@ -139,23 +157,23 @@ public class CRUDProduto extends javax.swing.JFrame {
                             .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblTipoProd)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(btnPesquisaTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGap(24, 24, 24)
+                        .addComponent(btnPesquisaTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnExcluir)
+                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAlterar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnConsultar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                        .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAlterar, btnConsultar, btnExcluir, btnInserir});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAlterar, btnExcluir, btnInserir});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -163,17 +181,10 @@ public class CRUDProduto extends javax.swing.JFrame {
     private void btnPesquisaTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaTipoActionPerformed
         DefaultTableModel modelo = (DefaultTableModel) tabelaProduto.getModel();
         modelo.addRow(new Object[]{txtNome.getText(), txtTipo.getText()});
+        
+        this.txtNome.setText("");
+        this.txtTipo.setText("");
     }//GEN-LAST:event_btnPesquisaTipoActionPerformed
-
-    private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
-        CadastroCliente obj = new CadastroCliente();
-        obj.setVisible(true);
-    }//GEN-LAST:event_btnInserirActionPerformed
-
-    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        CadastroCliente obj = new CadastroCliente();
-        obj.setVisible(true);
-    }//GEN-LAST:event_btnAlterarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         if(tabelaProduto.getSelectedRow() != -1){
@@ -185,6 +196,26 @@ public class CRUDProduto extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Você não selecionou nenhuma linha da tabela!", "Erro!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void txtNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusGained
+        this.txtNome.setBackground(Color.lightGray);
+        lblStatus.setText("Digite o nome do produto");
+    }//GEN-LAST:event_txtNomeFocusGained
+
+    private void txtNomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusLost
+        this.txtNome.setBackground(Color.white);
+        lblStatus.setText("");
+    }//GEN-LAST:event_txtNomeFocusLost
+
+    private void txtTipoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTipoFocusGained
+        this.txtTipo.setBackground(Color.lightGray);
+        lblStatus.setText("Digite o tipo do produto");
+    }//GEN-LAST:event_txtTipoFocusGained
+
+    private void txtTipoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTipoFocusLost
+        this.txtTipo.setBackground(Color.white);
+        lblStatus.setText("");
+    }//GEN-LAST:event_txtTipoFocusLost
 
     /**
      * @param args the command line arguments
@@ -224,12 +255,12 @@ public class CRUDProduto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterar;
-    private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnInserir;
     private javax.swing.JButton btnPesquisaTipo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblNomeProd;
+    private javax.swing.JLabel lblStatus;
     private javax.swing.JLabel lblTipoProd;
     private javax.swing.JTable tabelaProduto;
     private javax.swing.JTextField txtNome;
