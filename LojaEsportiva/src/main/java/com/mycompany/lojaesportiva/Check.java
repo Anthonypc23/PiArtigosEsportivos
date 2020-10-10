@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.JTextField;
+import javax.swing.JFormattedTextField;
 
 /**
  *
@@ -42,9 +43,16 @@ public class Check {
         try {
             String sex = btn.getSelection().getActionCommand();
         } catch (Exception e) {
-            msgErro.add("Você não selecinou um sexo");
+            msgErro.add("Você não selecionou um sexo");
         }
         
+    }
+    
+    public void validNasc(JFormattedTextField txt){
+        if(txt.getText().trim().equals("")){
+            msgErro.add("Não foi preenchido o campo " + txt.getName());
+            txt.setBackground(Color.yellow);
+        }
     }
     
     public void ValidVoid (JTextField txt){

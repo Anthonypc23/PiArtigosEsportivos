@@ -77,6 +77,9 @@ public class CadastroCliente extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtNomeFocusGained(evt);
             }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNomeFocusLost(evt);
+            }
         });
         txtNome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -93,17 +96,28 @@ public class CadastroCliente extends javax.swing.JFrame {
         lblNascimento.setText("Nascimento:");
 
         try {
-            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         txtTelefone.setToolTipText("Digite seu telefone");
+        txtTelefone.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTelefoneFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTelefoneFocusLost(evt);
+            }
+        });
 
         txtEstadoCivil.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtEstadoCivil.setToolTipText("Qual o seu Estado civil ?");
         txtEstadoCivil.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtEstadoCivilFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEstadoCivilFocusLost(evt);
             }
         });
         txtEstadoCivil.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -133,6 +147,9 @@ public class CadastroCliente extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtEndereçoFocusGained(evt);
             }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEndereçoFocusLost(evt);
+            }
         });
         txtEndereço.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -151,6 +168,9 @@ public class CadastroCliente extends javax.swing.JFrame {
         txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtEmailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmailFocusLost(evt);
             }
         });
         txtEmail.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -174,6 +194,14 @@ public class CadastroCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         txtNascimento.setToolTipText("Informe a sua data de nascimento");
+        txtNascimento.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNascimentoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNascimentoFocusLost(evt);
+            }
+        });
 
         GrupoSexo.add(jrbMasculino);
         jrbMasculino.setText("Masculino");
@@ -192,6 +220,9 @@ public class CadastroCliente extends javax.swing.JFrame {
         txtCPF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtCPFFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCPFFocusLost(evt);
             }
         });
         txtCPF.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -418,6 +449,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         valid.ValidVoid(txtCPF);
         valid.ValidSex(GrupoSexo);
         valid.ValidVoid(txtEndereço);
+        
         if(valid.temErro()){
             JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
         }else{
@@ -433,24 +465,23 @@ public class CadastroCliente extends javax.swing.JFrame {
       if(confirm == 0){
           JOptionPane.showMessageDialog(this, "Dados cadastrados com sucesso" ,"Aviso!",JOptionPane.INFORMATION_MESSAGE, icon);
       }
-
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void txtNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusGained
-       txtNome.setBackground(Color.white);
+       txtNome.setBackground(Color.lightGray);
     }//GEN-LAST:event_txtNomeFocusGained
 
     private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
-        txtEmail.setBackground(Color.white);
+        txtEmail.setBackground(Color.lightGray);
     }//GEN-LAST:event_txtEmailFocusGained
 
     private void txtCPFFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCPFFocusGained
-        txtCPF.setBackground(Color.white);
+        txtCPF.setBackground(Color.lightGray);
     }//GEN-LAST:event_txtCPFFocusGained
 
     private void txtEndereçoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEndereçoFocusGained
-        txtEndereço.setBackground(Color.white);
+        txtEndereço.setBackground(Color.lightGray);
     }//GEN-LAST:event_txtEndereçoFocusGained
 
     private void txtNomeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyReleased
@@ -459,12 +490,10 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     private void txtEndereçoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEndereçoKeyReleased
         txtEndereço.setText(txtEndereço.getText().toUpperCase());
-        
-        
     }//GEN-LAST:event_txtEndereçoKeyReleased
 
     private void txtEstadoCivilFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEstadoCivilFocusGained
-
+        txtEstadoCivil.setBackground(Color.lightGray);
     }//GEN-LAST:event_txtEstadoCivilFocusGained
 
     private void txtEstadoCivilKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoCivilKeyReleased
@@ -487,17 +516,52 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeMouseEntered
 
     private void txtEstadoCivilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEstadoCivilMouseEntered
-        txtExemplo.setText("Exemplo: SOLTEIRO,CASADO,SEPARADO,DIVORCIADO e VIUVO");
+        txtExemplo.setText("Exemplo: SOLTEIRO, CASADO, SEPARADO, DIVORCIADO e VIÚVO");
     }//GEN-LAST:event_txtEstadoCivilMouseEntered
 
     private void txtEndereçoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEndereçoMouseEntered
-        txtExemplo.setText("Exemplo: Bairro,Rua,Número residencial");
+        txtExemplo.setText("Exemplo: Bairro, Rua, Número residencial");
     }//GEN-LAST:event_txtEndereçoMouseEntered
 
     private void txtExemploMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtExemploMouseExited
-              
         
     }//GEN-LAST:event_txtExemploMouseExited
+
+    private void txtNomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusLost
+        txtNome.setBackground(Color.white);
+    }//GEN-LAST:event_txtNomeFocusLost
+
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+        txtEmail.setBackground(Color.white);
+    }//GEN-LAST:event_txtEmailFocusLost
+
+    private void txtCPFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCPFFocusLost
+        txtCPF.setBackground(Color.white);
+    }//GEN-LAST:event_txtCPFFocusLost
+
+    private void txtEndereçoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEndereçoFocusLost
+        txtEndereço.setBackground(Color.white);
+    }//GEN-LAST:event_txtEndereçoFocusLost
+
+    private void txtNascimentoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNascimentoFocusGained
+        txtNascimento.setBackground(Color.lightGray);
+    }//GEN-LAST:event_txtNascimentoFocusGained
+
+    private void txtNascimentoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNascimentoFocusLost
+        txtNascimento.setBackground(Color.white);
+    }//GEN-LAST:event_txtNascimentoFocusLost
+
+    private void txtEstadoCivilFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEstadoCivilFocusLost
+        txtEstadoCivil.setBackground(Color.white);
+    }//GEN-LAST:event_txtEstadoCivilFocusLost
+
+    private void txtTelefoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefoneFocusGained
+        txtTelefone.setBackground(Color.lightGray);
+    }//GEN-LAST:event_txtTelefoneFocusGained
+
+    private void txtTelefoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefoneFocusLost
+        txtTelefone.setBackground(Color.white);
+    }//GEN-LAST:event_txtTelefoneFocusLost
 
     /**
      * @param args the command line arguments
