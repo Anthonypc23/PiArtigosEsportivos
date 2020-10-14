@@ -453,7 +453,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         if(valid.temErro()){
             JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
         }else{
-      int confirm = JOptionPane.showConfirmDialog(this, "Confirme os seus dados: " +"\n" 
+        int confirm = JOptionPane.showConfirmDialog(this, "Confirme os seus dados: " +"\n" 
                                                          + "Nome: " + txtNome.getText() +  "\n"
                                                          + "E-mail: " + txtEmail.getText() + "\n"
                                                          + "CPF: " +txtCPF.getText() + "\n"
@@ -462,7 +462,7 @@ public class CadastroCliente extends javax.swing.JFrame {
                                                          + "Estado Civil: " +txtEstadoCivil.getText() + "\n"
                                                          + "Telefone: " +txtTelefone.getText() + "\n"
                                                          + "Endereço: " +txtEndereço.getText() + "\n","Atenção",JOptionPane.OK_CANCEL_OPTION);
-      if(confirm == 0){
+        if(confirm == 0){
           JOptionPane.showMessageDialog(this, "Dados cadastrados com sucesso" ,"Aviso!",JOptionPane.INFORMATION_MESSAGE, icon);
       }
         }
