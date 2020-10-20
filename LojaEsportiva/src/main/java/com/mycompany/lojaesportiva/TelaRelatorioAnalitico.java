@@ -16,6 +16,7 @@ public class TelaRelatorioAnalitico extends javax.swing.JFrame {
      */
     public TelaRelatorioAnalitico() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -45,7 +46,15 @@ public class TelaRelatorioAnalitico extends javax.swing.JFrame {
             new String [] {
                 "Descrição do Produto", "Quantidade"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
 
