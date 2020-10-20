@@ -191,8 +191,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiClienteActionPerformed
 
     private void jmiVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiVendasActionPerformed
-       TeladeVendas telaV = new TeladeVendas();
-       telaV.setVisible(true);
+      // TeladeVendas telaV = new TeladeVendas();
+      // telaV.setVisible(true);
     }//GEN-LAST:event_jmiVendasActionPerformed
 
     private void jmiRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRelatorioActionPerformed
