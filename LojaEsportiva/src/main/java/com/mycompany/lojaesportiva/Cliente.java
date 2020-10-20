@@ -9,7 +9,7 @@ package com.mycompany.lojaesportiva;
  *
  * @author rrmat
  */
-public class Dados {
+public class Cliente {
 
     private String Nome;
     private String Email;
@@ -19,6 +19,10 @@ public class Dados {
     private String EstadoCivil;
     private String Telefone;
     private String Endereço;
+
+    public Cliente() {
+   
+    }
 
     public String getNome() {
         return Nome;
@@ -84,8 +88,5 @@ public class Dados {
         this.Endereço = Endereço;
     }
 
-    public static void main(String[] args) {
-       
-    }
     
 }
