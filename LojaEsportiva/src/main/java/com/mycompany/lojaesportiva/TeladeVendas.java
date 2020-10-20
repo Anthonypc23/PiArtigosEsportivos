@@ -165,6 +165,11 @@ public class TeladeVendas extends javax.swing.JFrame {
         Tamanhogrupo2.add(rbo1);
         rbo1.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         rbo1.setText("1 á 5 kg");
+        rbo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbo1ActionPerformed(evt);
+            }
+        });
 
         Tamanhogrupo2.add(rbo6);
         rbo6.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
@@ -378,6 +383,11 @@ public class TeladeVendas extends javax.swing.JFrame {
         chkGarantia.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         chkGarantia.setText("Garantia Estendida");
         chkGarantia.setActionCommand("Garantia Estendida");
+        chkGarantia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkGarantiaActionPerformed(evt);
+            }
+        });
 
         Servicosgrupo4.add(chkDesconto);
         chkDesconto.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
@@ -535,6 +545,14 @@ public class TeladeVendas extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
      this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void rbo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbo1ActionPerformed
+
+    private void chkGarantiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkGarantiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkGarantiaActionPerformed
 
     /**
      * @param args the command line arguments

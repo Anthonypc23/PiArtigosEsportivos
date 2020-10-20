@@ -331,6 +331,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="1 &#xe1; 5 kg"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbo1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rbo6">
           <Properties>
@@ -730,6 +733,9 @@
               <Connection code="&quot;Garantia Estendida&quot;" type="code"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkGarantiaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="chkDesconto">
           <Properties>
