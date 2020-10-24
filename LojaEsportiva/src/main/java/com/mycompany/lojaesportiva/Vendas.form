@@ -7,6 +7,30 @@
         <Property name="text" type="java.lang.String" value="jLabel13"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoTamanhoLuvas">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoMarcasLuva">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoPesosGYM">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoTamanhoTenis">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoMarcasTenis">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoMarcasBolas">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoMarcasCal&#xe7;a">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoMarcasShort">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoMarcaCamiseta">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoTamanhoCalca">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoTamanhoShort">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoTamanhoCamiseta">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -33,29 +57,27 @@
           <Component id="cboTipoParce" alignment="1" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="painelGuias" min="-2" pref="786" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Component id="JPanel" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="painelGuias" pref="786" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="txtCPFCompra" min="-2" pref="227" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -73,9 +95,9 @@
               <Component id="JPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="cboTipoParce" min="-2" pref="31" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -153,11 +175,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="tglnike5" linkSize="12" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="tglnikeLuvas" linkSize="12" min="-2" pref="77" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="tglAdidas5" linkSize="12" min="-2" max="-2" attributes="0"/>
+                          <Component id="tglAdidasLuvas" linkSize="12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="tglPuma5" linkSize="12" min="-2" pref="84" max="-2" attributes="0"/>
+                          <Component id="tglPumaLuvas" linkSize="12" min="-2" pref="84" max="-2" attributes="0"/>
                           <EmptySpace pref="14" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -167,9 +189,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="tglnike5" linkSize="13" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="tglAdidas5" linkSize="13" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tglPuma5" linkSize="13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tglnikeLuvas" linkSize="13" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="tglAdidasLuvas" linkSize="13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tglPumaLuvas" linkSize="13" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -177,24 +199,33 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JToggleButton" name="tglnike5">
+                <Component class="javax.swing.JToggleButton" name="tglnikeLuvas">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasLuva"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Nike"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="tglAdidas5">
+                <Component class="javax.swing.JToggleButton" name="tglAdidasLuvas">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasLuva"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Adidas"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="tglPuma5">
+                <Component class="javax.swing.JToggleButton" name="tglPumaLuvas">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasLuva"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="14" style="1"/>
                     </Property>
@@ -225,7 +256,7 @@
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                           <Component id="rboLG" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -247,6 +278,9 @@
               <SubComponents>
                 <Component class="javax.swing.JRadioButton" name="rboLP">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoTamanhoLuvas"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="0"/>
                     </Property>
@@ -255,6 +289,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rboLM">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoTamanhoLuvas"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="0"/>
                     </Property>
@@ -263,6 +300,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rboLG">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoTamanhoLuvas"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="G/GG"/>
                   </Properties>
                 </Component>
@@ -284,7 +324,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel6" min="-2" pref="147" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jSpinnerLuvas" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="spnLuvas" min="-2" pref="48" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -295,7 +335,7 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel6" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="jSpinnerLuvas" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="spnLuvas" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
@@ -308,10 +348,10 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Quantidade"/>
+                    <Property name="text" type="java.lang.String" value="Quantidade:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="jSpinnerLuvas">
+                <Component class="javax.swing.JSpinner" name="spnLuvas">
                 </Component>
               </SubComponents>
             </Container>
@@ -399,16 +439,25 @@
               <SubComponents>
                 <Component class="javax.swing.JRadioButton" name="jRadioButton1">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoPesosGYM"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="1 &#xe0; 5 kg"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="jRadioButton2">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoPesosGYM"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="6 &#xe0; 12 Kg"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="jRadioButton3">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoPesosGYM"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="13 &#xe0; 30 Kg"/>
                   </Properties>
                 </Component>
@@ -421,7 +470,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList1">
+                <Component class="javax.swing.JList" name="listaGYM">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="12" style="0"/>
@@ -460,7 +509,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel7" min="-2" pref="147" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jSpinnerGYM" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="spnGYM" min="-2" pref="48" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -469,12 +518,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jLabel7" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel7" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="spnGYM" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jSpinnerGYM" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -485,10 +533,10 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Quantidade"/>
+                    <Property name="text" type="java.lang.String" value="Quantidade:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="jSpinnerGYM">
+                <Component class="javax.swing.JSpinner" name="spnGYM">
                 </Component>
               </SubComponents>
             </Container>
@@ -555,11 +603,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="tglNike" linkSize="3" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="tglNikeTenis" linkSize="3" min="-2" pref="77" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="tglAdidas" linkSize="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tglAdidasTenis" linkSize="3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="tglPuma" linkSize="3" min="-2" pref="84" max="-2" attributes="0"/>
+                          <Component id="tglPumaTenis" linkSize="3" min="-2" pref="84" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -569,9 +617,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="tglNike" linkSize="2" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="tglAdidas" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tglPuma" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tglNikeTenis" linkSize="2" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="tglAdidasTenis" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tglPumaTenis" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -579,24 +627,33 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JToggleButton" name="tglNike">
+                <Component class="javax.swing.JToggleButton" name="tglNikeTenis">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasTenis"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Nike"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="tglAdidas">
+                <Component class="javax.swing.JToggleButton" name="tglAdidasTenis">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasTenis"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Adidas"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="tglPuma">
+                <Component class="javax.swing.JToggleButton" name="tglPumaTenis">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasTenis"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="14" style="1"/>
                     </Property>
@@ -643,6 +700,9 @@
               <SubComponents>
                 <Component class="javax.swing.JRadioButton" name="rboT1">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoTamanhoTenis"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="0"/>
                     </Property>
@@ -651,6 +711,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rboT2">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoTamanhoTenis"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="0"/>
                     </Property>
@@ -674,7 +737,7 @@
                       <Group type="102" attributes="0">
                           <Component id="jLabel1" min="-2" pref="147" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jSpinnerTenis" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="spnTenis" min="-2" pref="48" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -683,12 +746,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="spnTenis" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jSpinnerTenis" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -699,10 +761,10 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Quantidade"/>
+                    <Property name="text" type="java.lang.String" value="Quantidade:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="jSpinnerTenis">
+                <Component class="javax.swing.JSpinner" name="spnTenis">
                 </Component>
               </SubComponents>
             </Container>
@@ -721,8 +783,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                       <Component id="jPanel21" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                       <Component id="jPanel35" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -737,13 +800,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel21" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="jPanel35" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanel21" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       <Component id="jPanel34" min="-2" pref="43" max="-2" attributes="0"/>
                       <EmptySpace pref="47" max="32767" attributes="0"/>
                   </Group>
@@ -767,11 +834,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="tglnike8" linkSize="18" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="tglnikeBolas" linkSize="18" min="-2" pref="77" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="tglAdidas8" linkSize="18" min="-2" max="-2" attributes="0"/>
+                          <Component id="tglAdidasBolas" linkSize="18" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="tglPuma8" linkSize="18" min="-2" pref="84" max="-2" attributes="0"/>
+                          <Component id="tglPumaBolas" linkSize="18" min="-2" pref="84" max="-2" attributes="0"/>
                           <EmptySpace pref="14" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -781,9 +848,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="tglnike8" linkSize="19" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="tglAdidas8" linkSize="19" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tglPuma8" linkSize="19" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tglnikeBolas" linkSize="19" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="tglAdidasBolas" linkSize="19" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tglPumaBolas" linkSize="19" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -791,24 +858,33 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JToggleButton" name="tglnike8">
+                <Component class="javax.swing.JToggleButton" name="tglnikeBolas">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasBolas"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Nike"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="tglAdidas8">
+                <Component class="javax.swing.JToggleButton" name="tglAdidasBolas">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasBolas"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Adidas"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="tglPuma8">
+                <Component class="javax.swing.JToggleButton" name="tglPumaBolas">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasBolas"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="14" style="1"/>
                     </Property>
@@ -832,7 +908,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel9" min="-2" pref="147" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jSpinnerBolas" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="spnBolas" min="-2" pref="48" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -841,12 +917,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jLabel9" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel9" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="spnBolas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jSpinnerBolas" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -857,10 +932,10 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Quantidade"/>
+                    <Property name="text" type="java.lang.String" value="Quantidade:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="jSpinnerBolas">
+                <Component class="javax.swing.JSpinner" name="spnBolas">
                 </Component>
               </SubComponents>
             </Container>
@@ -1065,6 +1140,9 @@
               <SubComponents>
                 <Component class="javax.swing.JRadioButton" name="rboC1">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoTamanhoShort"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="0"/>
                     </Property>
@@ -1073,6 +1151,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rboC2">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoTamanhoShort"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="0"/>
                     </Property>
@@ -1121,7 +1202,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Quantidade"/>
+                    <Property name="text" type="java.lang.String" value="Quantidade:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="spnShort">
@@ -1194,6 +1275,9 @@
               <SubComponents>
                 <Component class="javax.swing.JToggleButton" name="tglAdidasShort">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasShort"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
@@ -1205,6 +1289,9 @@
                 </Component>
                 <Component class="javax.swing.JToggleButton" name="tglPumaShort">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasShort"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
@@ -1213,6 +1300,9 @@
                 </Component>
                 <Component class="javax.swing.JToggleButton" name="tglnikeShort">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasShort"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
@@ -1263,6 +1353,9 @@
               <SubComponents>
                 <Component class="javax.swing.JToggleButton" name="tglAdidasCalca">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasCal&#xe7;a"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
@@ -1271,6 +1364,9 @@
                 </Component>
                 <Component class="javax.swing.JToggleButton" name="tglPumaCalca">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasCal&#xe7;a"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
@@ -1279,6 +1375,9 @@
                 </Component>
                 <Component class="javax.swing.JToggleButton" name="tglnikeCalca">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcasCal&#xe7;a"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
@@ -1327,7 +1426,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Quantidade"/>
+                    <Property name="text" type="java.lang.String" value="Quantidade:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="spnCalca">
@@ -1372,6 +1471,9 @@
               <SubComponents>
                 <Component class="javax.swing.JRadioButton" name="rboC3">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoTamanhoCalca"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="0"/>
                     </Property>
@@ -1380,6 +1482,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rboC4">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoTamanhoCalca"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="0"/>
                     </Property>
@@ -1430,6 +1535,9 @@
               <SubComponents>
                 <Component class="javax.swing.JToggleButton" name="tglAdidasCamiseta">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcaCamiseta"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
@@ -1438,6 +1546,9 @@
                 </Component>
                 <Component class="javax.swing.JToggleButton" name="tglPumaCamisetas">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcaCamiseta"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
@@ -1446,6 +1557,9 @@
                 </Component>
                 <Component class="javax.swing.JToggleButton" name="tglnikeCamiseta">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoMarcaCamiseta"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
@@ -1494,7 +1608,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Quantidade"/>
+                    <Property name="text" type="java.lang.String" value="Quantidade:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="spnCamiseta">
@@ -1542,6 +1656,9 @@
               <SubComponents>
                 <Component class="javax.swing.JRadioButton" name="rboC5">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoTamanhoCamiseta"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="0"/>
                     </Property>
@@ -1550,6 +1667,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rboC6">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoTamanhoCamiseta"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="0"/>
                     </Property>
@@ -1558,6 +1678,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rboC7">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grupoTamanhoCamiseta"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Sitka Text" size="12" style="0"/>
                     </Property>
@@ -1597,10 +1720,10 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="tabelaResumo">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="7" rowCount="4">
+                      <Table columnCount="7" rowCount="0">
                         <Column editable="false" title="Cliente" type="java.lang.Object"/>
                         <Column editable="false" title="Luvas" type="java.lang.Object"/>
                         <Column editable="false" title="GYM" type="java.lang.Object"/>
@@ -1689,7 +1812,7 @@
               <Group type="102" attributes="0">
                   <Component id="chkGarantia" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="chkDesconto" min="-2" max="-2" attributes="0"/>
+                  <Component id="chkDesconto" min="-2" pref="25" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="chkParcelamentos" min="-2" max="-2" attributes="0"/>
               </Group>

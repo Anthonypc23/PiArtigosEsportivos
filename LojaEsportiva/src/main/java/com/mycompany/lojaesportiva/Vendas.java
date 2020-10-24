@@ -3,8 +3,10 @@ package com.mycompany.lojaesportiva;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,7 +21,7 @@ public class Vendas extends javax.swing.JFrame {
         SpinnerNumberModel num = new SpinnerNumberModel();
         num.setMinimum(0);
         num.setMaximum(10);
-        jSpinnerTenis.setModel(num);
+        spnTenis.setModel(num);
         
         num.setMinimum(0);
         num.setMaximum(10);
@@ -27,15 +29,15 @@ public class Vendas extends javax.swing.JFrame {
 
         num.setMinimum(0);
         num.setMaximum(10);
-        jSpinnerLuvas.setModel(num);
+        spnLuvas.setModel(num);
         
         num.setMinimum(0);
         num.setMaximum(10);
-        jSpinnerGYM.setModel(num);
+        spnGYM.setModel(num);
         
         num.setMinimum(0);
         num.setMaximum(10);
-        jSpinnerBolas.setModel(num);
+        spnBolas.setModel(num);
         
         this.setLocationRelativeTo(null); 
     }
@@ -47,48 +49,60 @@ public class Vendas extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel13 = new javax.swing.JLabel();
+        grupoTamanhoLuvas = new javax.swing.ButtonGroup();
+        grupoMarcasLuva = new javax.swing.ButtonGroup();
+        grupoPesosGYM = new javax.swing.ButtonGroup();
+        grupoTamanhoTenis = new javax.swing.ButtonGroup();
+        grupoMarcasTenis = new javax.swing.ButtonGroup();
+        grupoMarcasBolas = new javax.swing.ButtonGroup();
+        grupoMarcasCalça = new javax.swing.ButtonGroup();
+        grupoMarcasShort = new javax.swing.ButtonGroup();
+        grupoMarcaCamiseta = new javax.swing.ButtonGroup();
+        grupoTamanhoCalca = new javax.swing.ButtonGroup();
+        grupoTamanhoShort = new javax.swing.ButtonGroup();
+        grupoTamanhoCamiseta = new javax.swing.ButtonGroup();
         painelGuias = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
-        tglnike5 = new javax.swing.JToggleButton();
-        tglAdidas5 = new javax.swing.JToggleButton();
-        tglPuma5 = new javax.swing.JToggleButton();
+        tglnikeLuvas = new javax.swing.JToggleButton();
+        tglAdidasLuvas = new javax.swing.JToggleButton();
+        tglPumaLuvas = new javax.swing.JToggleButton();
         jPanel27 = new javax.swing.JPanel();
         rboLP = new javax.swing.JRadioButton();
         rboLM = new javax.swing.JRadioButton();
         rboLG = new javax.swing.JRadioButton();
         jPanel31 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jSpinnerLuvas = new javax.swing.JSpinner();
+        spnLuvas = new javax.swing.JSpinner();
         jPanel12 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listaGYM = new javax.swing.JList<>();
         jPanel32 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jSpinnerGYM = new javax.swing.JSpinner();
+        spnGYM = new javax.swing.JSpinner();
         jPanel2 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
-        tglNike = new javax.swing.JToggleButton();
-        tglAdidas = new javax.swing.JToggleButton();
-        tglPuma = new javax.swing.JToggleButton();
+        tglNikeTenis = new javax.swing.JToggleButton();
+        tglAdidasTenis = new javax.swing.JToggleButton();
+        tglPumaTenis = new javax.swing.JToggleButton();
         jPanel22 = new javax.swing.JPanel();
         rboT1 = new javax.swing.JRadioButton();
         rboT2 = new javax.swing.JRadioButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jSpinnerTenis = new javax.swing.JSpinner();
+        spnTenis = new javax.swing.JSpinner();
         jPanel11 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
-        tglnike8 = new javax.swing.JToggleButton();
-        tglAdidas8 = new javax.swing.JToggleButton();
-        tglPuma8 = new javax.swing.JToggleButton();
+        tglnikeBolas = new javax.swing.JToggleButton();
+        tglAdidasBolas = new javax.swing.JToggleButton();
+        tglPumaBolas = new javax.swing.JToggleButton();
         jPanel34 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jSpinnerBolas = new javax.swing.JSpinner();
+        spnBolas = new javax.swing.JSpinner();
         jPanel35 = new javax.swing.JPanel();
         chkFutebol = new javax.swing.JCheckBox();
         chkVolei = new javax.swing.JCheckBox();
@@ -131,7 +145,7 @@ public class Vendas extends javax.swing.JFrame {
         rboC7 = new javax.swing.JRadioButton();
         tblResumo = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaResumo = new javax.swing.JTable();
         JPanel = new javax.swing.JPanel();
         chkGarantia = new javax.swing.JCheckBox();
         chkDesconto = new javax.swing.JCheckBox();
@@ -151,14 +165,17 @@ public class Vendas extends javax.swing.JFrame {
 
         jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
-        tglnike5.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        tglnike5.setText("Nike");
+        grupoMarcasLuva.add(tglnikeLuvas);
+        tglnikeLuvas.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        tglnikeLuvas.setText("Nike");
 
-        tglAdidas5.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        tglAdidas5.setText("Adidas");
+        grupoMarcasLuva.add(tglAdidasLuvas);
+        tglAdidasLuvas.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        tglAdidasLuvas.setText("Adidas");
 
-        tglPuma5.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        tglPuma5.setText("Puma");
+        grupoMarcasLuva.add(tglPumaLuvas);
+        tglPumaLuvas.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        tglPumaLuvas.setText("Puma");
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -166,37 +183,40 @@ public class Vendas extends javax.swing.JFrame {
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tglnike5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tglnikeLuvas, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tglAdidas5)
+                .addComponent(tglAdidasLuvas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tglPuma5, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tglPumaLuvas, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jPanel18Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {tglAdidas5, tglPuma5, tglnike5});
+        jPanel18Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {tglAdidasLuvas, tglPumaLuvas, tglnikeLuvas});
 
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tglnike5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tglAdidas5)
-                    .addComponent(tglPuma5))
+                    .addComponent(tglnikeLuvas, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tglAdidasLuvas)
+                    .addComponent(tglPumaLuvas))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel18Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {tglAdidas5, tglPuma5, tglnike5});
+        jPanel18Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {tglAdidasLuvas, tglPumaLuvas, tglnikeLuvas});
 
         jPanel27.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tamanhos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
+        grupoTamanhoLuvas.add(rboLP);
         rboLP.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboLP.setText("PP/P");
 
+        grupoTamanhoLuvas.add(rboLM);
         rboLM.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboLM.setText("M");
 
+        grupoTamanhoLuvas.add(rboLG);
         rboLG.setText("G/GG");
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
@@ -210,7 +230,7 @@ public class Vendas extends javax.swing.JFrame {
                 .addComponent(rboLM)
                 .addGap(26, 26, 26))
             .addGroup(jPanel27Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(59, 59, 59)
                 .addComponent(rboLG)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -227,7 +247,7 @@ public class Vendas extends javax.swing.JFrame {
         jPanel31.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel6.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
-        jLabel6.setText("Quantidade");
+        jLabel6.setText("Quantidade:");
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -237,7 +257,7 @@ public class Vendas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinnerLuvas, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(spnLuvas, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 3, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
@@ -246,7 +266,7 @@ public class Vendas extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinnerLuvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnLuvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28))
         );
 
@@ -284,10 +304,13 @@ public class Vendas extends javax.swing.JFrame {
 
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pesos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
+        grupoPesosGYM.add(jRadioButton1);
         jRadioButton1.setText("1 à 5 kg");
 
+        grupoPesosGYM.add(jRadioButton2);
         jRadioButton2.setText("6 à 12 Kg");
 
+        grupoPesosGYM.add(jRadioButton3);
         jRadioButton3.setText("13 à 30 Kg");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -312,18 +335,18 @@ public class Vendas extends javax.swing.JFrame {
                 .addComponent(jRadioButton3))
         );
 
-        jList1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listaGYM.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        listaGYM.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "- Kit 40 Kg De Anilhas De Ferro + Barras De Supino E Halteres.", "- Halter Sextavado Pintado 12 Kg Para Ginastica E Academia.", "- Elástico P/ Treino Crossfit Musculação Ginástica Exercício Físico.", "- Cinturão Fivela Musculação Crossfit Academia Cinto.", "- Esteira Ergométrica Kikos Kx9500 110v.", "- Esteira Mecânica Emp-880 Com 5 Funções 0173 Polimet.", "- Elíptico Magnético Polimet Light - Preto/Laranja.", "- Simulador de Escada Matrix C3X." };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listaGYM);
 
         jPanel32.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel7.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
-        jLabel7.setText("Quantidade");
+        jLabel7.setText("Quantidade:");
 
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
@@ -332,18 +355,17 @@ public class Vendas extends javax.swing.JFrame {
             .addGroup(jPanel32Layout.createSequentialGroup()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinnerGYM, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(spnGYM, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 13, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel32Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnGYM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36))
-            .addGroup(jPanel32Layout.createSequentialGroup()
-                .addComponent(jSpinnerGYM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -377,14 +399,17 @@ public class Vendas extends javax.swing.JFrame {
 
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
-        tglNike.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        tglNike.setText("Nike");
+        grupoMarcasTenis.add(tglNikeTenis);
+        tglNikeTenis.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        tglNikeTenis.setText("Nike");
 
-        tglAdidas.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        tglAdidas.setText("Adidas");
+        grupoMarcasTenis.add(tglAdidasTenis);
+        tglAdidasTenis.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        tglAdidasTenis.setText("Adidas");
 
-        tglPuma.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        tglPuma.setText("Puma");
+        grupoMarcasTenis.add(tglPumaTenis);
+        tglPumaTenis.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        tglPumaTenis.setText("Puma");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -392,34 +417,36 @@ public class Vendas extends javax.swing.JFrame {
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tglNike, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tglNikeTenis, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tglAdidas)
+                .addComponent(tglAdidasTenis)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tglPuma, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tglPumaTenis, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel13Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {tglAdidas, tglNike, tglPuma});
+        jPanel13Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {tglAdidasTenis, tglNikeTenis, tglPumaTenis});
 
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tglNike, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tglAdidas)
-                    .addComponent(tglPuma))
+                    .addComponent(tglNikeTenis, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tglAdidasTenis)
+                    .addComponent(tglPumaTenis))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel13Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {tglAdidas, tglNike, tglPuma});
+        jPanel13Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {tglAdidasTenis, tglNikeTenis, tglPumaTenis});
 
         jPanel22.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tamanhos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
+        grupoTamanhoTenis.add(rboT1);
         rboT1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboT1.setText("34 à 37");
 
+        grupoTamanhoTenis.add(rboT2);
         rboT2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboT2.setText("38 à 45");
 
@@ -446,7 +473,7 @@ public class Vendas extends javax.swing.JFrame {
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
-        jLabel1.setText("Quantidade");
+        jLabel1.setText("Quantidade:");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -455,18 +482,17 @@ public class Vendas extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinnerTenis, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(spnTenis, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 13, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnTenis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36))
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jSpinnerTenis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -502,14 +528,17 @@ public class Vendas extends javax.swing.JFrame {
 
         jPanel21.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
-        tglnike8.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        tglnike8.setText("Nike");
+        grupoMarcasBolas.add(tglnikeBolas);
+        tglnikeBolas.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        tglnikeBolas.setText("Nike");
 
-        tglAdidas8.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        tglAdidas8.setText("Adidas");
+        grupoMarcasBolas.add(tglAdidasBolas);
+        tglAdidasBolas.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        tglAdidasBolas.setText("Adidas");
 
-        tglPuma8.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        tglPuma8.setText("Puma");
+        grupoMarcasBolas.add(tglPumaBolas);
+        tglPumaBolas.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        tglPumaBolas.setText("Puma");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -517,33 +546,33 @@ public class Vendas extends javax.swing.JFrame {
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tglnike8, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tglnikeBolas, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tglAdidas8)
+                .addComponent(tglAdidasBolas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tglPuma8, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tglPumaBolas, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jPanel21Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {tglAdidas8, tglPuma8, tglnike8});
+        jPanel21Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {tglAdidasBolas, tglPumaBolas, tglnikeBolas});
 
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tglnike8, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tglAdidas8)
-                    .addComponent(tglPuma8))
+                    .addComponent(tglnikeBolas, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tglAdidasBolas)
+                    .addComponent(tglPumaBolas))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel21Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {tglAdidas8, tglPuma8, tglnike8});
+        jPanel21Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {tglAdidasBolas, tglPumaBolas, tglnikeBolas});
 
         jPanel34.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel9.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
-        jLabel9.setText("Quantidade");
+        jLabel9.setText("Quantidade:");
 
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
@@ -552,18 +581,17 @@ public class Vendas extends javax.swing.JFrame {
             .addGroup(jPanel34Layout.createSequentialGroup()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinnerBolas, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(spnBolas, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 13, Short.MAX_VALUE))
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel34Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnBolas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36))
-            .addGroup(jPanel34Layout.createSequentialGroup()
-                .addComponent(jSpinnerBolas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Modelos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
@@ -607,8 +635,9 @@ public class Vendas extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(132, 132, 132)
+                .addGap(70, 70, 70)
                 .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
@@ -620,11 +649,14 @@ public class Vendas extends javax.swing.JFrame {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(37, 37, 37)
+                        .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)))
                 .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(47, Short.MAX_VALUE))
         );
@@ -633,9 +665,11 @@ public class Vendas extends javax.swing.JFrame {
 
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tamanhos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
+        grupoTamanhoShort.add(rboC1);
         rboC1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboC1.setText("34 à 37");
 
+        grupoTamanhoShort.add(rboC2);
         rboC2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboC2.setText("38 à 45");
 
@@ -662,7 +696,7 @@ public class Vendas extends javax.swing.JFrame {
         jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
-        jLabel2.setText("Quantidade");
+        jLabel2.setText("Quantidade:");
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -696,6 +730,7 @@ public class Vendas extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 0, 12))); // NOI18N
 
+        grupoMarcasShort.add(tglAdidasShort);
         tglAdidasShort.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
         tglAdidasShort.setText("Adidas");
         tglAdidasShort.addActionListener(new java.awt.event.ActionListener() {
@@ -704,9 +739,11 @@ public class Vendas extends javax.swing.JFrame {
             }
         });
 
+        grupoMarcasShort.add(tglPumaShort);
         tglPumaShort.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
         tglPumaShort.setText("Puma");
 
+        grupoMarcasShort.add(tglnikeShort);
         tglnikeShort.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
         tglnikeShort.setText("Nike");
 
@@ -741,12 +778,15 @@ public class Vendas extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 0, 12))); // NOI18N
 
+        grupoMarcasCalça.add(tglAdidasCalca);
         tglAdidasCalca.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
         tglAdidasCalca.setText("Adidas");
 
+        grupoMarcasCalça.add(tglPumaCalca);
         tglPumaCalca.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
         tglPumaCalca.setText("Puma");
 
+        grupoMarcasCalça.add(tglnikeCalca);
         tglnikeCalca.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
         tglnikeCalca.setText("Nike");
 
@@ -777,7 +817,7 @@ public class Vendas extends javax.swing.JFrame {
         jPanel20.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel15.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
-        jLabel15.setText("Quantidade");
+        jLabel15.setText("Quantidade:");
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -802,9 +842,11 @@ public class Vendas extends javax.swing.JFrame {
 
         jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tamanhos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
+        grupoTamanhoCalca.add(rboC3);
         rboC3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboC3.setText("34 à 37");
 
+        grupoTamanhoCalca.add(rboC4);
         rboC4.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboC4.setText("38 à 45");
 
@@ -830,12 +872,15 @@ public class Vendas extends javax.swing.JFrame {
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 0, 12))); // NOI18N
 
+        grupoMarcaCamiseta.add(tglAdidasCamiseta);
         tglAdidasCamiseta.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
         tglAdidasCamiseta.setText("Adidas");
 
+        grupoMarcaCamiseta.add(tglPumaCamisetas);
         tglPumaCamisetas.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
         tglPumaCamisetas.setText("Puma");
 
+        grupoMarcaCamiseta.add(tglnikeCamiseta);
         tglnikeCamiseta.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
         tglnikeCamiseta.setText("Nike");
 
@@ -866,7 +911,7 @@ public class Vendas extends javax.swing.JFrame {
         jPanel23.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel16.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
-        jLabel16.setText("Quantidade");
+        jLabel16.setText("Quantidade:");
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -891,12 +936,15 @@ public class Vendas extends javax.swing.JFrame {
 
         jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tamanhos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
+        grupoTamanhoCamiseta.add(rboC5);
         rboC5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboC5.setText("PP/P");
 
+        grupoTamanhoCamiseta.add(rboC6);
         rboC6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboC6.setText("M");
 
+        grupoTamanhoCamiseta.add(rboC7);
         rboC7.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboC7.setText("GG/G");
 
@@ -994,12 +1042,9 @@ public class Vendas extends javax.swing.JFrame {
 
         painelGuias.addTab("Roupas", jPanel3);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaResumo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Cliente", "Luvas", "GYM", "Tênis", "Bolas", "Roupas", "Valor Total"
@@ -1013,7 +1058,7 @@ public class Vendas extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tabelaResumo);
 
         javax.swing.GroupLayout tblResumoLayout = new javax.swing.GroupLayout(tblResumo);
         tblResumo.setLayout(tblResumoLayout);
@@ -1063,7 +1108,7 @@ public class Vendas extends javax.swing.JFrame {
             .addGroup(JPanelLayout.createSequentialGroup()
                 .addComponent(chkGarantia)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(chkDesconto)
+                .addComponent(chkDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(chkParcelamentos))
         );
@@ -1127,24 +1172,22 @@ public class Vendas extends javax.swing.JFrame {
             .addComponent(cboTipoParce, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(painelGuias, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(JPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(painelGuias, javax.swing.GroupLayout.PREFERRED_SIZE, 786, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(txtCPFCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(txtCPFCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(166, 166, 166))
+                .addGap(172, 172, 172))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1159,9 +1202,9 @@ public class Vendas extends javax.swing.JFrame {
                 .addComponent(JPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(cboTipoParce, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
+                .addContainerGap())
         );
 
         pack();
@@ -1169,34 +1212,109 @@ public class Vendas extends javax.swing.JFrame {
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
     try{
-        String text = "";
-        if(tglNike.isSelected()){
-        text = tglNike.getText();
-}
-            if(tglAdidas.isSelected()){
-        text = tglAdidas.getText();
-}
-            if(tglPuma.isSelected()){
-        text = tglPuma.getText();
-}
-
-         String Servicos = "";
+        // Informações do tênis ////////////////////////////////////////////////////////
+        String marcaTenis = "";
+        if(tglNikeTenis.isSelected()){
+        marcaTenis = tglNikeTenis.getActionCommand();
+        }
+        if(tglAdidasTenis.isSelected()){
+        marcaTenis = tglAdidasTenis.getActionCommand();
+        }
+        if(tglPumaTenis.isSelected()){
+        marcaTenis = tglPumaTenis.getActionCommand();
+        }
+        String grupoTamTenis = this.grupoTamanhoTenis.getSelection().getActionCommand();
+        String spnTeniss = this.spnTenis.getValue().toString();
+        
+        // Informações da luva ///////////////////////////////////////////////////////////
+        String marcaLuvas = "";
+        if(tglnikeLuvas.isSelected()){
+        marcaLuvas = tglnikeLuvas.getActionCommand();
+        }
+        if(tglAdidasLuvas.isSelected()){
+        marcaLuvas = tglAdidasLuvas.getActionCommand();
+        }
+        if(tglPumaLuvas.isSelected()){
+        marcaLuvas = tglPumaLuvas.getActionCommand();
+        }
+        String grupoTamLuvas = this.grupoTamanhoLuvas.getSelection().getActionCommand();
+        String spnLuva = this.spnLuvas.getValue().toString();
+//        
+        // Informações do GYM /////////////////////////////////////////////////////
+//        ArrayList<String> listaAcessorios = (ArrayList<String>) listaGYM.getSelectedValuesList();
+//        String listaConcatenada = "";
+//        for (String itemLista : listaAcessorios) {
+//            listaConcatenada += itemLista + " ";
+//        }        
+//        if(listaConcatenada.trim().equals("")){
+//            JOptionPane.showMessageDialog(this, "Selecione ao menos um acessório!");
+//            return;
+//        }
+        String grupoPesoGYM = this.grupoPesosGYM.getSelection().getActionCommand();
+        String spnGym = this.spnGYM.getValue().toString();
+        
+        // Informações da bola ///////////////////////////////////////////////////////////
+        String modeloBolas = "";
         if(chkFutebol.isSelected()){
-            Servicos += chkFutebol.getText() + " ";
+            modeloBolas += chkFutebol.getText() + " ";
         }
         if(chkVolei.isSelected()){
-            Servicos += chkVolei.getText() + " ";
+            modeloBolas += chkVolei.getText() + " ";
         }
         if(chkHandebol.isSelected()){
-            Servicos += chkHandebol.getText() + " ";
+            modeloBolas += chkHandebol.getText() + " ";
         }
+        if(chkBasquete.isSelected()){
+            modeloBolas += chkBasquete.getText() + " ";
+        }
+        String grupoMarcaBolas = this.grupoMarcasBolas.getSelection().getActionCommand();
+        String spnBola = this.spnBolas.getValue().toString();
+//        
+        // Informações roupas - Calça ///////////////////////////////////////////////////////////////
+        String marcaCalca = "";
+        if(tglnikeCalca.isSelected()){
+        marcaCalca = tglnikeCalca.getActionCommand();
+        }
+        if(tglAdidasCalca.isSelected()){
+        marcaCalca = tglAdidasCalca.getActionCommand();
+        }
+        if(tglPumaCalca.isSelected()){
+        marcaCalca = tglPumaCalca.getActionCommand();
+        }
+        String grupoTamCalca = this.grupoTamanhoCalca.getSelection().getActionCommand();
+        String spnCalcaa = this.spnCalca.getValue().toString();
+//        
+        // Informações roupas - short ///////////////////////////////////////////////////////////////////////
+        String marcaShort = "";
+        if(tglnikeShort.isSelected()){
+        marcaShort = tglnikeShort.getActionCommand();
+        }
+        if(tglAdidasShort.isSelected()){
+        marcaShort = tglAdidasShort.getActionCommand();
+        }
+        if(tglPumaCalca.isSelected()){
+        marcaShort = tglPumaShort.getActionCommand();
+        }
+        String grupoTamShort = this.grupoTamanhoShort.getSelection().getActionCommand();
+        String spnShorts = this.spnShort.getValue().toString();
         
-          if(chkBasquete.isSelected()){
-            Servicos += chkBasquete.getText() + " ";
-            
+        // Informações roupas - camiseta ////////////////////////////////////////////////////////////////////////
+        String marcaCamiseta = "";
+        if(tglnikeShort.isSelected()){
+        marcaCamiseta = tglnikeCamiseta.getActionCommand();
         }
-          
-           if(chkGarantia.isSelected()){
+        if(tglAdidasShort.isSelected()){
+        marcaCamiseta = tglAdidasCamiseta.getActionCommand();
+        }
+        if(tglPumaCalca.isSelected()){
+        marcaCamiseta = tglPumaCamisetas.getActionCommand();
+        }
+        String grupoTamCamiseta = this.grupoTamanhoCamiseta.getSelection().getActionCommand();
+        String spnCamisetas = this.spnCamiseta.getValue().toString();
+        
+        // Informações dos serviços //////////////////////////////////////////////////
+        String Servicos = "";
+        if(chkGarantia.isSelected()){
             Servicos += chkGarantia.getText() + " ";
         }
         if(chkDesconto.isSelected()){
@@ -1206,7 +1324,7 @@ public class Vendas extends javax.swing.JFrame {
             Servicos += chkParcelamentos.getText() + " ";
         }
         
-       String Parcelamentos = cboTipoParce.getSelectedItem().toString();
+        String Parcelamentos = cboTipoParce.getSelectedItem().toString();
         
         if (txtCPFCompra.getText().trim().equals("")) {
             txtCPFCompra.setBackground(Color.yellow);
@@ -1216,8 +1334,10 @@ public class Vendas extends javax.swing.JFrame {
         txtCPFCompra.setBackground(Color.white);
         txtCPFCompra.setText("");
         painelGuias.setSelectedIndex(5);
+        DefaultTableModel model = (DefaultTableModel) tabelaResumo.getModel();
+        model.addRow(new Object []{txtCPFCompra.getText(),"Marca: "+ marcaLuvas+", Quantidade: "+spnLuva+",Tamanho: "+grupoTamLuvas});
         }catch (Exception e){
-            JOptionPane.showMessageDialog(this, "ERRO AO TRATAR A EXCESSÃO!");
+            JOptionPane.showMessageDialog(this, "SELECIONE OS BOTÕES DE RÁDIO!");
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
@@ -1284,6 +1404,18 @@ public class Vendas extends javax.swing.JFrame {
     private javax.swing.JCheckBox chkHandebol;
     private javax.swing.JCheckBox chkParcelamentos;
     private javax.swing.JCheckBox chkVolei;
+    private javax.swing.ButtonGroup grupoMarcaCamiseta;
+    private javax.swing.ButtonGroup grupoMarcasBolas;
+    private javax.swing.ButtonGroup grupoMarcasCalça;
+    private javax.swing.ButtonGroup grupoMarcasLuva;
+    private javax.swing.ButtonGroup grupoMarcasShort;
+    private javax.swing.ButtonGroup grupoMarcasTenis;
+    private javax.swing.ButtonGroup grupoPesosGYM;
+    private javax.swing.ButtonGroup grupoTamanhoCalca;
+    private javax.swing.ButtonGroup grupoTamanhoCamiseta;
+    private javax.swing.ButtonGroup grupoTamanhoLuvas;
+    private javax.swing.ButtonGroup grupoTamanhoShort;
+    private javax.swing.ButtonGroup grupoTamanhoTenis;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1296,7 +1428,6 @@ public class Vendas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1328,11 +1459,7 @@ public class Vendas extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSpinner jSpinnerBolas;
-    private javax.swing.JSpinner jSpinnerGYM;
-    private javax.swing.JSpinner jSpinnerLuvas;
-    private javax.swing.JSpinner jSpinnerTenis;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JList<String> listaGYM;
     private javax.swing.JTabbedPane painelGuias;
     private javax.swing.JRadioButton rboC1;
     private javax.swing.JRadioButton rboC2;
@@ -1346,27 +1473,32 @@ public class Vendas extends javax.swing.JFrame {
     private javax.swing.JRadioButton rboLP;
     private javax.swing.JRadioButton rboT1;
     private javax.swing.JRadioButton rboT2;
+    private javax.swing.JSpinner spnBolas;
     private javax.swing.JSpinner spnCalca;
     private javax.swing.JSpinner spnCamiseta;
+    private javax.swing.JSpinner spnGYM;
+    private javax.swing.JSpinner spnLuvas;
     private javax.swing.JSpinner spnShort;
+    private javax.swing.JSpinner spnTenis;
+    private javax.swing.JTable tabelaResumo;
     private javax.swing.JPanel tblResumo;
-    private javax.swing.JToggleButton tglAdidas;
-    private javax.swing.JToggleButton tglAdidas5;
-    private javax.swing.JToggleButton tglAdidas8;
+    private javax.swing.JToggleButton tglAdidasBolas;
     private javax.swing.JToggleButton tglAdidasCalca;
     private javax.swing.JToggleButton tglAdidasCamiseta;
+    private javax.swing.JToggleButton tglAdidasLuvas;
     private javax.swing.JToggleButton tglAdidasShort;
-    private javax.swing.JToggleButton tglNike;
-    private javax.swing.JToggleButton tglPuma;
-    private javax.swing.JToggleButton tglPuma5;
-    private javax.swing.JToggleButton tglPuma8;
+    private javax.swing.JToggleButton tglAdidasTenis;
+    private javax.swing.JToggleButton tglNikeTenis;
+    private javax.swing.JToggleButton tglPumaBolas;
     private javax.swing.JToggleButton tglPumaCalca;
     private javax.swing.JToggleButton tglPumaCamisetas;
+    private javax.swing.JToggleButton tglPumaLuvas;
     private javax.swing.JToggleButton tglPumaShort;
-    private javax.swing.JToggleButton tglnike5;
-    private javax.swing.JToggleButton tglnike8;
+    private javax.swing.JToggleButton tglPumaTenis;
+    private javax.swing.JToggleButton tglnikeBolas;
     private javax.swing.JToggleButton tglnikeCalca;
     private javax.swing.JToggleButton tglnikeCamiseta;
+    private javax.swing.JToggleButton tglnikeLuvas;
     private javax.swing.JToggleButton tglnikeShort;
     private javax.swing.JTextField txtCPFCompra;
     // End of variables declaration//GEN-END:variables
