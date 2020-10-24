@@ -33,6 +33,7 @@ public class TelaRelatorioAnalitico extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Relatorio Analitico");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relatório Detalhado de Vendas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 

@@ -64,7 +64,7 @@ public class Check {
         if(Senha.trim().equals("")){
             msgErro.add("Não foi preenchido o campo " + txt.getName());
             txt.setBackground(Color.yellow);
-        }  
+        }else  
         if(Senha.trim().length()<6){
            msgErro.add("Você não Completou o campo " + txt.getName());
            txt.setBackground(Color.yellow);

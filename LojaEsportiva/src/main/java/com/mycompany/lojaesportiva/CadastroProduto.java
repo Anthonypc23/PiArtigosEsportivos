@@ -57,6 +57,7 @@ public class CadastroProduto extends javax.swing.JFrame {
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Produto");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Ecommerce-Product-icon.png"))); // NOI18N
 
