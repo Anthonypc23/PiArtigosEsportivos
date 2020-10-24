@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.JTextField;
 import javax.swing.JFormattedTextField;
+import javax.swing.JPasswordField;
 
 /**
  *
@@ -48,11 +49,27 @@ public class Check {
         
     }
     
+    
     public void validNasc(JFormattedTextField txt){
         if(txt.getText().trim().equals("")){
             msgErro.add("Não foi preenchido o campo " + txt.getName());
             txt.setBackground(Color.yellow);
         }
+    }
+    
+    public void ValidVoid (JPasswordField  txt){
+       char[] senhac = txt.getPassword();
+       String Senha = String.valueOf(senhac);
+      
+        if(Senha.trim().equals("")){
+            msgErro.add("Não foi preenchido o campo " + txt.getName());
+            txt.setBackground(Color.yellow);
+        }  
+        if(Senha.trim().length()<6){
+           msgErro.add("Você não Completou o campo " + txt.getName());
+           txt.setBackground(Color.yellow);
+        }    
+        
     }
     
     public void ValidVoid (JTextField txt){
@@ -61,6 +78,16 @@ public class Check {
             txt.setBackground(Color.yellow);
         }
     }
+    
+    public void Validsize(JTextField txt){
+        if(txt.getText().trim().length()<11){
+           msgErro.add("Você não Completou o campo " + txt.getName());
+           txt.setBackground(Color.yellow);
+        }
+    }
+    
+   
+    
     
     public void clearMSG(){
      
