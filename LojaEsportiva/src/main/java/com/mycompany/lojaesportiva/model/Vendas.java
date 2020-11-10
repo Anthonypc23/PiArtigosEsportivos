@@ -1,7 +1,7 @@
 
-package com.mycompany.lojaesportiva;
+package com.mycompany.lojaesportiva.model;
 
-public class ClasseVendas {
+public class Vendas {
     
     private String cliente;
     private String produto;
@@ -13,7 +13,7 @@ public class ClasseVendas {
     private String marca;
     private String tamanho;
 
-    public ClasseVendas() {
+    public Vendas() {
     }
 
     public String getCliente() {

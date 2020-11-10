@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.lojaesportiva;
+package com.mycompany.lojaesportiva.view;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -13,12 +13,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author k
  */
-public class CRUDProduto extends javax.swing.JFrame {
+public class CRUDProdutoView extends javax.swing.JFrame {
 
     /**
-     * Creates new form CadastroProduto
+     * Creates new form CadastroProdutoView
      */
-    public CRUDProduto() {
+    public CRUDProdutoView() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -233,12 +233,12 @@ public class CRUDProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDescricaoFocusLost
 
     private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
-        CadastroProduto tela = new CadastroProduto();
+        CadastroProdutoView tela = new CadastroProdutoView();
         tela.setVisible(true);
     }//GEN-LAST:event_btnInserirActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        CadastroProduto tela = new CadastroProduto();
+        CadastroProdutoView tela = new CadastroProdutoView();
         tela.setVisible(true);
     }//GEN-LAST:event_btnAlterarActionPerformed
 
@@ -259,21 +259,23 @@ public class CRUDProduto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CRUDProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRUDProdutoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CRUDProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRUDProdutoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CRUDProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRUDProdutoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CRUDProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRUDProdutoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CRUDProduto().setVisible(true);
+                new CRUDProdutoView().setVisible(true);
             }
         });
     }

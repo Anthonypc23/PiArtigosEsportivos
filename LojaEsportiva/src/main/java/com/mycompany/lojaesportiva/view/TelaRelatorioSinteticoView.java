@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.lojaesportiva;
+package com.mycompany.lojaesportiva.view;
 
-import com.mycompany.lojaesportiva.TelaRelatorioAnalitico;
+import com.mycompany.lojaesportiva.view.TelaRelatorioAnaliticoView;
 
 /**
  *
  * @author ATGM
  */
-public class TelaRelatorioSintetico extends javax.swing.JFrame {
+public class TelaRelatorioSinteticoView extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaRelatorioSintetico
      */
-    public TelaRelatorioSintetico() {
+    public TelaRelatorioSinteticoView() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -197,7 +197,7 @@ public class TelaRelatorioSintetico extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        TelaRelatorioAnalitico objRelatorioAna = new TelaRelatorioAnalitico();
+        TelaRelatorioAnaliticoView objRelatorioAna = new TelaRelatorioAnaliticoView();
         objRelatorioAna.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -218,20 +218,21 @@ public class TelaRelatorioSintetico extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaRelatorioSintetico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaRelatorioSinteticoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaRelatorioSintetico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaRelatorioSinteticoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaRelatorioSintetico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaRelatorioSinteticoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaRelatorioSintetico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaRelatorioSinteticoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaRelatorioSintetico().setVisible(true);
+                new TelaRelatorioSinteticoView().setVisible(true);
             }
         });
     }
