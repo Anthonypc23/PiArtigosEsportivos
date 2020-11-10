@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.lojaesportiva;
+package com.mycompany.lojaesportiva.model;
 
 /**
  *
  * @author rrmat
  */
 public class Cliente {
-
+    private int IdCliente;
     private String Nome;
     private String Email;
+    private String Senha;
     private String CPF;
     private String Nascimento;
     private String Sexo;
@@ -23,6 +24,15 @@ public class Cliente {
     public Cliente() {
    
     }
+
+    public int getIdCliente() {
+        return IdCliente;
+    }
+
+    public void setIdCliente(int IdCliente) {
+        this.IdCliente = IdCliente;
+    }
+    
 
     public String getNome() {
         return Nome;
@@ -40,6 +50,14 @@ public class Cliente {
         this.Email = Email;
     }
 
+    public String getSenha() {
+        return Senha;
+    }
+
+    public void setSenha(String Senha) {
+        this.Senha = Senha;
+    }
+    
     public String getCPF() {
         return CPF;
     }

@@ -1,5 +1,5 @@
 
-package com.mycompany.lojaesportiva;
+package com.mycompany.lojaesportiva.model;
 
 public class Relatorio {
     

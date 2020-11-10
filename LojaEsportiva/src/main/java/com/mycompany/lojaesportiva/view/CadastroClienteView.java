@@ -3,10 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.lojaesportiva;
+package com.mycompany.lojaesportiva.view;
 
+import com.mycompany.lojaesportiva.controller.Clientecontroller;
+import com.mycompany.lojaesportiva.model.Check;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -14,14 +19,24 @@ import javax.swing.JOptionPane;
  *
  * @author rrmat
  */
-public class CadastroCliente extends javax.swing.JFrame {
-
+public class CadastroClienteView extends javax.swing.JFrame {
+int IdCliente = 0;
+String modo = "Criar";
     /**
      * Creates new form CadastroCliente
      */
-    public CadastroCliente() {
+    public CadastroClienteView() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+    
+    public CadastroClienteView(int IdCliente) {
+        modo = "Alterar";
+        initComponents();
+        this.setLocationRelativeTo(null);
+        preencherFormulario(IdCliente);
+        
+        
     }
 
     /**
@@ -61,6 +76,8 @@ public class CadastroCliente extends javax.swing.JFrame {
         btnConfirmar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         txtExemplo = new javax.swing.JLabel();
+        lblid = new javax.swing.JLabel();
+        lblID = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Cliente");
@@ -217,15 +234,15 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         GrupoSexo.add(jrbMasculino);
         jrbMasculino.setText("Masculino");
-        jrbMasculino.setActionCommand("Masculino");
+        jrbMasculino.setActionCommand("M");
 
         GrupoSexo.add(jrbFeminino);
         jrbFeminino.setText("Feminino");
-        jrbFeminino.setActionCommand("Feminino");
+        jrbFeminino.setActionCommand("F");
 
         GrupoSexo.add(jrbOutros);
         jrbOutros.setText("Outros");
-        jrbOutros.setActionCommand("Outros");
+        jrbOutros.setActionCommand("O");
 
         txtCPF.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtCPF.setName("CPF"); // NOI18N
@@ -271,7 +288,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,11 +297,11 @@ public class CadastroCliente extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblCPF, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                            .addComponent(txtEmail)
-                            .addComponent(txtNome)))
+                            .addComponent(txtCPF)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblEstadoCivil)
@@ -316,7 +333,7 @@ public class CadastroCliente extends javax.swing.JFrame {
                                 .addComponent(jrbFeminino)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jrbOutros)))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGap(14, 14, 14))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtEstadoCivil, txtNascimento});
@@ -419,19 +436,33 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         });
 
+        lblid.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        lblID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtExemplo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(txtExemplo, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(lblid, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblID)
+                        .addGap(293, 293, 293))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblid, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+                    .addComponent(lblID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtExemplo)
                 .addGap(25, 25, 25))
         );
@@ -479,8 +510,9 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        if(modo.equals("Criar")){
         ImageIcon icon = new ImageIcon("C:\\GitHub\\PiArtigosEsportivos\\LojaEsportiva\\src\\main\\resources\\imagens\\check.png");
-     
+        String nome,email,senha,cpf,nascimento,sexo,estadocivil,telefone,endereco;
         Check valid = new Check();
         valid.ValidVoid(txtNome);
         valid.ValidVoid(txtEmail);
@@ -493,23 +525,89 @@ public class CadastroCliente extends javax.swing.JFrame {
         if(valid.temErro()){
             JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
         }else{
-            
+         nome = txtNome.getText();    
          char[] senhac = txtSenha.getPassword();
-         String Senha = String.valueOf(senhac);
-            
+         senha = String.valueOf(senhac);
+         email = txtEmail.getText();
+         cpf = txtCPF.getText();
+         nascimento = txtNascimento.getText();
+         sexo = GrupoSexo.getSelection().getActionCommand();
+         estadocivil = txtEstadoCivil.getText();
+         telefone = txtTelefone.getText().trim().replace("(", "").replace(")", "").replace("-", "");
+         endereco = txtEndereço.getText();
         int confirm = JOptionPane.showConfirmDialog(this, "Confirme os seus dados: " +"\n" 
-                                                         + "Nome: " + txtNome.getText() +  "\n"
-                                                         + "E-mail: " + txtEmail.getText() + "\n"
-                                                         + "Senha" + Senha + "\n"
-                                                         + "CPF: " +txtCPF.getText() + "\n"
-                                                         + "Nascimento: " +txtNascimento.getText() + "\n"
-                                                         + "Sexo: " +GrupoSexo.getSelection().getActionCommand()+ "\n"
-                                                         + "Estado Civil: " +txtEstadoCivil.getText() + "\n"
-                                                         + "Telefone: " +txtTelefone.getText() + "\n"
-                                                         + "Endereço: " +txtEndereço.getText() + "\n","Atenção",JOptionPane.OK_CANCEL_OPTION);
+                                                         + "Nome: " + nome +  "\n"
+                                                         + "E-mail: " + email + "\n"
+                                                         + "Senha" + senha + "\n"
+                                                         + "CPF: " +cpf + "\n"
+                                                         + "Nascimento: " +nascimento + "\n"
+                                                         + "Sexo: " +sexo+ "\n"
+                                                         + "Estado Civil: " +estadocivil + "\n"
+                                                         + "Telefone: " +telefone + "\n"
+                                                         + "Endereço: " +endereco + "\n","Atenção",JOptionPane.OK_CANCEL_OPTION);
         if(confirm == 0){
-          JOptionPane.showMessageDialog(this, "Dados cadastrados com sucesso" ,"Aviso!",JOptionPane.INFORMATION_MESSAGE, icon);
+             try {
+                 if(Clientecontroller.Cadastrar(nome, email, senha, cpf, nascimento, sexo, estadocivil, telefone, endereco)){
+                     JOptionPane.showMessageDialog(this, "Cadastro concluido com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                 }else{
+                     JOptionPane.showMessageDialog(this, "Erro ao finalizar cadastrar", "Aviso!", JOptionPane.ERROR_MESSAGE);
+                 }  } catch (SQLException ex) {
+                 Logger.getLogger(CadastroClienteView.class.getName()).log(Level.SEVERE, null, ex);
+             }
+          
+            
       }
+        }
+        }else{
+             ImageIcon icon = new ImageIcon("C:\\GitHub\\PiArtigosEsportivos\\LojaEsportiva\\src\\main\\resources\\imagens\\check.png");
+        String nome,email,senha,cpf,nascimento,sexo,estadocivil,telefone,endereco;
+        Check valid = new Check();
+        valid.ValidVoid(txtNome);
+        valid.ValidVoid(txtEmail);
+        valid.ValidVoid(txtSenha);
+        valid.ValidVoid(txtCPF);
+        valid.Validsize(txtCPF);
+        valid.ValidSex(GrupoSexo);
+        valid.ValidVoid(txtEndereço);
+        
+        if(valid.temErro()){
+            JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
+        }else{
+         int IdCliente = Integer.parseInt(lblID.getText());
+         nome = txtNome.getText();    
+         char[] senhac = txtSenha.getPassword();
+         senha = String.valueOf(senhac);
+         email = txtEmail.getText();
+         cpf = txtCPF.getText();
+         nascimento = txtNascimento.getText();
+         sexo = GrupoSexo.getSelection().getActionCommand();
+         estadocivil = txtEstadoCivil.getText();
+         telefone = txtTelefone.getText().trim().replace("(", "").replace(")", "").replace("-", "");
+         endereco = txtEndereço.getText();
+        int confirm = JOptionPane.showConfirmDialog(this, "Confirme os seus dados: " +"\n" 
+                                                         + "Nome: " + nome +  "\n"
+                                                         + "E-mail: " + email + "\n"
+                                                         + "Senha" + senha + "\n"
+                                                         + "CPF: " +cpf + "\n"
+                                                         + "Nascimento: " +nascimento + "\n"
+                                                         + "Sexo: " +sexo+ "\n"
+                                                         + "Estado Civil: " +estadocivil + "\n"
+                                                         + "Telefone: " +telefone + "\n"
+                                                         + "Endereço: " +endereco + "\n","Atenção",JOptionPane.OK_CANCEL_OPTION);
+        if(confirm == 0){
+             try {
+                 if(Clientecontroller.Alterar(nome, email, senha, cpf, nascimento, sexo, estadocivil, telefone, endereco, IdCliente)){
+                     JOptionPane.showMessageDialog(this, "Cadastro Alterado com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                     this.dispose();
+                 }else{
+                     JOptionPane.showMessageDialog(this, "Erro ao finalizar cadastrar", "Aviso!", JOptionPane.ERROR_MESSAGE);
+                 }  } catch (SQLException ex) {
+                 Logger.getLogger(CadastroClienteView.class.getName()).log(Level.SEVERE, null, ex);
+             }
+          
+            
+      }
+        }
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
@@ -658,20 +756,21 @@ public class CadastroCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            new CadastroCliente().setVisible(true);
+            new CadastroClienteView().setVisible(true);
             }
         });
         
@@ -694,10 +793,12 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEndereco;
     private javax.swing.JLabel lblEstadoCivil;
+    private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblNascimento;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblSexo;
     private javax.swing.JLabel lblTelefone;
+    private javax.swing.JLabel lblid;
     private javax.swing.JTextField txtCPF;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEndereço;
@@ -708,4 +809,31 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtSenha;
     private javax.swing.JFormattedTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
+
+    private void preencherFormulario(int IdCliente) {
+    String[] cli = Clientecontroller.CLienteID(IdCliente);
+    lblid.setText("ID:");
+    lblID.setText(cli[0]);
+    txtNome.setText(cli[1]);
+    txtEmail.setText(cli[2]);
+    txtSenha.setText(cli[3]);
+    txtCPF.setText(cli[4]);
+    txtNascimento.setText(cli[5]);
+    switch(cli[6]){
+        case "M":
+            jrbMasculino.setSelected(true);
+        break;
+        case "F":
+            jrbFeminino.setSelected(true);
+        break;
+        case "O":
+            jrbOutros.setSelected(true);
+        break;
+    }
+    txtEstadoCivil.setText(cli[7]);
+    txtTelefone.setText(cli[8]);
+    txtEndereço.setText(cli[9]);
+    
+        
+    }
 }

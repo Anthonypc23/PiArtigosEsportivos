@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.lojaesportiva;
+package com.mycompany.lojaesportiva.view;
 
 /**
  *
  * @author rrmat
  */
-public class TelaPrincipal extends javax.swing.JFrame {
+public class TelaPrincipalView extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaPrincipal
      */
-    public TelaPrincipal() {
+    public TelaPrincipalView() {
         initComponents();
         
         this.setExtendedState(MAXIMIZED_BOTH);
@@ -178,17 +178,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiCRUDClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCRUDClienteActionPerformed
-      CRUDCliente crudc = new CRUDCliente();
+      CRUDClienteView crudc = new CRUDClienteView();
       crudc.setVisible(true);
     }//GEN-LAST:event_jmiCRUDClienteActionPerformed
 
     private void jmiProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiProdutoActionPerformed
-       CadastroProduto CadP = new CadastroProduto();
+       CadastroProdutoView CadP = new CadastroProdutoView();
        CadP.setVisible(true);
     }//GEN-LAST:event_jmiProdutoActionPerformed
 
     private void jmiCRUDProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCRUDProdutoActionPerformed
-        CRUDProduto crudp = new CRUDProduto();
+        CRUDProdutoView crudp = new CRUDProdutoView();
         crudp.setVisible(true);
     }//GEN-LAST:event_jmiCRUDProdutoActionPerformed
 
@@ -197,22 +197,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiSairActionPerformed
 
     private void jmiClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiClienteActionPerformed
-       CadastroCliente CadC = new CadastroCliente();
+       CadastroClienteView CadC = new CadastroClienteView();
        CadC.setVisible(true);
     }//GEN-LAST:event_jmiClienteActionPerformed
 
     private void jmiVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiVendasActionPerformed
-       Vendas telaV = new Vendas();
+       VendasView telaV = new VendasView();
        telaV.setVisible(true);
     }//GEN-LAST:event_jmiVendasActionPerformed
 
     private void jmiRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRelatorioActionPerformed
-       TelaRelatorioSintetico TelaR = new TelaRelatorioSintetico();
+       TelaRelatorioSinteticoView TelaR = new TelaRelatorioSinteticoView();
        TelaR.setVisible(true);
     }//GEN-LAST:event_jmiRelatorioActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-       Login log = new Login(this, true);
+       LoginView log = new LoginView(this, true);
        log.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -233,20 +233,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPrincipal().setVisible(true);
+                new TelaPrincipalView().setVisible(true);
             }
         });
     }
