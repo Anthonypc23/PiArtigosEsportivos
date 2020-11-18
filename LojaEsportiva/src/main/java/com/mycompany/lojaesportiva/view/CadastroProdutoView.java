@@ -5,8 +5,12 @@
  */
 package com.mycompany.lojaesportiva.view;
 
+import com.mycompany.lojaesportiva.controller.ProdutoController;
 import com.mycompany.lojaesportiva.model.Check;
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -16,12 +20,22 @@ import javax.swing.JOptionPane;
  */
 public class CadastroProdutoView extends javax.swing.JFrame {
 
+    int IdProduto = 0;
+    String modo = "Criar";
+    
     /**
      * Creates new form CadastroProduto
      */
     public CadastroProdutoView() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+
+    public CadastroProdutoView(int IdProduto) {
+        modo = "Alterar";
+        initComponents();
+        this.setLocationRelativeTo(null);
+        preencherFormulario(IdProduto);
     }
 
     /**
@@ -328,7 +342,10 @@ public class CadastroProdutoView extends javax.swing.JFrame {
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         ImageIcon icon = new ImageIcon("C:\\GitHub\\PiArtigosEsportivos\\LojaEsportiva\\src\\main\\resources\\imagens\\check.png");
-
+        String nome, descricao;
+        int quantidade;
+        float valor;
+        
         Check valid = new Check();
         valid.ValidVoid(txtNome);
         valid.ValidVoid(txtQuantidade);
@@ -338,19 +355,30 @@ public class CadastroProdutoView extends javax.swing.JFrame {
         if(valid.temErro()){
             JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!", JOptionPane.ERROR_MESSAGE);
         }else{
+            nome = txtNome.getText();
+            quantidade = Integer.parseInt(txtQuantidade.getText());
+            descricao = txtDescricao.getText();
+            valor = Float.parseFloat(txtValor.getText());
             int confirm = JOptionPane.showConfirmDialog(this, "Confirme os seus dados: " +"\n"
-                + "Nome do produto: " + txtNome.getText() +  "\n"
-                + "Tipo do produto: " +txtQuantidade.getText() + "\n"
-                + "Descrição do produto: " + txtDescricao.getText() +  "\n"
-                + "Valor do produto: " + txtValor.getText() +  "\n", "Atenção",JOptionPane.OK_CANCEL_OPTION);
+                + "Nome do produto: " + nome +  "\n"
+                + "Quantidade do produto: " + quantidade + "\n"
+                + "Descrição do produto: " + descricao +  "\n"
+                + "Valor do produto: " + valor +  "\n", "Atenção",JOptionPane.OK_CANCEL_OPTION);
             if(confirm == 0){
                 JOptionPane.showMessageDialog(this, "Dados cadastrados com sucesso" ,"Aviso!",JOptionPane.INFORMATION_MESSAGE, icon);
+                try {
+                if(ProdutoController.Cadastrar(nome, quantidade, descricao, valor)){
+                     JOptionPane.showMessageDialog(this, "Cadastro concluido com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                }else{
+                     JOptionPane.showMessageDialog(this, "Erro ao finalizar cadastrar", "Aviso!", JOptionPane.ERROR_MESSAGE);
+                }  
+                } catch (SQLException ex) {
+                Logger.getLogger(CadastroProdutoView.class.getName()).log(Level.SEVERE, null, ex);
+            }           
             }
             CRUDProdutoView tela = new CRUDProdutoView();
             tela.setVisible(true);
         }
-        
-        
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -445,4 +473,14 @@ public class CadastroProdutoView extends javax.swing.JFrame {
     private javax.swing.JTextField txtQuantidade;
     private javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
+
+    private void preencherFormulario(int IdProduto) {
+        String[] prod = ProdutoController.ProdutoID(IdProduto);
+  
+        lblID.setText(prod[0]);
+        txtNome.setText(prod[1]);
+        txtQuantidade.setText(prod[2]);
+        txtDescricao.setText(prod[3]);
+        txtValor.setText(prod[4]);
+    }
 }

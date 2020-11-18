@@ -3,12 +3,21 @@ package com.mycompany.lojaesportiva.model;
 
 public class Produto {
     
+    private int IdProduto;
     private String nomeProduto;
     private int quantidadeProduto;
     private String descricao;
     private float valor;
 
     public Produto() {
+    }
+
+    public int getIdProduto() {
+        return IdProduto;
+    }
+
+    public void setIdProduto(int IdProduto) {
+        this.IdProduto = IdProduto;
     }
     
     public String getNomeProduto() {

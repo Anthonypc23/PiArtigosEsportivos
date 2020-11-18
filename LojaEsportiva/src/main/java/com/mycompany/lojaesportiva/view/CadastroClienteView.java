@@ -20,8 +20,10 @@ import javax.swing.JOptionPane;
  * @author rrmat
  */
 public class CadastroClienteView extends javax.swing.JFrame {
-int IdCliente = 0;
-String modo = "Criar";
+    
+    int IdCliente = 0;
+    String modo = "Criar";
+    
     /**
      * Creates new form CadastroCliente
      */
@@ -35,8 +37,6 @@ String modo = "Criar";
         initComponents();
         this.setLocationRelativeTo(null);
         preencherFormulario(IdCliente);
-        
-        
     }
 
     /**
@@ -513,6 +513,7 @@ String modo = "Criar";
         if(modo.equals("Criar")){
         ImageIcon icon = new ImageIcon("C:\\GitHub\\PiArtigosEsportivos\\LojaEsportiva\\src\\main\\resources\\imagens\\check.png");
         String nome,email,senha,cpf,nascimento,sexo,estadocivil,telefone,endereco;
+        
         Check valid = new Check();
         valid.ValidVoid(txtNome);
         valid.ValidVoid(txtEmail);
@@ -525,16 +526,16 @@ String modo = "Criar";
         if(valid.temErro()){
             JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
         }else{
-         nome = txtNome.getText();    
-         char[] senhac = txtSenha.getPassword();
-         senha = String.valueOf(senhac);
-         email = txtEmail.getText();
-         cpf = txtCPF.getText();
-         nascimento = txtNascimento.getText();
-         sexo = GrupoSexo.getSelection().getActionCommand();
-         estadocivil = txtEstadoCivil.getText();
-         telefone = txtTelefone.getText().trim().replace("(", "").replace(")", "").replace("-", "");
-         endereco = txtEndereço.getText();
+            nome = txtNome.getText();    
+            char[] senhac = txtSenha.getPassword();
+            senha = String.valueOf(senhac);
+            email = txtEmail.getText();
+            cpf = txtCPF.getText();
+            nascimento = txtNascimento.getText();
+            sexo = GrupoSexo.getSelection().getActionCommand();
+            estadocivil = txtEstadoCivil.getText();
+            telefone = txtTelefone.getText().trim().replace("(", "").replace(")", "").replace("-", "");
+            endereco = txtEndereço.getText();
         int confirm = JOptionPane.showConfirmDialog(this, "Confirme os seus dados: " +"\n" 
                                                          + "Nome: " + nome +  "\n"
                                                          + "E-mail: " + email + "\n"
@@ -546,17 +547,15 @@ String modo = "Criar";
                                                          + "Telefone: " +telefone + "\n"
                                                          + "Endereço: " +endereco + "\n","Atenção",JOptionPane.OK_CANCEL_OPTION);
         if(confirm == 0){
-             try {
-                 if(Clientecontroller.Cadastrar(nome, email, senha, cpf, nascimento, sexo, estadocivil, telefone, endereco)){
+            try {
+                if(Clientecontroller.Cadastrar(nome, email, senha, cpf, nascimento, sexo, estadocivil, telefone, endereco)){
                      JOptionPane.showMessageDialog(this, "Cadastro concluido com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
-                 }else{
+                }else{
                      JOptionPane.showMessageDialog(this, "Erro ao finalizar cadastrar", "Aviso!", JOptionPane.ERROR_MESSAGE);
-                 }  } catch (SQLException ex) {
-                 Logger.getLogger(CadastroClienteView.class.getName()).log(Level.SEVERE, null, ex);
-             }
-          
-            
-      }
+                }  } catch (SQLException ex) {
+                Logger.getLogger(CadastroClienteView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         }
         }else{
              ImageIcon icon = new ImageIcon("C:\\GitHub\\PiArtigosEsportivos\\LojaEsportiva\\src\\main\\resources\\imagens\\check.png");
@@ -597,16 +596,14 @@ String modo = "Criar";
         if(confirm == 0){
              try {
                  if(Clientecontroller.Alterar(nome, email, senha, cpf, nascimento, sexo, estadocivil, telefone, endereco, IdCliente)){
-                     JOptionPane.showMessageDialog(this, "Cadastro Alterado com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                     JOptionPane.showMessageDialog(this, "Cadastro Alterado com sucesso", "Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
                      this.dispose();
                  }else{
                      JOptionPane.showMessageDialog(this, "Erro ao finalizar cadastrar", "Aviso!", JOptionPane.ERROR_MESSAGE);
                  }  } catch (SQLException ex) {
                  Logger.getLogger(CadastroClienteView.class.getName()).log(Level.SEVERE, null, ex);
-             }
-          
-            
-      }
+            }
+        }
         }
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
@@ -736,7 +733,7 @@ String modo = "Criar";
         if(Senha.length()>=12){
             evt.consume();
             JOptionPane.showMessageDialog(this,"Máximo de 12 caracteres atingido!");
-                }
+        }
     }//GEN-LAST:event_txtSenhaKeyTyped
 
     /**
@@ -833,7 +830,5 @@ String modo = "Criar";
     txtEstadoCivil.setText(cli[7]);
     txtTelefone.setText(cli[8]);
     txtEndereço.setText(cli[9]);
-    
-        
     }
 }
