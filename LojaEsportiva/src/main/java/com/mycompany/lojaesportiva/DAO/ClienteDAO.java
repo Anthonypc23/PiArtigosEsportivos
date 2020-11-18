@@ -77,7 +77,7 @@ public class ClienteDAO {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conexao = DriverManager.getConnection(URL,LOGIN,SENHA);
             
-            InstrucaoSQL = conexao.prepareStatement("SELECT * FROM cliente WHERE nome like ? or CPF like ?");
+            InstrucaoSQL = conexao.prepareStatement("SELECT * FROM Cliente WHERE nome like ? or CPF like ?");
             InstrucaoSQL.setString(1, pnome+"%");
             InstrucaoSQL.setString(2, pCPF+"%");
             
@@ -225,5 +225,4 @@ public class ClienteDAO {
         
         return retorno;
   }
-
 }
