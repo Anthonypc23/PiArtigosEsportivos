@@ -75,11 +75,11 @@ public class CRUDClienteView extends javax.swing.JFrame {
 
             },
             new String [] {
-                "IdCliente", "Nome", "Email", "Senha", "CPF", "Nascimento", "Sexo", "Estado Civil", "Telefone", "Endereço"
+                "IdCliente", "Nome", "Email", "CPF", "Nascimento", "Sexo", "Estado Civil", "Telefone", "Endereço"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

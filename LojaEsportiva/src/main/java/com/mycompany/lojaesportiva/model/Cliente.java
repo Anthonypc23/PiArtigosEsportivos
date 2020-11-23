@@ -13,7 +13,6 @@ public class Cliente {
     private int IdCliente;
     private String Nome;
     private String Email;
-    private String Senha;
     private String CPF;
     private String Nascimento;
     private String Sexo;
@@ -48,14 +47,6 @@ public class Cliente {
 
     public void setEmail(String Email) {
         this.Email = Email;
-    }
-
-    public String getSenha() {
-        return Senha;
-    }
-
-    public void setSenha(String Senha) {
-        this.Senha = Senha;
     }
     
     public String getCPF() {

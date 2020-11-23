@@ -33,16 +33,15 @@ public class ClienteDAO {
            Class.forName("com.mysql.cj.jdbc.Driver");
            conexao = DriverManager.getConnection(URL,LOGIN,SENHA);
            
-           InstrucaoSQL = conexao.prepareStatement("INSERT INTO Cliente(nome,email,senha,CPF,nascimento,sexo,estadocivil,telefone,endereco) VALUES(?,?,?,?,?,?,?,?,?)");
+           InstrucaoSQL = conexao.prepareStatement("INSERT INTO Cliente(nome,email,CPF,nascimento,sexo,estadocivil,telefone,endereco) VALUES(?,?,?,?,?,?,?,?)");
            InstrucaoSQL.setString(1, cli.getNome());
            InstrucaoSQL.setString(2, cli.getEmail());
-           InstrucaoSQL.setString(3, cli.getSenha());
-           InstrucaoSQL.setString(4, cli.getCPF());
-           InstrucaoSQL.setString(5, cli.getNascimento());
-           InstrucaoSQL.setString(6, cli.getSexo());
-           InstrucaoSQL.setString(7, cli.getEstadoCivil());
-           InstrucaoSQL.setString(8, cli.getTelefone());
-           InstrucaoSQL.setString(9, cli.getEndereço());
+           InstrucaoSQL.setString(3, cli.getCPF());
+           InstrucaoSQL.setString(4, cli.getNascimento());
+           InstrucaoSQL.setString(5, cli.getSexo());
+           InstrucaoSQL.setString(6, cli.getEstadoCivil());
+           InstrucaoSQL.setString(7, cli.getTelefone());
+           InstrucaoSQL.setString(8, cli.getEndereço());
            int linhasafetadas = InstrucaoSQL.executeUpdate();
            
            if(linhasafetadas>0){
@@ -88,7 +87,6 @@ public class ClienteDAO {
             cli.setIdCliente(rs.getInt("IdCliente"));
             cli.setNome(rs.getString("nome"));
             cli.setEmail(rs.getString("email"));
-            cli.setSenha(rs.getString("senha"));
             cli.setCPF(rs.getString("CPF"));
             cli.setNascimento(rs.getString("nascimento"));
             cli.setSexo(rs.getString("sexo"));
@@ -146,7 +144,6 @@ public class ClienteDAO {
               cli.setIdCliente(rs.getInt("IdCLiente"));
               cli.setNome(rs.getString("nome"));
               cli.setEmail(rs.getString("email"));
-              cli.setSenha(rs.getString("senha"));
               cli.setCPF(rs.getString("CPF"));
               cli.setNascimento(rs.getString("nascimento"));
               cli.setSexo(rs.getString("sexo"));
@@ -189,17 +186,16 @@ public class ClienteDAO {
            Class.forName("com.mysql.cj.jdbc.Driver");
            conexao = DriverManager.getConnection(URL,LOGIN,SENHA);
            
-           InstrucaoSQL = conexao.prepareStatement("UPDATE Cliente SET nome = ?, email = ?, senha = ?, CPF = ?, nascimento = ?, Sexo = ?, estadocivil = ?, telefone = ?, endereco = ? WHERE IdCliente = ?");
+           InstrucaoSQL = conexao.prepareStatement("UPDATE Cliente SET nome = ?, email = ?, CPF = ?, nascimento = ?, Sexo = ?, estadocivil = ?, telefone = ?, endereco = ? WHERE IdCliente = ?");
            InstrucaoSQL.setString(1, cli.getNome());
            InstrucaoSQL.setString(2, cli.getEmail());
-           InstrucaoSQL.setString(3, cli.getSenha());
-           InstrucaoSQL.setString(4, cli.getCPF());
-           InstrucaoSQL.setString(5, cli.getNascimento());
-           InstrucaoSQL.setString(6, cli.getSexo());
-           InstrucaoSQL.setString(7, cli.getEstadoCivil());
-           InstrucaoSQL.setString(8, cli.getTelefone());
-           InstrucaoSQL.setString(9, cli.getEndereço());
-           InstrucaoSQL.setInt(10, cli.getIdCliente());
+           InstrucaoSQL.setString(3, cli.getCPF());
+           InstrucaoSQL.setString(4, cli.getNascimento());
+           InstrucaoSQL.setString(5, cli.getSexo());
+           InstrucaoSQL.setString(6, cli.getEstadoCivil());
+           InstrucaoSQL.setString(7, cli.getTelefone());
+           InstrucaoSQL.setString(8, cli.getEndereço());
+           InstrucaoSQL.setInt(9, cli.getIdCliente());
 
            
            int linhasafetadas = InstrucaoSQL.executeUpdate();

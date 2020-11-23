@@ -8,11 +8,10 @@ import java.util.ArrayList;
 
 public class Clientecontroller {
     
-    public static boolean Cadastrar(String pnome,String pemail, String psenha,String pcpf,String pnascimento, String psexo, String pestadocivil, String ptelefone, String pendereco) throws SQLException {
+    public static boolean Cadastrar(String pnome,String pemail,String pcpf,String pnascimento, String psexo, String pestadocivil, String ptelefone, String pendereco) throws SQLException {
         Cliente cli = new Cliente();
         cli.setNome(pnome);
         cli.setEmail(pemail);
-        cli.setSenha(psenha);
         cli.setCPF(pcpf);
         cli.setNascimento(pnascimento);
         cli.setSexo(psexo);
@@ -31,7 +30,6 @@ public class Clientecontroller {
                 ListaClienteRetorno.add(new String []{String.valueOf(cli.getIdCliente()),
                                                       cli.getNome(),
                                                       cli.getEmail(),
-                                                      cli.getSenha(),
                                                       cli.getCPF(),
                                                       cli.getNascimento(),
                                                       cli.getSexo(),
@@ -53,7 +51,6 @@ public class Clientecontroller {
            ClienteRetorno = new String []{String.valueOf(cli.getIdCliente()),
                                             cli.getNome(),
                                             cli.getEmail(),
-                                            cli.getSenha(),
                                             cli.getCPF(),
                                             cli.getNascimento(),
                                             cli.getSexo(),
@@ -66,12 +63,11 @@ public class Clientecontroller {
         return ClienteRetorno;
     }
     
-    public static boolean Alterar(String pnome,String pemail, String psenha,String pcpf,String pnascimento, String psexo, String pestadocivil, String ptelefone, String pendereco, int IdCLiente ) throws SQLException {
+    public static boolean Alterar(String pnome,String pemail,String pcpf,String pnascimento, String psexo, String pestadocivil, String ptelefone, String pendereco, int IdCLiente ) throws SQLException {
         Cliente cli = new Cliente();
         cli.setIdCliente(IdCLiente);
         cli.setNome(pnome);
         cli.setEmail(pemail);
-        cli.setSenha(psenha);
         cli.setCPF(pcpf);
         cli.setNascimento(pnascimento);
         cli.setSexo(psexo);
