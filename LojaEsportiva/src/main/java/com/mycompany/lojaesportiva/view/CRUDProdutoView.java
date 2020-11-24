@@ -5,7 +5,12 @@
  */
 package com.mycompany.lojaesportiva.view;
 
+import com.mycompany.lojaesportiva.controller.ProdutoController;
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -194,21 +199,34 @@ public class CRUDProdutoView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPesquisaTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaTipoActionPerformed
-        DefaultTableModel modelo = (DefaultTableModel) tabelaProduto.getModel();
-        modelo.addRow(new Object[]{txtNome.getText(), txtDescricao.getText()});
-        
-        this.txtNome.setText("");
-        this.txtDescricao.setText("");
+        ArrayList<String[]> ListarProduto = ProdutoController.ListarProduto(txtNome.getText(), txtDescricao.getText());
+        DefaultTableModel model = new DefaultTableModel();
+        model = (DefaultTableModel)tabelaProduto.getModel();
+        model.setRowCount(0);
+        for (String[] Produto : ListarProduto) {
+            model.addRow(Produto);
+        }
     }//GEN-LAST:event_btnPesquisaTipoActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        if(tabelaProduto.getSelectedRow() != -1){
-            DefaultTableModel modelo = (DefaultTableModel) tabelaProduto.getModel();
-            int indiceLinha = tabelaProduto.getSelectedRow();
-            modelo.removeRow(indiceLinha);
-            JOptionPane.showMessageDialog(this, "Dados excluídos com sucesso!", "Alerta!", JOptionPane.WARNING_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(this, "Você não selecionou nenhuma linha da tabela!", "Erro!", JOptionPane.ERROR_MESSAGE);
+         DefaultTableModel modelo = (DefaultTableModel) tabelaProduto.getModel();
+            int indiceLinha = -1, idselecionado = 0;
+             indiceLinha = tabelaProduto.getSelectedRow();
+             if(indiceLinha>=0){
+                 idselecionado = Integer.parseInt(tabelaProduto.getValueAt(indiceLinha, 0).toString());
+             }else{
+                 JOptionPane.showMessageDialog(this, "Você nao selecionou uma linha!");
+             }
+            
+        try {
+            if(ProdutoController.Excluir(idselecionado)){
+                modelo.removeRow(indiceLinha);
+                JOptionPane.showMessageDialog(this, "Dados excluídos com sucesso!", "Alerta!", JOptionPane.WARNING_MESSAGE);    
+            }else{
+                JOptionPane.showMessageDialog(this, "Erro ao Excluir dados", "Alerta!", JOptionPane.WARNING_MESSAGE);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CRUDProdutoView.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
@@ -238,8 +256,18 @@ public class CRUDProdutoView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInserirActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        CadastroProdutoView tela = new CadastroProdutoView();
-        tela.setVisible(true);
+        int linhaSelecionada = tabelaProduto.getSelectedRow();
+        int IdProduto = 0;
+        if(linhaSelecionada>-1){
+            IdProduto = Integer.parseInt(tabelaProduto.getValueAt(linhaSelecionada, 0).toString());
+        }else{
+            JOptionPane.showMessageDialog(this, "Você não selecionou uma linha");
+            return;
+        }
+        if(IdProduto > 0){
+         CadastroProdutoView prod = new CadastroProdutoView(IdProduto);
+         prod.setVisible(true);
+        }
     }//GEN-LAST:event_btnAlterarActionPerformed
 
     /**

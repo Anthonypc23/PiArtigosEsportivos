@@ -51,15 +51,10 @@ public class ClienteDAO {
         } catch (Exception e) {
         }finally{
             if(InstrucaoSQL!=null){
-              
-                    InstrucaoSQL.close();
-                
+                InstrucaoSQL.close();
             }
-            
             if(conexao!=null){
-               
-                    conexao.close();
-               
+                conexao.close();
             }
         }
         
@@ -94,9 +89,8 @@ public class ClienteDAO {
             cli.setTelefone(rs.getString("telefone"));
             cli.setEndereço(rs.getString("endereco"));
             ListaCLiente.add(cli);
-                    
-                  
             }
+            
         } catch (Exception e) {
         }finally{
             if(InstrucaoSQL!=null){
@@ -105,7 +99,6 @@ public class ClienteDAO {
                 } catch (SQLException ex) {
                     Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
             }
             if(conexao!=null){
                 try {
@@ -113,13 +106,8 @@ public class ClienteDAO {
                 } catch (SQLException ex) {
                     Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
             }
         }
-       
-        
-        
-        
         
         return ListaCLiente;
     }
@@ -161,7 +149,6 @@ public class ClienteDAO {
                 } catch (SQLException ex) {
                     Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
             }
             if(conexao!=null){
                 try {
@@ -169,16 +156,14 @@ public class ClienteDAO {
                 } catch (SQLException ex) {
                     Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
             }
         }
        
-        
-     return cliente;
+        return cliente;
     }
     
   public static boolean Alterar(Cliente cli) throws SQLException {
-    boolean retorno = false;
+        boolean retorno = false;
         Connection conexao = null;
         PreparedStatement InstrucaoSQL = null;
         
@@ -207,15 +192,10 @@ public class ClienteDAO {
         } catch (Exception e) {
         }finally{
             if(InstrucaoSQL!=null){
-              
-                    InstrucaoSQL.close();
-                
+                InstrucaoSQL.close();
             }
-            
             if(conexao!=null){
-               
-                    conexao.close();
-               
+                conexao.close();
             }
         }
         
@@ -239,20 +219,13 @@ public class ClienteDAO {
       } catch (Exception e) {
         }finally{
             if(InstrucaoSQL!=null){
-              
-                    InstrucaoSQL.close();
-                
+                InstrucaoSQL.close();
             }
-            
             if(conexao!=null){
-               
-                    conexao.close();
-               
+                conexao.close();
             }
         }
       
-      
-      
-      return retorno;
-  }
+        return retorno;
+    }
 }

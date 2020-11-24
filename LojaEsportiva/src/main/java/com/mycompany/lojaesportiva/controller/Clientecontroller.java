@@ -36,14 +36,12 @@ public class Clientecontroller {
                                                       cli.getEstadoCivil(),
                                                       cli.getTelefone(),
                                                       cli.getEndereço()});
-                
             }
-            return ListaClienteRetorno; 
-          
+            
+        return ListaClienteRetorno; 
     }
     
     public static String[] CLienteID(int IdCliente){
-    
         Cliente cli = ClienteDAO.ClienteId(IdCliente);
         String [] ClienteRetorno = null;
         
@@ -58,7 +56,6 @@ public class Clientecontroller {
                                             cli.getTelefone(),
                                             cli.getEndereço()};   
         }
-        
         
         return ClienteRetorno;
     }

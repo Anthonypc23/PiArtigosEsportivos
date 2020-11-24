@@ -7,7 +7,7 @@ public class Produto {
     private String nomeProduto;
     private int quantidadeProduto;
     private String descricao;
-    private float valor;
+    private double valor;
 
     public Produto() {
     }
@@ -44,11 +44,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public float getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(float valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 }

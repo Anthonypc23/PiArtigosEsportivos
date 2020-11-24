@@ -21,13 +21,12 @@ public class Check {
     ArrayList <String> msgErro = new ArrayList<>();
     
     public void ValidNumber (JTextField txt){
-        
         try {
             if(txt.getText().trim().equals("")){
                 throw new IllegalArgumentException();
             }
             
-            int conversao = Integer.parseInt(txt.getText());
+            double conversao = Double.parseDouble(txt.getText());
         } catch (NumberFormatException e) {
             msgErro.add("Falha na conversão do campo " + txt.getName());
             txt.setBackground(Color.yellow);
@@ -40,7 +39,6 @@ public class Check {
     }
     
     public void ValidSex(ButtonGroup btn ){
-        
         try {
             String sex = btn.getSelection().getActionCommand();
         } catch (Exception e) {
