@@ -77,4 +77,12 @@ public class Clientecontroller {
     
         return ClienteDAO.Alterar(cli);
     }
+    
+    public static boolean Excluir(int pID) throws SQLException{
+        Cliente cli = new Cliente();
+        
+        cli.setIdCliente(pID);
+        
+        return ClienteDAO.Excluir(pID);
+    }
 }

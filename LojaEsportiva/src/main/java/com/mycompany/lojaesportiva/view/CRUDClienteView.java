@@ -212,14 +212,22 @@ public class CRUDClienteView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInserirActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        if(tabelaCliente.getSelectedRow() != -1){
             DefaultTableModel modelo = (DefaultTableModel) tabelaCliente.getModel();
-            int indiceLinha = tabelaCliente.getSelectedRow();
-            modelo.removeRow(indiceLinha);
-            JOptionPane.showMessageDialog(this, "Dados excluídos com sucesso!", "Alerta!", JOptionPane.WARNING_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(this, "Você não selecionou nenhuma linha da tabela!", "Alerta!", JOptionPane.WARNING_MESSAGE);
-        }
+            int indiceLinha = -1, idselecionado = 0;
+             indiceLinha = tabelaCliente.getSelectedRow();
+             if(indiceLinha>=0){
+                 idselecionado = Integer.parseInt(tabelaCliente.getValueAt(indiceLinha, 0).toString());
+             }else{
+                 JOptionPane.showMessageDialog(this, "Você nao selecionou uma linha");
+             }
+            
+
+            if(Clientecontroller.Excluir(idselecionado)){
+             modelo.removeRow(indiceLinha);
+            JOptionPane.showMessageDialog(this, "Dados excluídos com sucesso!", "Alerta!", JOptionPane.WARNING_MESSAGE);    
+            }else{
+            JOptionPane.showMessageDialog(this, "Erro ao Excluir dados", "Alerta!", JOptionPane.WARNING_MESSAGE);
+          }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**

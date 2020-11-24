@@ -221,4 +221,38 @@ public class ClienteDAO {
         
         return retorno;
   }
+  public static boolean Excluir(int pID) throws SQLException{
+      boolean retorno = false;
+      Connection conexao = null;
+      PreparedStatement InstrucaoSQL = null;
+      
+      try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        conexao = DriverManager.getConnection(URL,LOGIN,SENHA);
+        
+        InstrucaoSQL = conexao.prepareStatement("DELETE FROM Cliente WHERE IdCliente = ?");
+        InstrucaoSQL.setInt(1, pID);
+        int linhasafetadas = InstrucaoSQL.executeUpdate();
+        if(linhasafetadas >0 ){
+             return true;
+      }
+      } catch (Exception e) {
+        }finally{
+            if(InstrucaoSQL!=null){
+              
+                    InstrucaoSQL.close();
+                
+            }
+            
+            if(conexao!=null){
+               
+                    conexao.close();
+               
+            }
+        }
+      
+      
+      
+      return retorno;
+  }
 }
