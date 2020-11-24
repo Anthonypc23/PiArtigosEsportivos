@@ -411,7 +411,7 @@ public class CadastroProdutoView extends javax.swing.JFrame {
                 + "Valor do produto: " + valor +  "\n", "Atenção",JOptionPane.OK_CANCEL_OPTION);
         if(confirm == 0){
                 try {
-                if(ProdutoController.Alterar(IdProduto, nome, quantidade, descricao, valor)){
+                if(ProdutoController.Alterar(Id, nome, quantidade, descricao, valor)){
                      JOptionPane.showMessageDialog(this, "Alterado com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
                 }else{
                      JOptionPane.showMessageDialog(this, "Erro ao finalizar a alteração!", "Aviso!", JOptionPane.ERROR_MESSAGE);

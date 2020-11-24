@@ -530,7 +530,7 @@ public class CadastroClienteView extends javax.swing.JFrame {
         }
         }else{
              ImageIcon icon = new ImageIcon("C:\\GitHub\\PiArtigosEsportivos\\LojaEsportiva\\src\\main\\resources\\imagens\\check.png");
-        String nome,email,senha,cpf,nascimento,sexo,estadocivil,telefone,endereco;
+        String nome,email,cpf,nascimento,sexo,estadocivil,telefone,endereco;
         Check valid = new Check();
         valid.ValidVoid(txtNome);
         valid.ValidVoid(txtEmail);
