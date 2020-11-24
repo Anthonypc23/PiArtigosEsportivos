@@ -1,7 +1,6 @@
 
 package com.mycompany.lojaesportiva.DAO;
 
-import com.mycompany.lojaesportiva.model.Cliente;
 import com.mycompany.lojaesportiva.model.Produto;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -31,7 +30,7 @@ public class ProdutoDAO {
            InstrucaoSQL.setString(1, prod.getNomeProduto());
            InstrucaoSQL.setInt(2, prod.getQuantidadeProduto());
            InstrucaoSQL.setString(3, prod.getDescricao());
-           InstrucaoSQL.setFloat(4, prod.getValor());
+           InstrucaoSQL.setDouble(4, prod.getValor());
            
            int linhasafetadas = InstrucaoSQL.executeUpdate();
            
@@ -39,12 +38,11 @@ public class ProdutoDAO {
                retorno = true;
            }
            
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | SQLException e) {
         }finally{
             if(InstrucaoSQL!=null){
                 InstrucaoSQL.close();
             }
-            
             if(conexao!=null){
                     conexao.close();
             }
@@ -75,10 +73,10 @@ public class ProdutoDAO {
                 prod.setNomeProduto(rs.getString("nomeProduto"));
                 prod.setQuantidadeProduto(rs.getInt("quantidadeProduto"));
                 prod.setDescricao(rs.getString("descricao"));
-                prod.setValor(rs.getFloat("valor"));
+                prod.setValor(rs.getDouble("valor"));
                 ListaProduto.add(prod);
             }
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | SQLException e) {
         }finally{
             if(InstrucaoSQL!=null){
                 try {
@@ -120,25 +118,25 @@ public class ProdutoDAO {
                 prod.setNomeProduto(rs.getString("nomeProduto"));
                 prod.setQuantidadeProduto(rs.getInt("quantidadeProduto"));
                 prod.setDescricao(rs.getString("descricao"));
-                prod.setValor(rs.getFloat("valor"));
+                prod.setValor(rs.getDouble("valor"));
   
                 produto = prod;
             }
             
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | SQLException e) {
          }finally{
             if(InstrucaoSQL!=null){
                 try {
                     InstrucaoSQL.close();
                 } catch (SQLException ex) {
-                    Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             if(conexao!=null){
                 try {
                     conexao.close();
                 } catch (SQLException ex) {
-                    Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
@@ -157,6 +155,10 @@ public class ProdutoDAO {
            
            InstrucaoSQL = conexao.prepareStatement("UPDATE Produto SET nomeProduto = ?, quantidadeProduto = ?, descricao = ?, valor = ? WHERE IdProduto = ?");
            InstrucaoSQL.setString(1, prod.getNomeProduto());
+           InstrucaoSQL.setInt(2, prod.getQuantidadeProduto());
+           InstrucaoSQL.setString(3, prod.getDescricao());
+           InstrucaoSQL.setDouble(4, prod.getValor());
+           InstrucaoSQL.setInt(5, prod.getIdProduto());
 
            int linhasafetadas = InstrucaoSQL.executeUpdate();
            
@@ -164,7 +166,7 @@ public class ProdutoDAO {
                retorno = true;
            }
            
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | SQLException e) {
         }finally{
             if(InstrucaoSQL!=null){
                  InstrucaoSQL.close();
@@ -177,4 +179,34 @@ public class ProdutoDAO {
         
         return retorno;
     }
+    
+    public static boolean Excluir(int pID) throws SQLException{
+      boolean retorno = false;
+      Connection conexao = null;
+      PreparedStatement InstrucaoSQL = null;
+      
+      try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        conexao = DriverManager.getConnection(URL,LOGIN,SENHA);
+        
+        InstrucaoSQL = conexao.prepareStatement("DELETE FROM Produto WHERE IdProduto = ?");
+        InstrucaoSQL.setInt(1, pID);
+        int linhasafetadas = InstrucaoSQL.executeUpdate();
+        if(linhasafetadas >0 ){
+             return true;
+      }
+      } catch (Exception e) {
+        }finally{
+            if(InstrucaoSQL!=null){
+              
+                    InstrucaoSQL.close();
+            }
+            
+            if(conexao!=null){
+                    conexao.close();
+            }
+        }
+      
+      return retorno;
+     }
 }

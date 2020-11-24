@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class ProdutoController {
     
-    public static boolean Cadastrar(String pnome, int pquantidade, String pdescricao, float pvalor) throws SQLException {
+    public static boolean Cadastrar(String pnome, int pquantidade, String pdescricao, double pvalor) throws SQLException {
         Produto prod = new Produto();
         prod.setNomeProduto(pnome);
         prod.setQuantidadeProduto(pquantidade);
@@ -39,7 +39,7 @@ public class ProdutoController {
         return ProdutoRetorno;
     }
     
-    public static boolean Alterar(int pIdProduto, String pnome, int quantidade, String descricao, float valor) throws SQLException {
+    public static boolean Alterar(int pIdProduto, String pnome, int quantidade, String descricao, double valor) throws SQLException {
         Produto prod = new Produto();
         prod.setIdProduto(pIdProduto);
         prod.setNomeProduto(pnome);
@@ -48,5 +48,13 @@ public class ProdutoController {
         prod.setValor(valor);
     
         return ProdutoDAO.Alterar(prod);
+    }
+    
+    public static boolean Excluir(int pID) throws SQLException{
+        Produto prod = new Produto();
+        
+        prod.setIdProduto(pID);
+        
+        return ProdutoDAO.Excluir(pID);
     }
 }

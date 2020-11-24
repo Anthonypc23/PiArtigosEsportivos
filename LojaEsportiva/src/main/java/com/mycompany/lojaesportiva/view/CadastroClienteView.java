@@ -565,6 +565,7 @@ public class CadastroClienteView extends javax.swing.JFrame {
                  if(Clientecontroller.Alterar(nome, email, cpf, nascimento, sexo, estadocivil, telefone, endereco, IdCliente)){
                      JOptionPane.showMessageDialog(this, "Cadastro Alterado com sucesso", "Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
                      this.dispose();
+                    
                  }else{
                      JOptionPane.showMessageDialog(this, "Erro ao finalizar cadastrar", "Aviso!", JOptionPane.ERROR_MESSAGE);
                  }  } catch (SQLException ex) {

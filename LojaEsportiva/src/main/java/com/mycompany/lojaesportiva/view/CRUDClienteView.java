@@ -7,7 +7,10 @@ package com.mycompany.lojaesportiva.view;
 
 import com.mycompany.lojaesportiva.controller.Clientecontroller;
 import java.awt.Color;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -221,13 +224,16 @@ public class CRUDClienteView extends javax.swing.JFrame {
                  JOptionPane.showMessageDialog(this, "Você nao selecionou uma linha");
              }
             
-
+        try {
             if(Clientecontroller.Excluir(idselecionado)){
-             modelo.removeRow(indiceLinha);
-            JOptionPane.showMessageDialog(this, "Dados excluídos com sucesso!", "Alerta!", JOptionPane.WARNING_MESSAGE);    
+                modelo.removeRow(indiceLinha);
+                JOptionPane.showMessageDialog(this, "Dados excluídos com sucesso!", "Alerta!", JOptionPane.WARNING_MESSAGE);    
             }else{
-            JOptionPane.showMessageDialog(this, "Erro ao Excluir dados", "Alerta!", JOptionPane.WARNING_MESSAGE);
-          }
+                JOptionPane.showMessageDialog(this, "Erro ao Excluir dados", "Alerta!", JOptionPane.WARNING_MESSAGE);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CRUDClienteView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**

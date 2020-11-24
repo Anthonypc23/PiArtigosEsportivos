@@ -202,6 +202,11 @@ public class CadastroProdutoView extends javax.swing.JFrame {
                 txtValorMouseEntered(evt);
             }
         });
+        txtValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtValorActionPerformed(evt);
+            }
+        });
         txtValor.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtValorKeyReleased(evt);
@@ -341,10 +346,11 @@ public class CadastroProdutoView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtQuantidadeKeyReleased
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        if(modo.equals("Criar")){        
         ImageIcon icon = new ImageIcon("C:\\GitHub\\PiArtigosEsportivos\\LojaEsportiva\\src\\main\\resources\\imagens\\check.png");
         String nome, descricao;
         int quantidade;
-        float valor;
+        double valor;
         
         Check valid = new Check();
         valid.ValidVoid(txtNome);
@@ -358,26 +364,63 @@ public class CadastroProdutoView extends javax.swing.JFrame {
             nome = txtNome.getText();
             quantidade = Integer.parseInt(txtQuantidade.getText());
             descricao = txtDescricao.getText();
-            valor = Float.parseFloat(txtValor.getText());
-            int confirm = JOptionPane.showConfirmDialog(this, "Confirme os seus dados: " +"\n"
+            valor = Double.parseDouble(txtValor.getText());
+            int confirm = JOptionPane.showConfirmDialog(this, "Confirme os seus dados: " + "\n"
                 + "Nome do produto: " + nome +  "\n"
                 + "Quantidade do produto: " + quantidade + "\n"
                 + "Descrição do produto: " + descricao +  "\n"
                 + "Valor do produto: " + valor +  "\n", "Atenção",JOptionPane.OK_CANCEL_OPTION);
             if(confirm == 0){
-                JOptionPane.showMessageDialog(this, "Dados cadastrados com sucesso" ,"Aviso!",JOptionPane.INFORMATION_MESSAGE, icon);
                 try {
                 if(ProdutoController.Cadastrar(nome, quantidade, descricao, valor)){
-                     JOptionPane.showMessageDialog(this, "Cadastro concluido com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                    JOptionPane.showMessageDialog(this, "Cadastrado com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
                 }else{
-                     JOptionPane.showMessageDialog(this, "Erro ao finalizar cadastrar", "Aviso!", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Erro ao finalizar o cadastro!", "Aviso!", JOptionPane.ERROR_MESSAGE);
                 }  
                 } catch (SQLException ex) {
                 Logger.getLogger(CadastroProdutoView.class.getName()).log(Level.SEVERE, null, ex);
-            }           
+                }           
             }
-            CRUDProdutoView tela = new CRUDProdutoView();
-            tela.setVisible(true);
+        }
+        }else{
+            ImageIcon icon = new ImageIcon("C:\\GitHub\\PiArtigosEsportivos\\LojaEsportiva\\src\\main\\resources\\imagens\\check.png");
+            String nome, descricao;
+            int quantidade, Id;
+            double valor;
+        
+            Check valid = new Check();
+            valid.ValidVoid(txtNome);
+            valid.ValidVoid(txtQuantidade);
+            valid.ValidVoid(txtDescricao);
+            valid.ValidNumber(txtValor);
+        
+        if(valid.temErro()){
+            JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
+        }else{
+            Id = Integer.parseInt(lblID.getText());
+            nome = txtNome.getText();    
+            quantidade = Integer.parseInt(txtQuantidade.getText());
+            descricao = txtDescricao.getText();
+            valor = Double.parseDouble(txtValor.getText());
+         
+        int confirm = JOptionPane.showConfirmDialog(this, "Confirme os seus dados: " +"\n"
+                +"ID: " + Id + "\n"
+                + "Nome do produto: " + nome +  "\n"
+                + "Quantidade do produto: " + quantidade + "\n"
+                + "Descrição do produto: " + descricao +  "\n"
+                + "Valor do produto: " + valor +  "\n", "Atenção",JOptionPane.OK_CANCEL_OPTION);
+        if(confirm == 0){
+                try {
+                if(ProdutoController.Alterar(IdProduto, nome, quantidade, descricao, valor)){
+                     JOptionPane.showMessageDialog(this, "Alterado com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                }else{
+                     JOptionPane.showMessageDialog(this, "Erro ao finalizar a alteração!", "Aviso!", JOptionPane.ERROR_MESSAGE);
+                }  
+                } catch (SQLException ex) {
+                Logger.getLogger(CadastroProdutoView.class.getName()).log(Level.SEVERE, null, ex);
+                }           
+            }
+        }
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
@@ -416,6 +459,10 @@ public class CadastroProdutoView extends javax.swing.JFrame {
     private void txtValorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtValorKeyReleased
         lblStatus.setText(txtValor.getText().toUpperCase());
     }//GEN-LAST:event_txtValorKeyReleased
+
+    private void txtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtValorActionPerformed
 
     /**
      * @param args the command line arguments

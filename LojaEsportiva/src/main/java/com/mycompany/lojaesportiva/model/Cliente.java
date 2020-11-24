@@ -96,6 +96,4 @@ public class Cliente {
     public void setEndereço(String Endereço) {
         this.Endereço = Endereço;
     }
-
-    
 }
