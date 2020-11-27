@@ -1,12 +1,9 @@
 
 package com.mycompany.lojaesportiva.view;
 
-import java.awt.Color;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,29 +14,114 @@ public class VendasView extends javax.swing.JFrame {
    
     public VendasView() {
         initComponents();
+        SpinnerNumberModel nikeLuva = new SpinnerNumberModel();
+        nikeLuva.setMinimum(0);
+        nikeLuva.setMaximum(10);
+        spnNikeLuvas.setModel(nikeLuva);
+        SpinnerNumberModel adidasLuva = new SpinnerNumberModel();
+        adidasLuva.setMinimum(0);
+        adidasLuva.setMaximum(10);
+        spnAdidasLuvas.setModel(adidasLuva);
+        SpinnerNumberModel pumaLuva = new SpinnerNumberModel();
+        pumaLuva.setMinimum(0);
+        pumaLuva.setMaximum(10);
+        spnPumaLuvas.setModel(pumaLuva);
         
-        SpinnerNumberModel num = new SpinnerNumberModel();
-        num.setMinimum(0);
-        num.setMaximum(10);
-        spnTenis.setModel(num);
+        SpinnerNumberModel kitGYM = new SpinnerNumberModel();
+        kitGYM.setMinimum(0);
+        kitGYM.setMaximum(10);
+        spnKitGYM.setModel(kitGYM);
+        SpinnerNumberModel halterGYM = new SpinnerNumberModel();
+        halterGYM.setMinimum(0);
+        halterGYM.setMaximum(10);
+        spnHalterGYM.setModel(halterGYM);
+        SpinnerNumberModel elasticoGYM = new SpinnerNumberModel();
+        elasticoGYM.setMinimum(0);
+        elasticoGYM.setMaximum(10);
+        spnElasticoGYM.setModel(elasticoGYM);
+        SpinnerNumberModel cinturaoGYM = new SpinnerNumberModel();
+        cinturaoGYM.setMinimum(0);
+        cinturaoGYM.setMaximum(10);
+        spnCinturaoGYM.setModel(cinturaoGYM);
+        SpinnerNumberModel ergoGYM = new SpinnerNumberModel();
+        ergoGYM.setMinimum(0);
+        ergoGYM.setMaximum(10);
+        spnErgoGYM.setModel(ergoGYM);
+        SpinnerNumberModel magGYM = new SpinnerNumberModel();
+        magGYM.setMinimum(0);
+        magGYM.setMaximum(10);
+        spnMagGYM.setModel(magGYM);
+        SpinnerNumberModel simuladorGYM = new SpinnerNumberModel();
+        simuladorGYM.setMinimum(0);
+        simuladorGYM.setMaximum(10);
+        spnSimuladorGYM.setModel(simuladorGYM);
         
-        num.setMinimum(0);
-        num.setMaximum(10);
-        spnShort.setModel(num);
-
-        num.setMinimum(0);
-        num.setMaximum(10);
-        spnLuvas.setModel(num);
+        SpinnerNumberModel nikeTenis = new SpinnerNumberModel();
+        nikeTenis.setMinimum(0);
+        nikeTenis.setMaximum(10);
+        spnNikeTenis.setModel(nikeTenis);
+        SpinnerNumberModel adidasTenis = new SpinnerNumberModel();
+        adidasTenis.setMinimum(0);
+        adidasTenis.setMaximum(10);
+        spnAdidasTenis.setModel(adidasTenis);
+        SpinnerNumberModel pumaTenis = new SpinnerNumberModel();
+        pumaTenis.setMinimum(0);
+        pumaTenis.setMaximum(10);
+        spnPumaTenis.setModel(pumaTenis);
         
-        num.setMinimum(0);
-        num.setMaximum(10);
-        spnGYM.setModel(num);
+        SpinnerNumberModel nikeBolas = new SpinnerNumberModel();
+        nikeBolas.setMinimum(0);
+        nikeBolas.setMaximum(10);
+        spnNikeBolas.setModel(nikeBolas);
+        SpinnerNumberModel adidasBolas = new SpinnerNumberModel();
+        adidasBolas.setMinimum(0);
+        adidasBolas.setMaximum(10);
+        spnAdidasBolas.setModel(adidasBolas);
+        SpinnerNumberModel pumaBolas = new SpinnerNumberModel();
+        pumaBolas.setMinimum(0);
+        pumaBolas.setMaximum(10);
+        spnPumaBolas.setModel(pumaBolas);
         
-        num.setMinimum(0);
-        num.setMaximum(10);
-        spnBolas.setModel(num);
+        SpinnerNumberModel nikeCalca = new SpinnerNumberModel();
+        nikeCalca.setMinimum(0);
+        nikeCalca.setMaximum(10);
+        spnNikeCalca.setModel(nikeCalca);
+        SpinnerNumberModel adidasCalca = new SpinnerNumberModel();
+        adidasCalca.setMinimum(0);
+        adidasCalca.setMaximum(10);
+        spnAdidasCalca.setModel(adidasCalca);
+        SpinnerNumberModel pumaCalca = new SpinnerNumberModel();
+        pumaCalca.setMinimum(0);
+        pumaCalca.setMaximum(10);
+        spnPumaCalca.setModel(pumaCalca);
         
-        this.setLocationRelativeTo(null); 
+        SpinnerNumberModel nikeShorts = new SpinnerNumberModel();
+        nikeShorts.setMinimum(0);
+        nikeShorts.setMaximum(10);
+        spnNikeShort.setModel(nikeShorts);
+        SpinnerNumberModel adidasShorts = new SpinnerNumberModel();
+        adidasShorts.setMinimum(0);
+        adidasShorts.setMaximum(10);
+        spnAdidasShort.setModel(adidasShorts);
+        SpinnerNumberModel pumaShorts = new SpinnerNumberModel();
+        pumaShorts.setMinimum(0);
+        pumaShorts.setMaximum(10);
+        spnPumaShort.setModel(pumaShorts);
+        
+        SpinnerNumberModel nikeCamisetas = new SpinnerNumberModel();
+        nikeCamisetas.setMinimum(0);
+        nikeCamisetas.setMaximum(10);
+        spnNikeCamiseta.setModel(nikeCamisetas);
+        SpinnerNumberModel adidasCamisetas = new SpinnerNumberModel();
+        adidasCamisetas.setMinimum(0);
+        adidasCamisetas.setMaximum(10);
+        spnAdidasCamiseta.setModel(adidasCamisetas);
+        SpinnerNumberModel pumaCamisetas = new SpinnerNumberModel();
+        pumaCamisetas.setMinimum(0);
+        pumaCamisetas.setMaximum(10);
+        spnPumaCamiseta.setModel(pumaCamisetas);
+        
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -54,138 +136,133 @@ public class VendasView extends javax.swing.JFrame {
         grupoTamanhoShort = new javax.swing.ButtonGroup();
         grupoTamanhoCamiseta = new javax.swing.ButtonGroup();
         painelGuias = new javax.swing.JTabbedPane();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         jPanel27 = new javax.swing.JPanel();
         rboLP = new javax.swing.JRadioButton();
         rboLM = new javax.swing.JRadioButton();
         rboLG = new javax.swing.JRadioButton();
         jPanel21 = new javax.swing.JPanel();
-        chkNikeCalca6 = new javax.swing.JCheckBox();
-        chkAdidasCalca6 = new javax.swing.JCheckBox();
-        chkPumaCalca6 = new javax.swing.JCheckBox();
+        chkNikeLuvas = new javax.swing.JCheckBox();
+        chkAdidasLuvas = new javax.swing.JCheckBox();
+        chkPumaLuvas = new javax.swing.JCheckBox();
         jPanel34 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
-        spnCalca15 = new javax.swing.JSpinner();
+        spnNikeLuvas = new javax.swing.JSpinner();
         jLabel31 = new javax.swing.JLabel();
-        spnCalca16 = new javax.swing.JSpinner();
+        spnAdidasLuvas = new javax.swing.JSpinner();
         jLabel32 = new javax.swing.JLabel();
-        spnCalca17 = new javax.swing.JSpinner();
+        spnPumaLuvas = new javax.swing.JSpinner();
         jPanel12 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
-        chkGarantia1 = new javax.swing.JCheckBox();
-        chkGarantia2 = new javax.swing.JCheckBox();
-        chkGarantia3 = new javax.swing.JCheckBox();
-        chkGarantia4 = new javax.swing.JCheckBox();
-        chkGarantia5 = new javax.swing.JCheckBox();
-        chkGarantia6 = new javax.swing.JCheckBox();
-        chkGarantia7 = new javax.swing.JCheckBox();
-        chkGarantia8 = new javax.swing.JCheckBox();
+        chkKitGYM = new javax.swing.JCheckBox();
+        chkHalterGYM = new javax.swing.JCheckBox();
+        chkElasticoGYM = new javax.swing.JCheckBox();
+        chkCinturaoGYM = new javax.swing.JCheckBox();
+        chkErgoGYM = new javax.swing.JCheckBox();
+        chkMagGYM = new javax.swing.JCheckBox();
+        chkElipticoGYM = new javax.swing.JCheckBox();
+        chkSimuladorGYM = new javax.swing.JCheckBox();
         jPanel41 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
-        spnCalca33 = new javax.swing.JSpinner();
+        spnKitGYM = new javax.swing.JSpinner();
         jLabel49 = new javax.swing.JLabel();
-        spnCalca34 = new javax.swing.JSpinner();
+        spnHalterGYM = new javax.swing.JSpinner();
         jLabel50 = new javax.swing.JLabel();
-        spnCalca35 = new javax.swing.JSpinner();
+        spnElasticoGYM = new javax.swing.JSpinner();
         jLabel51 = new javax.swing.JLabel();
-        spnCalca36 = new javax.swing.JSpinner();
+        spnCinturaoGYM = new javax.swing.JSpinner();
         jLabel52 = new javax.swing.JLabel();
-        spnCalca37 = new javax.swing.JSpinner();
+        spnErgoGYM = new javax.swing.JSpinner();
         jLabel53 = new javax.swing.JLabel();
-        spnCalca38 = new javax.swing.JSpinner();
+        spnMagGYM = new javax.swing.JSpinner();
         jLabel54 = new javax.swing.JLabel();
-        spnCalca39 = new javax.swing.JSpinner();
+        spnSimuladorGYM = new javax.swing.JSpinner();
         jPanel2 = new javax.swing.JPanel();
         jPanel22 = new javax.swing.JPanel();
         rboT1 = new javax.swing.JRadioButton();
         rboT2 = new javax.swing.JRadioButton();
         jPanel19 = new javax.swing.JPanel();
-        chkNikeCalca5 = new javax.swing.JCheckBox();
-        chkAdidasCalca5 = new javax.swing.JCheckBox();
-        chkPumaCalca5 = new javax.swing.JCheckBox();
+        chkNikeTenis = new javax.swing.JCheckBox();
+        chkAdidasTenis = new javax.swing.JCheckBox();
+        chkPumaTenis = new javax.swing.JCheckBox();
         jPanel42 = new javax.swing.JPanel();
         jLabel55 = new javax.swing.JLabel();
-        spnCalca40 = new javax.swing.JSpinner();
+        spnNikeTenis = new javax.swing.JSpinner();
         jLabel56 = new javax.swing.JLabel();
-        spnCalca41 = new javax.swing.JSpinner();
+        spnAdidasTenis = new javax.swing.JSpinner();
         jLabel57 = new javax.swing.JLabel();
-        spnCalca42 = new javax.swing.JSpinner();
-        tblResumo = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabelaResumo = new javax.swing.JTable();
+        spnPumaTenis = new javax.swing.JSpinner();
         jPanel3 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
         rboC5 = new javax.swing.JRadioButton();
         rboC6 = new javax.swing.JRadioButton();
         rboC7 = new javax.swing.JRadioButton();
-        jPanel16 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
-        rboC3 = new javax.swing.JRadioButton();
-        rboC4 = new javax.swing.JRadioButton();
-        jPanel43 = new javax.swing.JPanel();
-        jLabel58 = new javax.swing.JLabel();
-        spnCalca43 = new javax.swing.JSpinner();
-        jLabel59 = new javax.swing.JLabel();
-        spnCalca44 = new javax.swing.JSpinner();
-        jLabel60 = new javax.swing.JLabel();
-        spnCalca45 = new javax.swing.JSpinner();
-        jPanel17 = new javax.swing.JPanel();
-        jPanel24 = new javax.swing.JPanel();
-        chkNikeCalca1 = new javax.swing.JCheckBox();
-        chkAdidasCalca1 = new javax.swing.JCheckBox();
-        chkPumaCalca1 = new javax.swing.JCheckBox();
-        jPanel9 = new javax.swing.JPanel();
-        rboC1 = new javax.swing.JRadioButton();
-        rboC2 = new javax.swing.JRadioButton();
-        jPanel44 = new javax.swing.JPanel();
-        jLabel61 = new javax.swing.JLabel();
-        spnCalca46 = new javax.swing.JSpinner();
-        jLabel62 = new javax.swing.JLabel();
-        spnCalca47 = new javax.swing.JSpinner();
-        jLabel63 = new javax.swing.JLabel();
-        spnCalca48 = new javax.swing.JSpinner();
         jPanel29 = new javax.swing.JPanel();
-        chkNikeCalca3 = new javax.swing.JCheckBox();
-        chkAdidasCalca3 = new javax.swing.JCheckBox();
-        chkPumaCalca3 = new javax.swing.JCheckBox();
+        chkNikeCamiseta = new javax.swing.JCheckBox();
+        chkAdidasCamiseta = new javax.swing.JCheckBox();
+        chkPumaCamiseta = new javax.swing.JCheckBox();
         jPanel4 = new javax.swing.JPanel();
         chkNikeCalca = new javax.swing.JCheckBox();
         chkAdidasCalca = new javax.swing.JCheckBox();
         chkPumaCalca = new javax.swing.JCheckBox();
         jPanel45 = new javax.swing.JPanel();
         jLabel64 = new javax.swing.JLabel();
-        spnCalca49 = new javax.swing.JSpinner();
+        spnNikeCamiseta = new javax.swing.JSpinner();
         jLabel65 = new javax.swing.JLabel();
-        spnCalca50 = new javax.swing.JSpinner();
+        spnAdidasCamiseta = new javax.swing.JSpinner();
         jLabel66 = new javax.swing.JLabel();
-        spnCalca51 = new javax.swing.JSpinner();
+        spnPumaCamiseta = new javax.swing.JSpinner();
         jPanel13 = new javax.swing.JPanel();
         rboC8 = new javax.swing.JRadioButton();
         rboC9 = new javax.swing.JRadioButton();
+        jPanel43 = new javax.swing.JPanel();
+        jLabel58 = new javax.swing.JLabel();
+        spnNikeCalca = new javax.swing.JSpinner();
+        jLabel59 = new javax.swing.JLabel();
+        spnAdidasCalca = new javax.swing.JSpinner();
+        jLabel60 = new javax.swing.JLabel();
+        spnPumaCalca = new javax.swing.JSpinner();
+        jPanel24 = new javax.swing.JPanel();
+        chkNikeShort = new javax.swing.JCheckBox();
+        chkAdidasShort = new javax.swing.JCheckBox();
+        chkPumaShort = new javax.swing.JCheckBox();
+        jPanel44 = new javax.swing.JPanel();
+        jLabel61 = new javax.swing.JLabel();
+        spnNikeShort = new javax.swing.JSpinner();
+        jLabel62 = new javax.swing.JLabel();
+        spnAdidasShort = new javax.swing.JSpinner();
+        jLabel63 = new javax.swing.JLabel();
+        spnPumaShort = new javax.swing.JSpinner();
+        jPanel9 = new javax.swing.JPanel();
+        rboC1 = new javax.swing.JRadioButton();
+        rboC2 = new javax.swing.JRadioButton();
         jPanel11 = new javax.swing.JPanel();
         jPanel35 = new javax.swing.JPanel();
-        chkFutebol = new javax.swing.JCheckBox();
-        chkVolei = new javax.swing.JCheckBox();
-        chkHandebol = new javax.swing.JCheckBox();
-        chkBasquete = new javax.swing.JCheckBox();
+        chkFutebolBolas = new javax.swing.JCheckBox();
+        chkVoleiBolas = new javax.swing.JCheckBox();
+        chkHandebolBolas = new javax.swing.JCheckBox();
+        chkBasqueteBolas = new javax.swing.JCheckBox();
         jPanel5 = new javax.swing.JPanel();
-        chkNikeCalca4 = new javax.swing.JCheckBox();
-        chkAdidasCalca4 = new javax.swing.JCheckBox();
-        chkPumaCalca4 = new javax.swing.JCheckBox();
+        chkNikeBolas = new javax.swing.JCheckBox();
+        chkAdidasBolas = new javax.swing.JCheckBox();
+        chkPumaBolas = new javax.swing.JCheckBox();
         jPanel36 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
-        spnCalca18 = new javax.swing.JSpinner();
+        spnNikeBolas = new javax.swing.JSpinner();
         jLabel34 = new javax.swing.JLabel();
-        spnCalca19 = new javax.swing.JSpinner();
+        spnAdidasBolas = new javax.swing.JSpinner();
         jLabel35 = new javax.swing.JLabel();
-        spnCalca20 = new javax.swing.JSpinner();
+        spnPumaBolas = new javax.swing.JSpinner();
+        tblResumo = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabelaResumo = new javax.swing.JTable();
         JPanel = new javax.swing.JPanel();
         chkGarantia = new javax.swing.JCheckBox();
         chkDesconto = new javax.swing.JCheckBox();
@@ -202,6 +279,40 @@ public class VendasView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         painelGuias.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Luvas", "R$ 9,99", "R$ 8,99", "R$ 7,99"},
+                {"GYM", "R$ 50,00", "R$ 40,00", "R$ 35,00"},
+                {"Tênis", "R$ 300,00", "R$ 250,00", "R$ 200,00"},
+                {"Calças", "R$ 100,00", "R$ 90,00", "R$ 80,00"},
+                {"Shorts", "R$ 60,00", "R$ 50,00", "R$ 35,00"},
+                {"Camisetas", "R$ 40,00", "R$ 35,00", "R$ 30,00"},
+                {"Bolas", "R$ 30,00", "R$ 30,00", "R$ 26,00"}
+            },
+            new String [] {
+                "Produto", "Valor Nike", "Valor Adidas", "Valor Puma"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 786, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
+        );
+
+        painelGuias.addTab("Valores", jPanel6);
 
         jPanel27.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tamanhos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
@@ -243,30 +354,30 @@ public class VendasView extends javax.swing.JFrame {
 
         jPanel21.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
-        chkNikeCalca6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkNikeCalca6.setText("Nike");
-        chkNikeCalca6.setActionCommand("Garantia Estendida");
-        chkNikeCalca6.addActionListener(new java.awt.event.ActionListener() {
+        chkNikeLuvas.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkNikeLuvas.setText("Nike");
+        chkNikeLuvas.setActionCommand("Garantia Estendida");
+        chkNikeLuvas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkNikeCalca6ActionPerformed(evt);
+                chkNikeLuvasActionPerformed(evt);
             }
         });
 
-        chkAdidasCalca6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkAdidasCalca6.setText("Adidas");
-        chkAdidasCalca6.setActionCommand("Garantia Estendida");
-        chkAdidasCalca6.addActionListener(new java.awt.event.ActionListener() {
+        chkAdidasLuvas.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkAdidasLuvas.setText("Adidas");
+        chkAdidasLuvas.setActionCommand("Garantia Estendida");
+        chkAdidasLuvas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkAdidasCalca6ActionPerformed(evt);
+                chkAdidasLuvasActionPerformed(evt);
             }
         });
 
-        chkPumaCalca6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkPumaCalca6.setText("Puma");
-        chkPumaCalca6.setActionCommand("Garantia Estendida");
-        chkPumaCalca6.addActionListener(new java.awt.event.ActionListener() {
+        chkPumaLuvas.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkPumaLuvas.setText("Puma");
+        chkPumaLuvas.setActionCommand("Garantia Estendida");
+        chkPumaLuvas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkPumaCalca6ActionPerformed(evt);
+                chkPumaLuvasActionPerformed(evt);
             }
         });
 
@@ -276,20 +387,20 @@ public class VendasView extends javax.swing.JFrame {
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(chkNikeCalca6)
+                .addComponent(chkNikeLuvas)
                 .addGap(18, 18, 18)
-                .addComponent(chkAdidasCalca6)
+                .addComponent(chkAdidasLuvas)
                 .addGap(18, 18, 18)
-                .addComponent(chkPumaCalca6)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(chkPumaLuvas)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkNikeCalca6)
-                    .addComponent(chkAdidasCalca6)
-                    .addComponent(chkPumaCalca6))
+                    .addComponent(chkNikeLuvas)
+                    .addComponent(chkAdidasLuvas)
+                    .addComponent(chkPumaLuvas))
                 .addGap(0, 9, Short.MAX_VALUE))
         );
 
@@ -317,9 +428,9 @@ public class VendasView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(spnCalca15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(spnCalca16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(spnCalca17, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(spnNikeLuvas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(spnAdidasLuvas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnPumaLuvas, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel34Layout.setVerticalGroup(
@@ -328,15 +439,15 @@ public class VendasView extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnNikeLuvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnAdidasLuvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(spnPumaLuvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -348,27 +459,24 @@ public class VendasView extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(127, 127, 127))
+                        .addGap(119, 119, 119)
+                        .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(109, 109, 109))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(141, 141, 141)))
-                .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101))
+                        .addGap(437, 437, 437))))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                    .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         painelGuias.addTab("Luvas", jPanel7);
@@ -408,75 +516,75 @@ public class VendasView extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Acessórios ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
-        chkGarantia1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkGarantia1.setText("Kit 40 Kg De Anilhas De Ferro + Barras De Supino E Halteres.");
-        chkGarantia1.setActionCommand("Garantia Estendida");
-        chkGarantia1.addActionListener(new java.awt.event.ActionListener() {
+        chkKitGYM.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkKitGYM.setText("Kit 40 Kg De Anilhas De Ferro + Barras De Supino E Halteres.");
+        chkKitGYM.setActionCommand("Garantia Estendida");
+        chkKitGYM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkGarantia1ActionPerformed(evt);
+                chkKitGYMActionPerformed(evt);
             }
         });
 
-        chkGarantia2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkGarantia2.setText("Halter Sextavado Pintado 12 Kg Para Ginastica E Academia.");
-        chkGarantia2.setActionCommand("Garantia Estendida");
-        chkGarantia2.addActionListener(new java.awt.event.ActionListener() {
+        chkHalterGYM.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkHalterGYM.setText("Halter Sextavado Pintado 12 Kg Para Ginastica E Academia.");
+        chkHalterGYM.setActionCommand("Garantia Estendida");
+        chkHalterGYM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkGarantia2ActionPerformed(evt);
+                chkHalterGYMActionPerformed(evt);
             }
         });
 
-        chkGarantia3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkGarantia3.setText("Elástico P/ Treino Crossfit Musculação Ginástica Exercício Físico.");
-        chkGarantia3.setActionCommand("Garantia Estendida");
-        chkGarantia3.addActionListener(new java.awt.event.ActionListener() {
+        chkElasticoGYM.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkElasticoGYM.setText("Elástico P/ Treino Crossfit Musculação Ginástica Exercício Físico.");
+        chkElasticoGYM.setActionCommand("Garantia Estendida");
+        chkElasticoGYM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkGarantia3ActionPerformed(evt);
+                chkElasticoGYMActionPerformed(evt);
             }
         });
 
-        chkGarantia4.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkGarantia4.setText("Cinturão Fivela Musculação Crossfit Academia Cinto.");
-        chkGarantia4.setActionCommand("Garantia Estendida");
-        chkGarantia4.addActionListener(new java.awt.event.ActionListener() {
+        chkCinturaoGYM.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkCinturaoGYM.setText("Cinturão Fivela Musculação Crossfit Academia Cinto.");
+        chkCinturaoGYM.setActionCommand("Garantia Estendida");
+        chkCinturaoGYM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkGarantia4ActionPerformed(evt);
+                chkCinturaoGYMActionPerformed(evt);
             }
         });
 
-        chkGarantia5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkGarantia5.setText("Esteira Ergométrica Kikos Kx9500 110v.");
-        chkGarantia5.setActionCommand("Garantia Estendida");
-        chkGarantia5.addActionListener(new java.awt.event.ActionListener() {
+        chkErgoGYM.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkErgoGYM.setText("Esteira Ergométrica Kikos Kx9500 110v.");
+        chkErgoGYM.setActionCommand("Garantia Estendida");
+        chkErgoGYM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkGarantia5ActionPerformed(evt);
+                chkErgoGYMActionPerformed(evt);
             }
         });
 
-        chkGarantia6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkGarantia6.setText("Esteira Mecânica Emp-880 Com 5 Funções 0173 Polimet.");
-        chkGarantia6.setActionCommand("Garantia Estendida");
-        chkGarantia6.addActionListener(new java.awt.event.ActionListener() {
+        chkMagGYM.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkMagGYM.setText("Esteira Mecânica Emp-880 Com 5 Funções 0173 Polimet.");
+        chkMagGYM.setActionCommand("Garantia Estendida");
+        chkMagGYM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkGarantia6ActionPerformed(evt);
+                chkMagGYMActionPerformed(evt);
             }
         });
 
-        chkGarantia7.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkGarantia7.setText("Elíptico Magnético Polimet Light - Preto/Laranja.");
-        chkGarantia7.setActionCommand("Garantia Estendida");
-        chkGarantia7.addActionListener(new java.awt.event.ActionListener() {
+        chkElipticoGYM.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkElipticoGYM.setText("Elíptico Magnético Polimet Light - Preto/Laranja.");
+        chkElipticoGYM.setActionCommand("Garantia Estendida");
+        chkElipticoGYM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkGarantia7ActionPerformed(evt);
+                chkElipticoGYMActionPerformed(evt);
             }
         });
 
-        chkGarantia8.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkGarantia8.setText("Simulador de Escada Matrix C3X.");
-        chkGarantia8.setActionCommand("Garantia Estendida");
-        chkGarantia8.addActionListener(new java.awt.event.ActionListener() {
+        chkSimuladorGYM.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkSimuladorGYM.setText("Simulador de Escada Matrix C3X.");
+        chkSimuladorGYM.setActionCommand("Garantia Estendida");
+        chkSimuladorGYM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkGarantia8ActionPerformed(evt);
+                chkSimuladorGYMActionPerformed(evt);
             }
         });
 
@@ -486,34 +594,34 @@ public class VendasView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chkGarantia1)
-                    .addComponent(chkGarantia2)
-                    .addComponent(chkGarantia3)
-                    .addComponent(chkGarantia4)
-                    .addComponent(chkGarantia5)
-                    .addComponent(chkGarantia6)
-                    .addComponent(chkGarantia7)
-                    .addComponent(chkGarantia8))
+                    .addComponent(chkKitGYM)
+                    .addComponent(chkHalterGYM)
+                    .addComponent(chkElasticoGYM)
+                    .addComponent(chkCinturaoGYM)
+                    .addComponent(chkErgoGYM)
+                    .addComponent(chkMagGYM)
+                    .addComponent(chkElipticoGYM)
+                    .addComponent(chkSimuladorGYM))
                 .addGap(0, 11, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(chkGarantia1)
+                .addComponent(chkKitGYM)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkGarantia2)
+                .addComponent(chkHalterGYM)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkGarantia3)
+                .addComponent(chkElasticoGYM)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkGarantia4)
+                .addComponent(chkCinturaoGYM)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkGarantia5)
+                .addComponent(chkErgoGYM)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkGarantia6)
+                .addComponent(chkMagGYM)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkGarantia7)
+                .addComponent(chkElipticoGYM)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkGarantia8))
+                .addComponent(chkSimuladorGYM))
         );
 
         jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quantidades", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
@@ -546,36 +654,39 @@ public class VendasView extends javax.swing.JFrame {
             .addGroup(jPanel41Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel41Layout.createSequentialGroup()
-                            .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(spnCalca35, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel41Layout.createSequentialGroup()
-                            .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(spnCalca34, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel41Layout.createSequentialGroup()
-                            .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(spnCalca33, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel41Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel50)
+                        .addGap(69, 69, 69)
+                        .addComponent(spnElasticoGYM, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel41Layout.createSequentialGroup()
+                        .addComponent(jLabel49)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(spnHalterGYM, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel41Layout.createSequentialGroup()
+                        .addComponent(jLabel48)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(spnKitGYM, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel41Layout.createSequentialGroup()
-                        .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(spnCalca36, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel41Layout.createSequentialGroup()
-                        .addComponent(jLabel52)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(spnCalca37, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel41Layout.createSequentialGroup()
-                            .addComponent(jLabel54)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(spnCalca39, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel41Layout.createSequentialGroup()
-                            .addComponent(jLabel53)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(spnCalca38, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel41Layout.createSequentialGroup()
+                                    .addComponent(jLabel54)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(spnSimuladorGYM, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel41Layout.createSequentialGroup()
+                                    .addComponent(jLabel53)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(spnMagGYM, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel41Layout.createSequentialGroup()
+                                .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel52)
+                                    .addComponent(jLabel51))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(spnCinturaoGYM, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(spnErgoGYM, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel41Layout.setVerticalGroup(
@@ -583,31 +694,31 @@ public class VendasView extends javax.swing.JFrame {
             .addGroup(jPanel41Layout.createSequentialGroup()
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnKitGYM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnHalterGYM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnElasticoGYM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnCinturaoGYM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnErgoGYM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnMagGYM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnSimuladorGYM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -627,16 +738,13 @@ public class VendasView extends javax.swing.JFrame {
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         painelGuias.addTab("GYM", jPanel12);
@@ -673,30 +781,30 @@ public class VendasView extends javax.swing.JFrame {
 
         jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
-        chkNikeCalca5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkNikeCalca5.setText("Nike");
-        chkNikeCalca5.setActionCommand("Garantia Estendida");
-        chkNikeCalca5.addActionListener(new java.awt.event.ActionListener() {
+        chkNikeTenis.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkNikeTenis.setText("Nike");
+        chkNikeTenis.setActionCommand("Garantia Estendida");
+        chkNikeTenis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkNikeCalca5ActionPerformed(evt);
+                chkNikeTenisActionPerformed(evt);
             }
         });
 
-        chkAdidasCalca5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkAdidasCalca5.setText("Adidas");
-        chkAdidasCalca5.setActionCommand("Garantia Estendida");
-        chkAdidasCalca5.addActionListener(new java.awt.event.ActionListener() {
+        chkAdidasTenis.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkAdidasTenis.setText("Adidas");
+        chkAdidasTenis.setActionCommand("Garantia Estendida");
+        chkAdidasTenis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkAdidasCalca5ActionPerformed(evt);
+                chkAdidasTenisActionPerformed(evt);
             }
         });
 
-        chkPumaCalca5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkPumaCalca5.setText("Puma");
-        chkPumaCalca5.setActionCommand("Garantia Estendida");
-        chkPumaCalca5.addActionListener(new java.awt.event.ActionListener() {
+        chkPumaTenis.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkPumaTenis.setText("Puma");
+        chkPumaTenis.setActionCommand("Garantia Estendida");
+        chkPumaTenis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkPumaCalca5ActionPerformed(evt);
+                chkPumaTenisActionPerformed(evt);
             }
         });
 
@@ -706,20 +814,20 @@ public class VendasView extends javax.swing.JFrame {
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(chkNikeCalca5)
+                .addComponent(chkNikeTenis)
                 .addGap(18, 18, 18)
-                .addComponent(chkAdidasCalca5)
+                .addComponent(chkAdidasTenis)
                 .addGap(18, 18, 18)
-                .addComponent(chkPumaCalca5)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(chkPumaTenis)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkNikeCalca5)
-                    .addComponent(chkAdidasCalca5)
-                    .addComponent(chkPumaCalca5))
+                    .addComponent(chkNikeTenis)
+                    .addComponent(chkAdidasTenis)
+                    .addComponent(chkPumaTenis))
                 .addGap(0, 9, Short.MAX_VALUE))
         );
 
@@ -747,9 +855,9 @@ public class VendasView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(spnCalca40, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(spnCalca41, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(spnCalca42, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(spnNikeTenis, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(spnAdidasTenis, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnPumaTenis, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel42Layout.setVerticalGroup(
@@ -758,15 +866,15 @@ public class VendasView extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnNikeTenis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnAdidasTenis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(spnPumaTenis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -776,9 +884,9 @@ public class VendasView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(93, 93, 93)
                 .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(110, 110, 110)
+                .addGap(116, 116, 116)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(170, 170, 170))
+                .addGap(164, 164, 164))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(105, 105, 105)
                 .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -787,59 +895,16 @@ public class VendasView extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(13, 13, 13)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         painelGuias.addTab("Tênis", jPanel2);
-
-        tabelaResumo.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Cliente", "Luvas", "GYM", "Tênis", "Bolas", "Roupas", "Valor Total"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(tabelaResumo);
-
-        javax.swing.GroupLayout tblResumoLayout = new javax.swing.GroupLayout(tblResumo);
-        tblResumo.setLayout(tblResumoLayout);
-        tblResumoLayout.setHorizontalGroup(
-            tblResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
-        );
-        tblResumoLayout.setVerticalGroup(
-            tblResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
-        );
-
-        painelGuias.addTab("Resumo", tblResumo);
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel10.setText("Calças");
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel11.setText("Shorts");
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel12.setText("Camisetas");
 
         jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tamanhos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
@@ -876,285 +941,32 @@ public class VendasView extends javax.swing.JFrame {
                 .addComponent(rboC7))
         );
 
-        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tamanhos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
+        jPanel29.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Camisetas - Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
-        grupoTamanhoCalca.add(rboC3);
-        rboC3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        rboC3.setText("34 à 37");
-
-        grupoTamanhoCalca.add(rboC4);
-        rboC4.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        rboC4.setText("38 à 45");
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(rboC3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rboC4)
-                .addContainerGap())
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rboC3)
-                    .addComponent(rboC4))
-                .addGap(25, 25, 25))
-        );
-
-        jPanel43.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quantidades", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
-
-        jLabel58.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel58.setText(" Nike:");
-
-        jLabel59.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel59.setText(" Adidas:");
-
-        jLabel60.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel60.setText(" Puma:");
-
-        javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
-        jPanel43.setLayout(jPanel43Layout);
-        jPanel43Layout.setHorizontalGroup(
-            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel43Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(spnCalca43, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(spnCalca44, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(spnCalca45, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
-        jPanel43Layout.setVerticalGroup(
-            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel43Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel16Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jPanel43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel16Layout.createSequentialGroup()
-                .addComponent(jPanel43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
-                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel24.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
-
-        chkNikeCalca1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkNikeCalca1.setText("Nike");
-        chkNikeCalca1.setActionCommand("Garantia Estendida");
-        chkNikeCalca1.addActionListener(new java.awt.event.ActionListener() {
+        chkNikeCamiseta.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkNikeCamiseta.setText("Nike");
+        chkNikeCamiseta.setActionCommand("Garantia Estendida");
+        chkNikeCamiseta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkNikeCalca1ActionPerformed(evt);
+                chkNikeCamisetaActionPerformed(evt);
             }
         });
 
-        chkAdidasCalca1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkAdidasCalca1.setText("Adidas");
-        chkAdidasCalca1.setActionCommand("Garantia Estendida");
-        chkAdidasCalca1.addActionListener(new java.awt.event.ActionListener() {
+        chkAdidasCamiseta.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkAdidasCamiseta.setText("Adidas");
+        chkAdidasCamiseta.setActionCommand("Garantia Estendida");
+        chkAdidasCamiseta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkAdidasCalca1ActionPerformed(evt);
+                chkAdidasCamisetaActionPerformed(evt);
             }
         });
 
-        chkPumaCalca1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkPumaCalca1.setText("Puma");
-        chkPumaCalca1.setActionCommand("Garantia Estendida");
-        chkPumaCalca1.addActionListener(new java.awt.event.ActionListener() {
+        chkPumaCamiseta.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkPumaCamiseta.setText("Puma");
+        chkPumaCamiseta.setActionCommand("Garantia Estendida");
+        chkPumaCamiseta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkPumaCalca1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
-        jPanel24.setLayout(jPanel24Layout);
-        jPanel24Layout.setHorizontalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel24Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(chkNikeCalca1)
-                .addGap(18, 18, 18)
-                .addComponent(chkAdidasCalca1)
-                .addGap(18, 18, 18)
-                .addComponent(chkPumaCalca1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel24Layout.setVerticalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel24Layout.createSequentialGroup()
-                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkNikeCalca1)
-                    .addComponent(chkAdidasCalca1)
-                    .addComponent(chkPumaCalca1))
-                .addGap(0, 9, Short.MAX_VALUE))
-        );
-
-        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tamanhos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
-
-        grupoTamanhoShort.add(rboC1);
-        rboC1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        rboC1.setText("34 à 37");
-
-        grupoTamanhoShort.add(rboC2);
-        rboC2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        rboC2.setText("38 à 45");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(rboC1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rboC2)
-                .addContainerGap())
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rboC1)
-                    .addComponent(rboC2))
-                .addGap(25, 25, 25))
-        );
-
-        jPanel44.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quantidades", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
-
-        jLabel61.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel61.setText(" Nike:");
-
-        jLabel62.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel62.setText(" Adidas:");
-
-        jLabel63.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel63.setText(" Puma:");
-
-        javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
-        jPanel44.setLayout(jPanel44Layout);
-        jPanel44Layout.setHorizontalGroup(
-            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel44Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(spnCalca46, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(spnCalca47, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(spnCalca48, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
-        jPanel44Layout.setVerticalGroup(
-            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel44Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
-        jPanel17.setLayout(jPanel17Layout);
-        jPanel17Layout.setHorizontalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel17Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel17Layout.createSequentialGroup()
-                    .addGap(24, 24, 24)
-                    .addComponent(jPanel44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(25, Short.MAX_VALUE)))
-        );
-        jPanel17Layout.setVerticalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel17Layout.createSequentialGroup()
-                .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel17Layout.createSequentialGroup()
-                    .addGap(67, 67, 67)
-                    .addComponent(jPanel44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(68, Short.MAX_VALUE)))
-        );
-
-        jPanel29.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
-
-        chkNikeCalca3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkNikeCalca3.setText("Nike");
-        chkNikeCalca3.setActionCommand("Garantia Estendida");
-        chkNikeCalca3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkNikeCalca3ActionPerformed(evt);
-            }
-        });
-
-        chkAdidasCalca3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkAdidasCalca3.setText("Adidas");
-        chkAdidasCalca3.setActionCommand("Garantia Estendida");
-        chkAdidasCalca3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkAdidasCalca3ActionPerformed(evt);
-            }
-        });
-
-        chkPumaCalca3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkPumaCalca3.setText("Puma");
-        chkPumaCalca3.setActionCommand("Garantia Estendida");
-        chkPumaCalca3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkPumaCalca3ActionPerformed(evt);
+                chkPumaCamisetaActionPerformed(evt);
             }
         });
 
@@ -1164,24 +976,24 @@ public class VendasView extends javax.swing.JFrame {
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(chkNikeCalca3)
+                .addComponent(chkNikeCamiseta)
                 .addGap(18, 18, 18)
-                .addComponent(chkAdidasCalca3)
+                .addComponent(chkAdidasCamiseta)
                 .addGap(18, 18, 18)
-                .addComponent(chkPumaCalca3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(chkPumaCamiseta)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkNikeCalca3)
-                    .addComponent(chkAdidasCalca3)
-                    .addComponent(chkPumaCalca3))
+                    .addComponent(chkNikeCamiseta)
+                    .addComponent(chkAdidasCamiseta)
+                    .addComponent(chkPumaCamiseta))
                 .addGap(0, 9, Short.MAX_VALUE))
         );
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Calça - Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
         chkNikeCalca.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         chkNikeCalca.setText("Nike");
@@ -1221,7 +1033,7 @@ public class VendasView extends javax.swing.JFrame {
                 .addComponent(chkAdidasCalca)
                 .addGap(18, 18, 18)
                 .addComponent(chkPumaCalca)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1230,7 +1042,7 @@ public class VendasView extends javax.swing.JFrame {
                     .addComponent(chkNikeCalca)
                     .addComponent(chkAdidasCalca)
                     .addComponent(chkPumaCalca))
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGap(0, 4, Short.MAX_VALUE))
         );
 
         jPanel45.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quantidades", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
@@ -1257,10 +1069,10 @@ public class VendasView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(spnCalca49, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(spnCalca50, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(spnCalca51, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                        .addComponent(spnNikeCamiseta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(spnAdidasCamiseta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnPumaCamiseta, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel45Layout.setVerticalGroup(
             jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1268,15 +1080,15 @@ public class VendasView extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnNikeCamiseta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnAdidasCamiseta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(spnPumaCamiseta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tamanhos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
@@ -1309,84 +1121,239 @@ public class VendasView extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
+        jPanel43.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quantidades", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
+
+        jLabel58.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel58.setText(" Nike:");
+
+        jLabel59.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel59.setText(" Adidas:");
+
+        jLabel60.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel60.setText(" Puma:");
+
+        javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
+        jPanel43.setLayout(jPanel43Layout);
+        jPanel43Layout.setHorizontalGroup(
+            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel43Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(spnNikeCalca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(spnAdidasCalca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnPumaCalca, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel43Layout.setVerticalGroup(
+            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel43Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnNikeCalca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnAdidasCalca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnPumaCalca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel24.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Shorts - Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
+
+        chkNikeShort.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkNikeShort.setText("Nike");
+        chkNikeShort.setActionCommand("Garantia Estendida");
+        chkNikeShort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkNikeShortActionPerformed(evt);
+            }
+        });
+
+        chkAdidasShort.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkAdidasShort.setText("Adidas");
+        chkAdidasShort.setActionCommand("Garantia Estendida");
+        chkAdidasShort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkAdidasShortActionPerformed(evt);
+            }
+        });
+
+        chkPumaShort.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkPumaShort.setText("Puma");
+        chkPumaShort.setActionCommand("Garantia Estendida");
+        chkPumaShort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkPumaShortActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(chkNikeShort)
+                .addGap(18, 18, 18)
+                .addComponent(chkAdidasShort)
+                .addGap(18, 18, 18)
+                .addComponent(chkPumaShort)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chkNikeShort)
+                    .addComponent(chkAdidasShort)
+                    .addComponent(chkPumaShort))
+                .addGap(0, 9, Short.MAX_VALUE))
+        );
+
+        jPanel44.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quantidades", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
+
+        jLabel61.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel61.setText(" Nike:");
+
+        jLabel62.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel62.setText(" Adidas:");
+
+        jLabel63.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel63.setText(" Puma:");
+
+        javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
+        jPanel44.setLayout(jPanel44Layout);
+        jPanel44Layout.setHorizontalGroup(
+            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel44Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(spnNikeShort, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(spnAdidasShort, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnPumaShort, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel44Layout.setVerticalGroup(
+            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel44Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnNikeShort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnAdidasShort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnPumaShort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tamanhos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
+
+        grupoTamanhoShort.add(rboC1);
+        rboC1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        rboC1.setText("34 à 37");
+
+        grupoTamanhoShort.add(rboC2);
+        rboC2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        rboC2.setText("38 à 45");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(rboC1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(rboC2)
+                .addContainerGap())
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rboC1)
+                    .addComponent(rboC2))
+                .addGap(25, 25, 25))
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(182, 182, 182)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel43, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(10, 10, 10))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jPanel45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         painelGuias.addTab("Roupas", jPanel3);
 
         jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Modelos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
-        chkFutebol.setText("Futebol");
+        chkFutebolBolas.setText("Futebol");
 
-        chkVolei.setText("Vôlei");
+        chkVoleiBolas.setText("Vôlei");
 
-        chkHandebol.setText("Handebol");
+        chkHandebolBolas.setText("Handebol");
 
-        chkBasquete.setText("Basquete");
+        chkBasqueteBolas.setText("Basquete");
 
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
@@ -1395,51 +1362,51 @@ public class VendasView extends javax.swing.JFrame {
             .addGroup(jPanel35Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chkFutebol)
-                    .addComponent(chkVolei)
-                    .addComponent(chkHandebol)
-                    .addComponent(chkBasquete))
+                    .addComponent(chkFutebolBolas)
+                    .addComponent(chkVoleiBolas)
+                    .addComponent(chkHandebolBolas)
+                    .addComponent(chkBasqueteBolas))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel35Layout.createSequentialGroup()
-                .addComponent(chkFutebol)
+                .addComponent(chkFutebolBolas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkVolei)
+                .addComponent(chkVoleiBolas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkHandebol)
+                .addComponent(chkHandebolBolas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, Short.MAX_VALUE)
-                .addComponent(chkBasquete)
+                .addComponent(chkBasqueteBolas)
                 .addContainerGap())
         );
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marcas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
-        chkNikeCalca4.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkNikeCalca4.setText("Nike");
-        chkNikeCalca4.setActionCommand("Garantia Estendida");
-        chkNikeCalca4.addActionListener(new java.awt.event.ActionListener() {
+        chkNikeBolas.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkNikeBolas.setText("Nike");
+        chkNikeBolas.setActionCommand("Garantia Estendida");
+        chkNikeBolas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkNikeCalca4ActionPerformed(evt);
+                chkNikeBolasActionPerformed(evt);
             }
         });
 
-        chkAdidasCalca4.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkAdidasCalca4.setText("Adidas");
-        chkAdidasCalca4.setActionCommand("Garantia Estendida");
-        chkAdidasCalca4.addActionListener(new java.awt.event.ActionListener() {
+        chkAdidasBolas.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkAdidasBolas.setText("Adidas");
+        chkAdidasBolas.setActionCommand("Garantia Estendida");
+        chkAdidasBolas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkAdidasCalca4ActionPerformed(evt);
+                chkAdidasBolasActionPerformed(evt);
             }
         });
 
-        chkPumaCalca4.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        chkPumaCalca4.setText("Puma");
-        chkPumaCalca4.setActionCommand("Garantia Estendida");
-        chkPumaCalca4.addActionListener(new java.awt.event.ActionListener() {
+        chkPumaBolas.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        chkPumaBolas.setText("Puma");
+        chkPumaBolas.setActionCommand("Garantia Estendida");
+        chkPumaBolas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkPumaCalca4ActionPerformed(evt);
+                chkPumaBolasActionPerformed(evt);
             }
         });
 
@@ -1449,20 +1416,20 @@ public class VendasView extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(chkNikeCalca4)
+                .addComponent(chkNikeBolas)
                 .addGap(18, 18, 18)
-                .addComponent(chkAdidasCalca4)
+                .addComponent(chkAdidasBolas)
                 .addGap(18, 18, 18)
-                .addComponent(chkPumaCalca4)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(chkPumaBolas)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkNikeCalca4)
-                    .addComponent(chkAdidasCalca4)
-                    .addComponent(chkPumaCalca4))
+                    .addComponent(chkNikeBolas)
+                    .addComponent(chkAdidasBolas)
+                    .addComponent(chkPumaBolas))
                 .addGap(0, 9, Short.MAX_VALUE))
         );
 
@@ -1490,9 +1457,9 @@ public class VendasView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(spnCalca18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(spnCalca19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(spnCalca20, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(spnNikeBolas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(spnAdidasBolas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnPumaBolas, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel36Layout.setVerticalGroup(
@@ -1501,15 +1468,15 @@ public class VendasView extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnNikeBolas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnAdidasBolas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnCalca20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(spnPumaBolas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -1521,30 +1488,59 @@ public class VendasView extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(96, 96, 96))
+                        .addGap(127, 127, 127))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(198, 198, 198))
+                .addGap(167, 167, 167))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(67, Short.MAX_VALUE))
+                        .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         painelGuias.addTab("Bolas", jPanel11);
+
+        tabelaResumo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cliente", "Luvas", "GYM", "Tênis", "Bolas", "Roupas", "Valor Total"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tabelaResumo);
+
+        javax.swing.GroupLayout tblResumoLayout = new javax.swing.GroupLayout(tblResumo);
+        tblResumo.setLayout(tblResumoLayout);
+        tblResumoLayout.setHorizontalGroup(
+            tblResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
+        );
+        tblResumoLayout.setVerticalGroup(
+            tblResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
+        );
+
+        painelGuias.addTab("Resumo", tblResumo);
 
         JPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Serviços", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
@@ -1579,15 +1575,17 @@ public class VendasView extends javax.swing.JFrame {
         JPanelLayout.setVerticalGroup(
             JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(JPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(chkGarantia)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(chkDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(chkParcelamentos))
+                .addComponent(chkParcelamentos)
+                .addGap(19, 19, 19))
         );
 
         cboTipoParce.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        cboTipoParce.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Parcelamento...", "Á vista ", "Dividido em 2x", "Dividido em 3x", "Dividido em 4x", "Dividido em 5x", "Dividido em 6x", "Dividido em 7x", "Dividido em 8x", "Dividido em 9x", "Dividido em 10x" }));
+        cboTipoParce.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Forma de pagamento...", "À vista ", "Parcelado em 2x", "Parcelado em 3x", "Parcelado em 4x", "Parcelado em 5x", "Parcelado em 6x", "Parcelado em 7x", "Parcelado em 8x", "Parcelado em 9x", "Parcelado em 10x" }));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Digite o seu CPF: *");
@@ -1642,26 +1640,27 @@ public class VendasView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelGuias)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(txtCPFCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(223, 223, 223)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(227, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(painelGuias, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(JPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCPFCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(226, 226, 226))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cboTipoParce, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(cboTipoParce, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -1671,15 +1670,15 @@ public class VendasView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
                     .addComponent(txtCPFCompra))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(painelGuias, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(painelGuias, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cboTipoParce, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -1701,29 +1700,29 @@ public class VendasView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtCPFCompraKeyTyped
 
-    private void chkPumaCalca1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPumaCalca1ActionPerformed
+    private void chkPumaShortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPumaShortActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkPumaCalca1ActionPerformed
+    }//GEN-LAST:event_chkPumaShortActionPerformed
 
-    private void chkAdidasCalca1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAdidasCalca1ActionPerformed
+    private void chkAdidasShortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAdidasShortActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkAdidasCalca1ActionPerformed
+    }//GEN-LAST:event_chkAdidasShortActionPerformed
 
-    private void chkNikeCalca1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkNikeCalca1ActionPerformed
+    private void chkNikeShortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkNikeShortActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkNikeCalca1ActionPerformed
+    }//GEN-LAST:event_chkNikeShortActionPerformed
 
-    private void chkNikeCalca3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkNikeCalca3ActionPerformed
+    private void chkNikeCamisetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkNikeCamisetaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkNikeCalca3ActionPerformed
+    }//GEN-LAST:event_chkNikeCamisetaActionPerformed
 
-    private void chkAdidasCalca3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAdidasCalca3ActionPerformed
+    private void chkAdidasCamisetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAdidasCamisetaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkAdidasCalca3ActionPerformed
+    }//GEN-LAST:event_chkAdidasCamisetaActionPerformed
 
-    private void chkPumaCalca3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPumaCalca3ActionPerformed
+    private void chkPumaCamisetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPumaCamisetaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkPumaCalca3ActionPerformed
+    }//GEN-LAST:event_chkPumaCamisetaActionPerformed
 
     private void chkPumaCalcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPumaCalcaActionPerformed
         // TODO add your handling code here:
@@ -1737,91 +1736,208 @@ public class VendasView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_chkNikeCalcaActionPerformed
 
-    private void chkNikeCalca4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkNikeCalca4ActionPerformed
+    private void chkNikeBolasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkNikeBolasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkNikeCalca4ActionPerformed
+    }//GEN-LAST:event_chkNikeBolasActionPerformed
 
-    private void chkAdidasCalca4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAdidasCalca4ActionPerformed
+    private void chkAdidasBolasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAdidasBolasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkAdidasCalca4ActionPerformed
+    }//GEN-LAST:event_chkAdidasBolasActionPerformed
 
-    private void chkPumaCalca4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPumaCalca4ActionPerformed
+    private void chkPumaBolasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPumaBolasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkPumaCalca4ActionPerformed
+    }//GEN-LAST:event_chkPumaBolasActionPerformed
 
-    private void chkNikeCalca5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkNikeCalca5ActionPerformed
+    private void chkNikeTenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkNikeTenisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkNikeCalca5ActionPerformed
+    }//GEN-LAST:event_chkNikeTenisActionPerformed
 
-    private void chkAdidasCalca5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAdidasCalca5ActionPerformed
+    private void chkAdidasTenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAdidasTenisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkAdidasCalca5ActionPerformed
+    }//GEN-LAST:event_chkAdidasTenisActionPerformed
 
-    private void chkPumaCalca5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPumaCalca5ActionPerformed
+    private void chkPumaTenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPumaTenisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkPumaCalca5ActionPerformed
+    }//GEN-LAST:event_chkPumaTenisActionPerformed
 
-    private void chkNikeCalca6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkNikeCalca6ActionPerformed
+    private void chkNikeLuvasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkNikeLuvasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkNikeCalca6ActionPerformed
+    }//GEN-LAST:event_chkNikeLuvasActionPerformed
 
-    private void chkAdidasCalca6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAdidasCalca6ActionPerformed
+    private void chkAdidasLuvasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAdidasLuvasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkAdidasCalca6ActionPerformed
+    }//GEN-LAST:event_chkAdidasLuvasActionPerformed
 
-    private void chkPumaCalca6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPumaCalca6ActionPerformed
+    private void chkPumaLuvasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPumaLuvasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkPumaCalca6ActionPerformed
+    }//GEN-LAST:event_chkPumaLuvasActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-        Check valid = new Check();
-        valid.ValidVoid(txtLogin);
-        valid.ValidVoid(txtSenha);
-        ImageIcon icon = new ImageIcon("C:\\GitHub\\PiArtigosEsportivos\\LojaEsportiva\\src\\main\\resources\\imagens\\check.png");
-
-        if(valid.temErro()){
-            JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(this, "Dados cadastrados com sucesso" ,"Aviso!",JOptionPane.INFORMATION_MESSAGE, icon);
+        // MARCAS
+        String marcasLuvas = "";
+        if (chkNikeLuvas.isSelected()) {
+            marcasLuvas += chkNikeLuvas.getText() + ", ";
         }
-
+        if (chkAdidasLuvas.isSelected()) {
+            marcasLuvas += chkAdidasLuvas.getText() + ", ";
+        }
+        if (chkPumaLuvas.isSelected()) {
+            marcasLuvas += chkPumaLuvas.getText() + " ";
+        }
+        String marcasTenis = "";
+        if (chkNikeTenis.isSelected()) {
+            marcasTenis += chkNikeLuvas.getText() + ", ";
+        }
+        if (chkAdidasLuvas.isSelected()) {
+            marcasTenis += chkAdidasLuvas.getText() + ", ";
+        }
+        if (chkPumaLuvas.isSelected()) {
+            marcasTenis += chkPumaLuvas.getText() + " ";
+        }
+        String marcasBolas = "";
+        if (chkNikeBolas.isSelected()) {
+            marcasBolas += chkNikeBolas.getText() + ", ";
+        }
+        if (chkAdidasBolas.isSelected()) {
+            marcasBolas += chkAdidasBolas.getText() + ", ";
+        }
+        if (chkPumaBolas.isSelected()) {
+            marcasBolas += chkPumaBolas.getText() + " ";
+        }
+        String acessoriosGYM = "";
+        if (chkKitGYM.isSelected()) {
+            acessoriosGYM += chkKitGYM.getText() + ", ";
+        }
+        if (chkHalterGYM.isSelected()) {
+            acessoriosGYM += chkHalterGYM.getText() + ", ";
+        }
+        if (chkElasticoGYM.isSelected()) {
+            acessoriosGYM += chkElasticoGYM.getText() + ", ";
+        }
+        if (chkCinturaoGYM.isSelected()) {
+            acessoriosGYM += chkCinturaoGYM.getText() + ", ";
+        }
+        if (chkErgoGYM.isSelected()) {
+            acessoriosGYM += chkErgoGYM.getText() + ", ";
+        }
+        if (chkMagGYM.isSelected()) {
+            acessoriosGYM += chkMagGYM.getText() + ", ";
+        }
+        if (chkElasticoGYM.isSelected()) {
+            acessoriosGYM += chkElasticoGYM.getText() + ", ";
+        }
+        if (chkSimuladorGYM.isSelected()) {
+            acessoriosGYM += chkSimuladorGYM.getText() + " ";
+        }
+        String marcasCalcas = "";
+        if (chkNikeCalca.isSelected()) {
+            marcasCalcas += chkNikeCalca.getText() + ", ";
+        }
+        if (chkAdidasCalca.isSelected()) {
+            marcasCalcas += chkAdidasCalca.getText() + ", ";
+        }
+        if (chkPumaCalca.isSelected()) {
+            marcasCalcas += chkPumaCalca.getText() + ", ";
+        }
+        String marcasShorts = "";
+        if (chkNikeShort.isSelected()) {
+            marcasShorts += chkNikeShort.getText() + ", ";
+        }
+        if (chkAdidasShort.isSelected()) {
+            marcasShorts += chkAdidasShort.getText() + ", ";
+        }
+        if (chkPumaShort.isSelected()) {
+            marcasShorts += chkPumaShort.getText() + ", ";
+        }
+        String marcasCamisetas = "";
+        if (chkNikeShort.isSelected()) {
+            marcasCamisetas += chkNikeShort.getText() + ", ";
+        }
+        if (chkAdidasShort.isSelected()) {
+            marcasCamisetas += chkAdidasShort.getText() + ", ";
+        }
+        if (chkPumaShort.isSelected()) {
+            marcasCamisetas += chkPumaShort.getText() + " ";
+        }
+        
+        // QUANTIDADES
+        String LuvasNike = spnNikeLuvas.getValue().toString();
+        String LuvasAdidas = spnAdidasLuvas.getValue().toString();
+        String LuvasPuma = spnPumaLuvas.getValue().toString();
+        String GYMKit = spnKitGYM.getValue().toString();
+        String GYMHalter = spnHalterGYM.getValue().toString();
+        String GYMElastico = spnElasticoGYM.getValue().toString();
+        String GYMCinturao = spnCinturaoGYM.getValue().toString();
+        String GYMErgo = spnErgoGYM.getValue().toString();
+        String GYMMag = spnMagGYM.getValue().toString();
+        String GYMSimulador = spnSimuladorGYM.getValue().toString();
+        String TenisNike = spnNikeTenis.getValue().toString();
+        String TenisAdidas = spnAdidasTenis.getValue().toString();
+        String TenisPuma = spnPumaTenis.getValue().toString();
+        String BolasNike = spnNikeBolas.getValue().toString();
+        String BolasAdidas = spnAdidasBolas.getValue().toString();
+        String BolasPuma = spnPumaBolas.getValue().toString();
+        String CalcaNike = spnNikeCalca.getValue().toString();
+        String CalcaAdidas = spnAdidasCalca.getValue().toString();
+        String CalcaPuma = spnPumaCalca.getValue().toString();
+        String ShortNike = spnNikeShort.getValue().toString();
+        String ShortAdidas = spnAdidasShort.getValue().toString();
+        String ShortPuma = spnPumaShort.getValue().toString();
+        String CamisetaNike = spnNikeCamiseta.getValue().toString();
+        String CamisetaAdidas = spnAdidasCamiseta.getValue().toString();
+        String CamisetaPuma = spnPumaLuvas.getValue().toString();
+        
+        // Serviços
+        String servicos = "";
+        if (chkGarantia.isSelected()) {
+            servicos += chkGarantia.getText() + ", ";
+        }
+        if (chkDesconto.isSelected()) {
+            servicos += chkDesconto.getText() + ", ";
+        }
+        if (chkParcelamentos.isSelected()) {
+            servicos += chkParcelamentos.getText() + " ";
+        }
+        
+        // Parcelamentos
+        String tipoParcela = (cboTipoParce.getSelectedItem().toString());
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
-    private void chkGarantia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkGarantia1ActionPerformed
+    private void chkKitGYMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkKitGYMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkGarantia1ActionPerformed
+    }//GEN-LAST:event_chkKitGYMActionPerformed
 
-    private void chkGarantia2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkGarantia2ActionPerformed
+    private void chkHalterGYMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkHalterGYMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkGarantia2ActionPerformed
+    }//GEN-LAST:event_chkHalterGYMActionPerformed
 
-    private void chkGarantia3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkGarantia3ActionPerformed
+    private void chkElasticoGYMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkElasticoGYMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkGarantia3ActionPerformed
+    }//GEN-LAST:event_chkElasticoGYMActionPerformed
 
-    private void chkGarantia4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkGarantia4ActionPerformed
+    private void chkCinturaoGYMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkCinturaoGYMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkGarantia4ActionPerformed
+    }//GEN-LAST:event_chkCinturaoGYMActionPerformed
 
-    private void chkGarantia5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkGarantia5ActionPerformed
+    private void chkErgoGYMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkErgoGYMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkGarantia5ActionPerformed
+    }//GEN-LAST:event_chkErgoGYMActionPerformed
 
-    private void chkGarantia6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkGarantia6ActionPerformed
+    private void chkMagGYMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMagGYMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkGarantia6ActionPerformed
+    }//GEN-LAST:event_chkMagGYMActionPerformed
 
-    private void chkGarantia7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkGarantia7ActionPerformed
+    private void chkElipticoGYMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkElipticoGYMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkGarantia7ActionPerformed
+    }//GEN-LAST:event_chkElipticoGYMActionPerformed
 
-    private void chkGarantia8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkGarantia8ActionPerformed
+    private void chkSimuladorGYMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSimuladorGYMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkGarantia8ActionPerformed
+    }//GEN-LAST:event_chkSimuladorGYMActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1866,51 +1982,45 @@ public class VendasView extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JComboBox<String> cboTipoParce;
+    private javax.swing.JCheckBox chkAdidasBolas;
     private javax.swing.JCheckBox chkAdidasCalca;
-    private javax.swing.JCheckBox chkAdidasCalca1;
-    private javax.swing.JCheckBox chkAdidasCalca2;
-    private javax.swing.JCheckBox chkAdidasCalca3;
-    private javax.swing.JCheckBox chkAdidasCalca4;
-    private javax.swing.JCheckBox chkAdidasCalca5;
-    private javax.swing.JCheckBox chkAdidasCalca6;
-    private javax.swing.JCheckBox chkBasquete;
+    private javax.swing.JCheckBox chkAdidasCamiseta;
+    private javax.swing.JCheckBox chkAdidasLuvas;
+    private javax.swing.JCheckBox chkAdidasShort;
+    private javax.swing.JCheckBox chkAdidasTenis;
+    private javax.swing.JCheckBox chkBasqueteBolas;
+    private javax.swing.JCheckBox chkCinturaoGYM;
     private javax.swing.JCheckBox chkDesconto;
-    private javax.swing.JCheckBox chkFutebol;
+    private javax.swing.JCheckBox chkElasticoGYM;
+    private javax.swing.JCheckBox chkElipticoGYM;
+    private javax.swing.JCheckBox chkErgoGYM;
+    private javax.swing.JCheckBox chkFutebolBolas;
     private javax.swing.JCheckBox chkGarantia;
-    private javax.swing.JCheckBox chkGarantia1;
-    private javax.swing.JCheckBox chkGarantia2;
-    private javax.swing.JCheckBox chkGarantia3;
-    private javax.swing.JCheckBox chkGarantia4;
-    private javax.swing.JCheckBox chkGarantia5;
-    private javax.swing.JCheckBox chkGarantia6;
-    private javax.swing.JCheckBox chkGarantia7;
-    private javax.swing.JCheckBox chkGarantia8;
-    private javax.swing.JCheckBox chkHandebol;
+    private javax.swing.JCheckBox chkHalterGYM;
+    private javax.swing.JCheckBox chkHandebolBolas;
+    private javax.swing.JCheckBox chkKitGYM;
+    private javax.swing.JCheckBox chkMagGYM;
+    private javax.swing.JCheckBox chkNikeBolas;
     private javax.swing.JCheckBox chkNikeCalca;
-    private javax.swing.JCheckBox chkNikeCalca1;
-    private javax.swing.JCheckBox chkNikeCalca2;
-    private javax.swing.JCheckBox chkNikeCalca3;
-    private javax.swing.JCheckBox chkNikeCalca4;
-    private javax.swing.JCheckBox chkNikeCalca5;
-    private javax.swing.JCheckBox chkNikeCalca6;
+    private javax.swing.JCheckBox chkNikeCamiseta;
+    private javax.swing.JCheckBox chkNikeLuvas;
+    private javax.swing.JCheckBox chkNikeShort;
+    private javax.swing.JCheckBox chkNikeTenis;
     private javax.swing.JCheckBox chkParcelamentos;
+    private javax.swing.JCheckBox chkPumaBolas;
     private javax.swing.JCheckBox chkPumaCalca;
-    private javax.swing.JCheckBox chkPumaCalca1;
-    private javax.swing.JCheckBox chkPumaCalca2;
-    private javax.swing.JCheckBox chkPumaCalca3;
-    private javax.swing.JCheckBox chkPumaCalca4;
-    private javax.swing.JCheckBox chkPumaCalca5;
-    private javax.swing.JCheckBox chkPumaCalca6;
-    private javax.swing.JCheckBox chkVolei;
+    private javax.swing.JCheckBox chkPumaCamiseta;
+    private javax.swing.JCheckBox chkPumaLuvas;
+    private javax.swing.JCheckBox chkPumaShort;
+    private javax.swing.JCheckBox chkPumaTenis;
+    private javax.swing.JCheckBox chkSimuladorGYM;
+    private javax.swing.JCheckBox chkVoleiBolas;
     private javax.swing.ButtonGroup grupoPesosGYM;
     private javax.swing.ButtonGroup grupoTamanhoCalca;
     private javax.swing.ButtonGroup grupoTamanhoCamiseta;
     private javax.swing.ButtonGroup grupoTamanhoLuvas;
     private javax.swing.ButtonGroup grupoTamanhoShort;
     private javax.swing.ButtonGroup grupoTamanhoTenis;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -1943,18 +2053,13 @@ public class VendasView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel24;
-    private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
-    private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel34;
@@ -1967,18 +2072,19 @@ public class VendasView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel44;
     private javax.swing.JPanel jPanel45;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTabbedPane painelGuias;
     private javax.swing.JRadioButton rboC1;
     private javax.swing.JRadioButton rboC2;
-    private javax.swing.JRadioButton rboC3;
-    private javax.swing.JRadioButton rboC4;
     private javax.swing.JRadioButton rboC5;
     private javax.swing.JRadioButton rboC6;
     private javax.swing.JRadioButton rboC7;
@@ -1989,31 +2095,31 @@ public class VendasView extends javax.swing.JFrame {
     private javax.swing.JRadioButton rboLP;
     private javax.swing.JRadioButton rboT1;
     private javax.swing.JRadioButton rboT2;
-    private javax.swing.JSpinner spnCalca15;
-    private javax.swing.JSpinner spnCalca16;
-    private javax.swing.JSpinner spnCalca17;
-    private javax.swing.JSpinner spnCalca18;
-    private javax.swing.JSpinner spnCalca19;
-    private javax.swing.JSpinner spnCalca20;
-    private javax.swing.JSpinner spnCalca33;
-    private javax.swing.JSpinner spnCalca34;
-    private javax.swing.JSpinner spnCalca35;
-    private javax.swing.JSpinner spnCalca36;
-    private javax.swing.JSpinner spnCalca37;
-    private javax.swing.JSpinner spnCalca38;
-    private javax.swing.JSpinner spnCalca39;
-    private javax.swing.JSpinner spnCalca40;
-    private javax.swing.JSpinner spnCalca41;
-    private javax.swing.JSpinner spnCalca42;
-    private javax.swing.JSpinner spnCalca43;
-    private javax.swing.JSpinner spnCalca44;
-    private javax.swing.JSpinner spnCalca45;
-    private javax.swing.JSpinner spnCalca46;
-    private javax.swing.JSpinner spnCalca47;
-    private javax.swing.JSpinner spnCalca48;
-    private javax.swing.JSpinner spnCalca49;
-    private javax.swing.JSpinner spnCalca50;
-    private javax.swing.JSpinner spnCalca51;
+    private javax.swing.JSpinner spnAdidasBolas;
+    private javax.swing.JSpinner spnAdidasCalca;
+    private javax.swing.JSpinner spnAdidasCamiseta;
+    private javax.swing.JSpinner spnAdidasLuvas;
+    private javax.swing.JSpinner spnAdidasShort;
+    private javax.swing.JSpinner spnAdidasTenis;
+    private javax.swing.JSpinner spnCinturaoGYM;
+    private javax.swing.JSpinner spnElasticoGYM;
+    private javax.swing.JSpinner spnErgoGYM;
+    private javax.swing.JSpinner spnHalterGYM;
+    private javax.swing.JSpinner spnKitGYM;
+    private javax.swing.JSpinner spnMagGYM;
+    private javax.swing.JSpinner spnNikeBolas;
+    private javax.swing.JSpinner spnNikeCalca;
+    private javax.swing.JSpinner spnNikeCamiseta;
+    private javax.swing.JSpinner spnNikeLuvas;
+    private javax.swing.JSpinner spnNikeShort;
+    private javax.swing.JSpinner spnNikeTenis;
+    private javax.swing.JSpinner spnPumaBolas;
+    private javax.swing.JSpinner spnPumaCalca;
+    private javax.swing.JSpinner spnPumaCamiseta;
+    private javax.swing.JSpinner spnPumaLuvas;
+    private javax.swing.JSpinner spnPumaShort;
+    private javax.swing.JSpinner spnPumaTenis;
+    private javax.swing.JSpinner spnSimuladorGYM;
     private javax.swing.JTable tabelaResumo;
     private javax.swing.JPanel tblResumo;
     private javax.swing.JTextField txtCPFCompra;
