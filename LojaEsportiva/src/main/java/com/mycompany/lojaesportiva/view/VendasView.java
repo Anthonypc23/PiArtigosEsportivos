@@ -1,6 +1,7 @@
 
 package com.mycompany.lojaesportiva.view;
 
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
@@ -1907,8 +1908,10 @@ public class VendasView extends javax.swing.JFrame {
         // Inserindo na tabela
         if (txtCPFCompra.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Digite o CPF!");
+            txtCPFCompra.setBackground(Color.yellow);
             return;
         }
+        txtCPFCompra.setBackground(Color.white);
         painelGuias.setSelectedIndex(6);
         DefaultTableModel model = (DefaultTableModel) tabelaResumo.getModel();
         model.addRow(new Object[]{txtCPFCompra.getText(), marcasLuvas, acessoriosGYM, marcasTenis, marcasBolas, marcasCalcas, marcasShorts, marcasCamisetas});
