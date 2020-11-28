@@ -1529,12 +1529,23 @@ public class VendasView extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(tabelaResumo);
+        if (tabelaResumo.getColumnModel().getColumnCount() > 0) {
+            tabelaResumo.getColumnModel().getColumn(0).setHeaderValue("Cliente");
+            tabelaResumo.getColumnModel().getColumn(3).setHeaderValue("Tênis");
+            tabelaResumo.getColumnModel().getColumn(4).setHeaderValue("Bolas");
+            tabelaResumo.getColumnModel().getColumn(5).setHeaderValue("Calças");
+            tabelaResumo.getColumnModel().getColumn(6).setHeaderValue("Shorts");
+            tabelaResumo.getColumnModel().getColumn(7).setHeaderValue("Camisetas");
+            tabelaResumo.getColumnModel().getColumn(8).setHeaderValue("Valor Total");
+        }
 
         javax.swing.GroupLayout tblResumoLayout = new javax.swing.GroupLayout(tblResumo);
         tblResumo.setLayout(tblResumoLayout);
         tblResumoLayout.setHorizontalGroup(
             tblResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE)
+            .addGroup(tblResumoLayout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+                .addContainerGap())
         );
         tblResumoLayout.setVerticalGroup(
             tblResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
