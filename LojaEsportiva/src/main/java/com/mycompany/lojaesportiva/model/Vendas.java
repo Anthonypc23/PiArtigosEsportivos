@@ -72,14 +72,6 @@ public class Vendas {
         this.tipoParcela = tipoParcela;
     }
 
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
     public String getTamanho() {
         return tamanho;
     }
@@ -88,5 +80,11 @@ public class Vendas {
         this.tamanho = tamanho;
     }
 
-    
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 }

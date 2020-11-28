@@ -4,6 +4,7 @@ package com.mycompany.lojaesportiva.view;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -11,7 +12,6 @@ import javax.swing.SpinnerNumberModel;
  */
 public class VendasView extends javax.swing.JFrame {
 
-   
     public VendasView() {
         initComponents();
         SpinnerNumberModel nikeLuva = new SpinnerNumberModel();
@@ -123,7 +123,7 @@ public class VendasView extends javax.swing.JFrame {
         
         this.setLocationRelativeTo(null);
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -302,7 +302,7 @@ public class VendasView extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 786, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -392,7 +392,7 @@ public class VendasView extends javax.swing.JFrame {
                 .addComponent(chkAdidasLuvas)
                 .addGap(18, 18, 18)
                 .addComponent(chkPumaLuvas)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -819,7 +819,7 @@ public class VendasView extends javax.swing.JFrame {
                 .addComponent(chkAdidasTenis)
                 .addGap(18, 18, 18)
                 .addComponent(chkPumaTenis)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -981,7 +981,7 @@ public class VendasView extends javax.swing.JFrame {
                 .addComponent(chkAdidasCamiseta)
                 .addGap(18, 18, 18)
                 .addComponent(chkPumaCamiseta)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1033,7 +1033,7 @@ public class VendasView extends javax.swing.JFrame {
                 .addComponent(chkAdidasCalca)
                 .addGap(18, 18, 18)
                 .addComponent(chkPumaCalca)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1421,7 +1421,7 @@ public class VendasView extends javax.swing.JFrame {
                 .addComponent(chkAdidasBolas)
                 .addGap(18, 18, 18)
                 .addComponent(chkPumaBolas)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1516,11 +1516,11 @@ public class VendasView extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Cliente", "Luvas", "GYM", "Tênis", "Bolas", "Roupas", "Valor Total"
+                "Cliente", "Luvas", "GYM", "Tênis", "Bolas", "Calças", "Shorts", "Camisetas", "Valor Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true
+                false, false, false, false, false, false, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1533,7 +1533,7 @@ public class VendasView extends javax.swing.JFrame {
         tblResumo.setLayout(tblResumoLayout);
         tblResumoLayout.setHorizontalGroup(
             tblResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE)
         );
         tblResumoLayout.setVerticalGroup(
             tblResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1641,26 +1641,24 @@ public class VendasView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(txtCPFCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(223, 223, 223)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(227, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(painelGuias, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(painelGuias, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(JPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cboTipoParce, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(JPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(cboTipoParce, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtCPFCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(223, 223, 223)
+                                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 184, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -1841,7 +1839,7 @@ public class VendasView extends javax.swing.JFrame {
             marcasCalcas += chkAdidasCalca.getText() + ", ";
         }
         if (chkPumaCalca.isSelected()) {
-            marcasCalcas += chkPumaCalca.getText() + ", ";
+            marcasCalcas += chkPumaCalca.getText() + " ";
         }
         String marcasShorts = "";
         if (chkNikeShort.isSelected()) {
@@ -1851,7 +1849,7 @@ public class VendasView extends javax.swing.JFrame {
             marcasShorts += chkAdidasShort.getText() + ", ";
         }
         if (chkPumaShort.isSelected()) {
-            marcasShorts += chkPumaShort.getText() + ", ";
+            marcasShorts += chkPumaShort.getText() + " ";
         }
         String marcasCamisetas = "";
         if (chkNikeShort.isSelected()) {
@@ -1905,6 +1903,15 @@ public class VendasView extends javax.swing.JFrame {
         
         // Parcelamentos
         String tipoParcela = (cboTipoParce.getSelectedItem().toString());
+        
+        // Inserindo na tabela
+        if (txtCPFCompra.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Digite o CPF!");
+            return;
+        }
+        painelGuias.setSelectedIndex(6);
+        DefaultTableModel model = (DefaultTableModel) tabelaResumo.getModel();
+        model.addRow(new Object[]{txtCPFCompra.getText(), marcasLuvas, acessoriosGYM, marcasTenis, marcasBolas, marcasCalcas, marcasShorts, marcasCamisetas});
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void chkKitGYMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkKitGYMActionPerformed
@@ -2124,4 +2131,5 @@ public class VendasView extends javax.swing.JFrame {
     private javax.swing.JPanel tblResumo;
     private javax.swing.JTextField txtCPFCompra;
     // End of variables declaration//GEN-END:variables
+
 }
