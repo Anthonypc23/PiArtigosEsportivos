@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.lojaesportiva.model;
+package com.mycompany.lojaesportiva.utils;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -85,6 +85,11 @@ public class Check {
     }
     
    
+    public void ValidCBO(int i){
+        if(i == 0){
+         msgErro.add("Você nao selecionou um Estado Civil");   
+        }
+    }
     
     
     public void clearMSG(){

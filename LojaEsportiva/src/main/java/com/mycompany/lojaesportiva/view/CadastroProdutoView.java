@@ -6,7 +6,7 @@
 package com.mycompany.lojaesportiva.view;
 
 import com.mycompany.lojaesportiva.controller.ProdutoController;
-import com.mycompany.lojaesportiva.model.Check;
+import com.mycompany.lojaesportiva.utils.Check;
 import java.awt.Color;
 import java.sql.SQLException;
 import java.util.logging.Level;

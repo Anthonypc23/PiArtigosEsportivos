@@ -5,7 +5,7 @@
  */
 package com.mycompany.lojaesportiva.view;
 
-import com.mycompany.lojaesportiva.model.Check;
+import com.mycompany.lojaesportiva.utils.Check;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;

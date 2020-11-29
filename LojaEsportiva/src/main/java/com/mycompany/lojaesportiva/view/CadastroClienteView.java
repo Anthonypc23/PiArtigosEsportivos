@@ -6,7 +6,7 @@
 package com.mycompany.lojaesportiva.view;
 
 import com.mycompany.lojaesportiva.controller.Clientecontroller;
-import com.mycompany.lojaesportiva.model.Check;
+import com.mycompany.lojaesportiva.utils.Check;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
@@ -56,7 +56,6 @@ public class CadastroClienteView extends javax.swing.JFrame {
         txtNome = new javax.swing.JTextField();
         lblNascimento = new javax.swing.JLabel();
         txtTelefone = new javax.swing.JFormattedTextField();
-        txtEstadoCivil = new javax.swing.JTextField();
         lblCPF = new javax.swing.JLabel();
         lblSexo = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
@@ -70,6 +69,7 @@ public class CadastroClienteView extends javax.swing.JFrame {
         jrbOutros = new javax.swing.JRadioButton();
         txtCPF = new javax.swing.JTextField();
         txtNascimento = new com.toedter.calendar.JDateChooser();
+        cboEstadocivil = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         btnCancelar = new javax.swing.JButton();
         btnConfirmar = new javax.swing.JButton();
@@ -130,27 +130,6 @@ public class CadastroClienteView extends javax.swing.JFrame {
         txtTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelefoneActionPerformed(evt);
-            }
-        });
-
-        txtEstadoCivil.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtEstadoCivil.setToolTipText("Qual o seu Estado civil ?");
-        txtEstadoCivil.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtEstadoCivilFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtEstadoCivilFocusLost(evt);
-            }
-        });
-        txtEstadoCivil.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                txtEstadoCivilMouseEntered(evt);
-            }
-        });
-        txtEstadoCivil.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtEstadoCivilKeyReleased(evt);
             }
         });
 
@@ -239,6 +218,8 @@ public class CadastroClienteView extends javax.swing.JFrame {
             }
         });
 
+        cboEstadocivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o seu estado civil...", "SOLTEIRO(A)", "CASADO(A)", "SEPARADO(A)", "DIVORCIADO(A)", "VIUVO(A)" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -259,22 +240,25 @@ public class CadastroClienteView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtEndereço))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(lblCPF))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblEstadoCivil)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtEstadoCivil))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblSexo)
-                            .addComponent(lblNascimento))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jrbMasculino)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jrbFeminino)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jrbOutros)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addComponent(lblCPF))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblSexo)
+                                    .addComponent(lblNascimento))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jrbMasculino)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jrbFeminino)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jrbOutros))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblEstadoCivil)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cboEstadocivil, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(61, 61, 61)
@@ -317,9 +301,9 @@ public class CadastroClienteView extends javax.swing.JFrame {
                     .addComponent(jrbFeminino)
                     .addComponent(jrbOutros))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEstadoCivil))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblEstadoCivil)
+                    .addComponent(cboEstadocivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTelefone)
@@ -331,7 +315,7 @@ public class CadastroClienteView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCPF, txtEmail, txtEndereço, txtEstadoCivil, txtNome});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCPF, txtEmail, txtEndereço, txtNome});
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -469,6 +453,7 @@ public class CadastroClienteView extends javax.swing.JFrame {
         valid.Validsize(txtCPF);
         valid.ValidSex(GrupoSexo);
         valid.ValidVoid(txtEndereço);
+        valid.ValidCBO(cboEstadocivil.getSelectedIndex());
         
         if(valid.temErro()){
             JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
@@ -478,7 +463,7 @@ public class CadastroClienteView extends javax.swing.JFrame {
             cpf = txtCPF.getText();
             nascimento = txtNascimento.getDate();
             sexo = GrupoSexo.getSelection().getActionCommand();
-            estadocivil = txtEstadoCivil.getText();
+            estadocivil = cboEstadocivil.getSelectedItem().toString();
             telefone = txtTelefone.getText().trim().replace("(", "").replace(")", "").replace("-", "");
             endereco = txtEndereço.getText();
         int confirm = JOptionPane.showConfirmDialog(this, "Confirme os seus dados: " +"\n" 
@@ -512,6 +497,7 @@ public class CadastroClienteView extends javax.swing.JFrame {
         valid.Validsize(txtCPF);
         valid.ValidSex(GrupoSexo);
         valid.ValidVoid(txtEndereço);
+        valid.ValidCBO(cboEstadocivil.getSelectedIndex());
         
         if(valid.temErro()){
             JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
@@ -522,7 +508,7 @@ public class CadastroClienteView extends javax.swing.JFrame {
          cpf = txtCPF.getText();
          nascimento = txtNascimento.getDate();
          sexo = GrupoSexo.getSelection().getActionCommand();
-         estadocivil = txtEstadoCivil.getText();
+         estadocivil = cboEstadocivil.getSelectedItem().toString();
          telefone = txtTelefone.getText().trim().replace("(", "").replace(")", "").replace("-", "");
          endereco = txtEndereço.getText();
         int confirm = JOptionPane.showConfirmDialog(this, "Confirme os seus dados: " +"\n" 
@@ -574,14 +560,6 @@ public class CadastroClienteView extends javax.swing.JFrame {
         txtEndereço.setText(txtEndereço.getText().toUpperCase());
     }//GEN-LAST:event_txtEndereçoKeyReleased
 
-    private void txtEstadoCivilFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEstadoCivilFocusGained
-        txtEstadoCivil.setBackground(Color.lightGray);
-    }//GEN-LAST:event_txtEstadoCivilFocusGained
-
-    private void txtEstadoCivilKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoCivilKeyReleased
-        txtEstadoCivil.setText(txtEstadoCivil.getText().toUpperCase());
-    }//GEN-LAST:event_txtEstadoCivilKeyReleased
-
     private void txtCPFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCPFKeyTyped
         if(txtCPF.getText().length()>=11){
             evt.consume();
@@ -600,10 +578,6 @@ public class CadastroClienteView extends javax.swing.JFrame {
     private void txtNomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNomeMouseEntered
         txtExemplo.setText("Digite seu Nome Completo");
     }//GEN-LAST:event_txtNomeMouseEntered
-
-    private void txtEstadoCivilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEstadoCivilMouseEntered
-        txtExemplo.setText("Exemplo: SOLTEIRO, CASADO, SEPARADO, DIVORCIADO e VIÚVO");
-    }//GEN-LAST:event_txtEstadoCivilMouseEntered
 
     private void txtEndereçoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEndereçoMouseEntered
         txtExemplo.setText("Exemplo: Bairro, Rua, Número residencial");
@@ -628,10 +602,6 @@ public class CadastroClienteView extends javax.swing.JFrame {
     private void txtEndereçoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEndereçoFocusLost
         txtEndereço.setBackground(Color.white);
     }//GEN-LAST:event_txtEndereçoFocusLost
-
-    private void txtEstadoCivilFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEstadoCivilFocusLost
-        txtEstadoCivil.setBackground(Color.white);
-    }//GEN-LAST:event_txtEstadoCivilFocusLost
 
     private void txtTelefoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefoneFocusGained
         txtTelefone.setBackground(Color.lightGray);
@@ -687,6 +657,7 @@ public class CadastroClienteView extends javax.swing.JFrame {
     private javax.swing.ButtonGroup GrupoSexo;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnConfirmar;
+    private javax.swing.JComboBox<String> cboEstadocivil;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -707,7 +678,6 @@ public class CadastroClienteView extends javax.swing.JFrame {
     private javax.swing.JTextField txtCPF;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEndereço;
-    private javax.swing.JTextField txtEstadoCivil;
     private javax.swing.JLabel txtExemplo;
     private com.toedter.calendar.JDateChooser txtNascimento;
     private javax.swing.JTextField txtNome;
@@ -726,14 +696,36 @@ public class CadastroClienteView extends javax.swing.JFrame {
         case "M":
             jrbMasculino.setSelected(true);
         break;
+        
         case "F":
             jrbFeminino.setSelected(true);
         break;
+        
         case "O":
             jrbOutros.setSelected(true);
         break;
     }
-    txtEstadoCivil.setText(cli[6]);
+    switch(cli[6]){
+        case "SOLTEIRO(A)":
+            cboEstadocivil.setSelectedIndex(1);
+        break;
+        
+        case "CASADO(A)":
+            cboEstadocivil.setSelectedIndex(2);
+        break;
+        
+        case "SEPARADO(A)":
+            cboEstadocivil.setSelectedIndex(3);
+        break;
+        
+        case "DIVORCIADO(A)":
+            cboEstadocivil.setSelectedIndex(4);
+        break;
+        
+        case "VIUVO(A)":
+            cboEstadocivil.setSelectedIndex(5);
+        break;
+    }
     txtTelefone.setText(cli[7]);
     txtEndereço.setText(cli[8]);
     }
