@@ -261,9 +261,6 @@ public class VendasView extends javax.swing.JFrame {
         spnAdidasBolas = new javax.swing.JSpinner();
         jLabel35 = new javax.swing.JLabel();
         spnPumaBolas = new javax.swing.JSpinner();
-        tblResumo = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabelaResumo = new javax.swing.JTable();
         JPanel = new javax.swing.JPanel();
         chkGarantia = new javax.swing.JCheckBox();
         chkDesconto = new javax.swing.JCheckBox();
@@ -730,11 +727,11 @@ public class VendasView extends javax.swing.JFrame {
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addGap(50, 50, 50))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1094,11 +1091,11 @@ public class VendasView extends javax.swing.JFrame {
 
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tamanhos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
-        grupoTamanhoShort.add(rboC8);
+        grupoTamanhoCalca.add(rboC8);
         rboC8.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboC8.setText("34 à 37");
 
-        grupoTamanhoShort.add(rboC9);
+        grupoTamanhoCalca.add(rboC9);
         rboC9.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         rboC9.setText("38 à 45");
 
@@ -1512,48 +1509,6 @@ public class VendasView extends javax.swing.JFrame {
 
         painelGuias.addTab("Bolas", jPanel11);
 
-        tabelaResumo.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Cliente", "Luvas", "GYM", "Tênis", "Bolas", "Calças", "Shorts", "Camisetas", "Valor Total"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(tabelaResumo);
-        if (tabelaResumo.getColumnModel().getColumnCount() > 0) {
-            tabelaResumo.getColumnModel().getColumn(0).setHeaderValue("Cliente");
-            tabelaResumo.getColumnModel().getColumn(3).setHeaderValue("Tênis");
-            tabelaResumo.getColumnModel().getColumn(4).setHeaderValue("Bolas");
-            tabelaResumo.getColumnModel().getColumn(5).setHeaderValue("Calças");
-            tabelaResumo.getColumnModel().getColumn(6).setHeaderValue("Shorts");
-            tabelaResumo.getColumnModel().getColumn(7).setHeaderValue("Camisetas");
-            tabelaResumo.getColumnModel().getColumn(8).setHeaderValue("Valor Total");
-        }
-
-        javax.swing.GroupLayout tblResumoLayout = new javax.swing.GroupLayout(tblResumo);
-        tblResumo.setLayout(tblResumoLayout);
-        tblResumoLayout.setHorizontalGroup(
-            tblResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tblResumoLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        tblResumoLayout.setVerticalGroup(
-            tblResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
-        );
-
-        painelGuias.addTab("Resumo", tblResumo);
-
         JPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Serviços", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
         chkGarantia.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
@@ -1924,8 +1879,13 @@ public class VendasView extends javax.swing.JFrame {
         }
         txtCPFCompra.setBackground(Color.white);
         painelGuias.setSelectedIndex(6);
-        DefaultTableModel model = (DefaultTableModel) tabelaResumo.getModel();
-        model.addRow(new Object[]{txtCPFCompra.getText(), marcasLuvas, acessoriosGYM, marcasTenis, marcasBolas, marcasCalcas, marcasShorts, marcasCamisetas});
+        String CPF = txtCPFCompra.getText();
+        ProdutosVendidos tela = new ProdutosVendidos (this, false);
+        tela.setVisible(true);
+        ProdutosVendidos tabelas = new ProdutosVendidos(CPF , marcasLuvas, acessoriosGYM, marcasTenis, marcasBolas, marcasCalcas, marcasShorts, marcasCamisetas);
+        tabelas.setVisible(true);
+//        DefaultTableModel model = (DefaultTableModel) tabelaResumo.getModel();
+//        model.addRow(new Object[]{txtCPFCompra.getText(), marcasLuvas, acessoriosGYM, marcasTenis, marcasBolas, marcasCalcas, marcasShorts, marcasCamisetas});
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void chkKitGYMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkKitGYMActionPerformed
@@ -2101,7 +2061,6 @@ public class VendasView extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTabbedPane painelGuias;
     private javax.swing.JRadioButton rboC1;
@@ -2141,8 +2100,6 @@ public class VendasView extends javax.swing.JFrame {
     private javax.swing.JSpinner spnPumaShort;
     private javax.swing.JSpinner spnPumaTenis;
     private javax.swing.JSpinner spnSimuladorGYM;
-    private javax.swing.JTable tabelaResumo;
-    private javax.swing.JPanel tblResumo;
     private javax.swing.JTextField txtCPFCompra;
     // End of variables declaration//GEN-END:variables
 
