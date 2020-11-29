@@ -5,6 +5,8 @@
  */
 package com.mycompany.lojaesportiva.model;
 
+import java.util.Date;
+
 /**
  *
  * @author rrmat
@@ -14,7 +16,7 @@ public class Cliente {
     private String Nome;
     private String Email;
     private String CPF;
-    private String Nascimento;
+    private Date Nascimento;
     private String Sexo;
     private String EstadoCivil;
     private String Telefone;
@@ -57,11 +59,11 @@ public class Cliente {
         this.CPF = CPF;
     }
 
-    public String getNascimento() {
+    public Date getNascimento() {
         return Nascimento;
     }
 
-    public void setNascimento(String Nascimento) {
+    public void setNascimento(Date Nascimento) {
         this.Nascimento = Nascimento;
     }
 

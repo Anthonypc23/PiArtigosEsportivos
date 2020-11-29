@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -37,7 +38,7 @@ public class ClienteDAO {
            InstrucaoSQL.setString(1, cli.getNome());
            InstrucaoSQL.setString(2, cli.getEmail());
            InstrucaoSQL.setString(3, cli.getCPF());
-           InstrucaoSQL.setString(4, cli.getNascimento());
+           InstrucaoSQL.setDate(4, new java.sql.Date(cli.getNascimento().getTime()));
            InstrucaoSQL.setString(5, cli.getSexo());
            InstrucaoSQL.setString(6, cli.getEstadoCivil());
            InstrucaoSQL.setString(7, cli.getTelefone());
@@ -83,7 +84,7 @@ public class ClienteDAO {
             cli.setNome(rs.getString("nome"));
             cli.setEmail(rs.getString("email"));
             cli.setCPF(rs.getString("CPF"));
-            cli.setNascimento(rs.getString("nascimento"));
+            cli.setNascimento(new Date (rs.getDate("nascimento").getTime()));
             cli.setSexo(rs.getString("sexo"));
             cli.setEstadoCivil(rs.getString("estadocivil"));
             cli.setTelefone(rs.getString("telefone"));
@@ -133,7 +134,7 @@ public class ClienteDAO {
               cli.setNome(rs.getString("nome"));
               cli.setEmail(rs.getString("email"));
               cli.setCPF(rs.getString("CPF"));
-              cli.setNascimento(rs.getString("nascimento"));
+              cli.setNascimento(new Date (rs.getDate("nascimento").getTime()));
               cli.setSexo(rs.getString("sexo"));
               cli.setEstadoCivil(rs.getString("estadocivil"));
               cli.setTelefone(rs.getString("telefone"));
@@ -175,7 +176,7 @@ public class ClienteDAO {
            InstrucaoSQL.setString(1, cli.getNome());
            InstrucaoSQL.setString(2, cli.getEmail());
            InstrucaoSQL.setString(3, cli.getCPF());
-           InstrucaoSQL.setString(4, cli.getNascimento());
+           InstrucaoSQL.setDate(4, new java.sql.Date(cli.getNascimento().getTime()));
            InstrucaoSQL.setString(5, cli.getSexo());
            InstrucaoSQL.setString(6, cli.getEstadoCivil());
            InstrucaoSQL.setString(7, cli.getTelefone());
