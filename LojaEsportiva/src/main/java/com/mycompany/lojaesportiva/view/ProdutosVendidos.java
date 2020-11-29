@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.lojaesportiva.view;
 
-/**
- *
- * @author k
- */
+import javax.swing.table.DefaultTableModel;
+
 public class ProdutosVendidos extends javax.swing.JDialog {
 
     /**
@@ -17,8 +10,26 @@ public class ProdutosVendidos extends javax.swing.JDialog {
     public ProdutosVendidos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
-
+    
+    public ProdutosVendidos(String CPF, String marcasLuvas, String acessoriosGYM, String marcasTenis, String marcasBolas, String marcasCalcas, String marcasShorts, String marcasCamisetas){
+        DefaultTableModel model = (DefaultTableModel) tblBolas.getModel();
+        model.addRow(new Object[]{marcasBolas});
+        DefaultTableModel model2 = (DefaultTableModel) tblCalca.getModel();
+        model2.addRow(new Object[]{marcasCalcas});
+        DefaultTableModel model3 = (DefaultTableModel) tblCamiseta.getModel();
+        model3.addRow(new Object[]{marcasCamisetas});
+        DefaultTableModel model4 = (DefaultTableModel) tblGYM.getModel();
+        model4.addRow(new Object[]{acessoriosGYM});
+        DefaultTableModel model5 = (DefaultTableModel) tblLuvas.getModel();
+        model5.addRow(new Object[]{marcasLuvas});
+        DefaultTableModel model6 = (DefaultTableModel) tblShort.getModel();
+        model6.addRow(new Object[]{marcasShorts});
+        DefaultTableModel model7 = (DefaultTableModel) tblTenis.getModel();
+        model7.addRow(new Object[]{marcasTenis});
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,19 +42,19 @@ public class ProdutosVendidos extends javax.swing.JDialog {
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable6 = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblBolas = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblCalca = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tblShort = new javax.swing.JTable();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
+        tblLuvas = new javax.swing.JTable();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tblTenis = new javax.swing.JTable();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jTable8 = new javax.swing.JTable();
+        tblCamiseta = new javax.swing.JTable();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTable10 = new javax.swing.JTable();
+        tblGYM = new javax.swing.JTable();
 
         jTable6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -62,7 +73,7 @@ public class ProdutosVendidos extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblBolas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -70,9 +81,9 @@ public class ProdutosVendidos extends javax.swing.JDialog {
                 "Bolas - Marcas", "Bolas - Quantidade", "Bolas - Tamanhos"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblBolas);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblCalca.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -80,9 +91,9 @@ public class ProdutosVendidos extends javax.swing.JDialog {
                 "Calça - Marcas", "Calça - Quantidades", "Calça - Tamanhos"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tblCalca);
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tblShort.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -90,9 +101,9 @@ public class ProdutosVendidos extends javax.swing.JDialog {
                 "Shorts - Marcas", "Shorts - Quantidades", "Shorts - Tamanhos"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(tblShort);
 
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+        tblLuvas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -100,14 +111,14 @@ public class ProdutosVendidos extends javax.swing.JDialog {
                 "Luvas - Marcas", "Luvas - Quantidades", "Luvas - Tamanhos"
             }
         ));
-        jScrollPane7.setViewportView(jTable7);
-        if (jTable7.getColumnModel().getColumnCount() > 0) {
-            jTable7.getColumnModel().getColumn(0).setHeaderValue("Luvas - Marcas");
-            jTable7.getColumnModel().getColumn(1).setHeaderValue("Luvas - Quantidades");
-            jTable7.getColumnModel().getColumn(2).setHeaderValue("Luvas - Tamanhos");
+        jScrollPane7.setViewportView(tblLuvas);
+        if (tblLuvas.getColumnModel().getColumnCount() > 0) {
+            tblLuvas.getColumnModel().getColumn(0).setHeaderValue("Luvas - Marcas");
+            tblLuvas.getColumnModel().getColumn(1).setHeaderValue("Luvas - Quantidades");
+            tblLuvas.getColumnModel().getColumn(2).setHeaderValue("Luvas - Tamanhos");
         }
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tblTenis.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -115,9 +126,9 @@ public class ProdutosVendidos extends javax.swing.JDialog {
                 "Tênis - Marcas", "Tênis - Quantidades", "Tênis - Tamanhos"
             }
         ));
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(tblTenis);
 
-        jTable8.setModel(new javax.swing.table.DefaultTableModel(
+        tblCamiseta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -125,9 +136,9 @@ public class ProdutosVendidos extends javax.swing.JDialog {
                 "Camisetas - Marcas", "Camisetas - Quantidades", "Camisetas - Tamanhos"
             }
         ));
-        jScrollPane8.setViewportView(jTable8);
+        jScrollPane8.setViewportView(tblCamiseta);
 
-        jTable10.setModel(new javax.swing.table.DefaultTableModel(
+        tblGYM.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -135,7 +146,7 @@ public class ProdutosVendidos extends javax.swing.JDialog {
                 "GYM - Acessórios", "GYM - Quantidades", "GYM - Peso"
             }
         ));
-        jScrollPane10.setViewportView(jTable10);
+        jScrollPane10.setViewportView(tblGYM);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -236,13 +247,13 @@ public class ProdutosVendidos extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable10;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
-    private javax.swing.JTable jTable7;
-    private javax.swing.JTable jTable8;
+    private javax.swing.JTable tblBolas;
+    private javax.swing.JTable tblCalca;
+    private javax.swing.JTable tblCamiseta;
+    private javax.swing.JTable tblGYM;
+    private javax.swing.JTable tblLuvas;
+    private javax.swing.JTable tblShort;
+    private javax.swing.JTable tblTenis;
     // End of variables declaration//GEN-END:variables
 }
