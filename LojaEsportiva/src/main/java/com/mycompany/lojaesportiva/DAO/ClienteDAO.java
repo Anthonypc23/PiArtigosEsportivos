@@ -229,4 +229,46 @@ public class ClienteDAO {
       
         return retorno;
     }
+  
+  public static Cliente ConsultaCPF(String CPF){
+       Connection conexao = null;
+       PreparedStatement InstrucaoSQL = null;
+       ResultSet rs = null;
+       Cliente cliente = new Cliente();
+       
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conexao = DriverManager.getConnection(URL,LOGIN,SENHA);
+            
+            InstrucaoSQL = conexao.prepareStatement("SELECT * FROM Cliente WHERE CPF LIKE ?");
+            InstrucaoSQL.setString(1, CPF);
+            rs = InstrucaoSQL.executeQuery();
+            
+            while(rs.next()){
+              Cliente cli = new Cliente();
+              cli.setIdCliente(rs.getInt("IdCliente"));
+              cliente = cli;
+            }
+            
+        } catch (Exception e) {
+         }finally{
+            if(InstrucaoSQL!=null){
+                try {
+                    InstrucaoSQL.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if(conexao!=null){
+                try {
+                    conexao.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+       
+        return cliente;
+    }
+  
 }

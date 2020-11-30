@@ -87,4 +87,11 @@ public class Clientecontroller {
         
         return ClienteDAO.Excluir(pID);
     }
+    
+      public static int ConsultaCPF(String CPF){
+        Cliente cli = ClienteDAO.ConsultaCPF(CPF);
+       int ClienteRetorno = cli.getIdCliente();
+           
+        return ClienteRetorno;
+    }
 }

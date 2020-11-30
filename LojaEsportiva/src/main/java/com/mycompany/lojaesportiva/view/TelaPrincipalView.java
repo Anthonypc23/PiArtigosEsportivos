@@ -131,6 +131,11 @@ public class TelaPrincipalView extends javax.swing.JFrame {
         jMenu4.setMnemonic('s');
         jMenu4.setText("Mercado");
         jMenu4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMenu4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu4ActionPerformed(evt);
+            }
+        });
 
         jmiVendas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
         jmiVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/shopping-icon.png"))); // NOI18N
@@ -202,8 +207,8 @@ public class TelaPrincipalView extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiClienteActionPerformed
 
     private void jmiVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiVendasActionPerformed
-       VendasView telaV = new VendasView();
-       telaV.setVisible(true);
+      LojaView loja = new LojaView();
+      loja.setVisible(true);
     }//GEN-LAST:event_jmiVendasActionPerformed
 
     private void jmiRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRelatorioActionPerformed
@@ -215,6 +220,10 @@ public class TelaPrincipalView extends javax.swing.JFrame {
        LoginView log = new LoginView(this, true);
        log.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu4ActionPerformed
 
     /**
      * @param args the command line arguments
