@@ -1,15 +1,17 @@
 package com.mycompany.lojaesportiva.view;
 
+/**
+ * Classe principal para fazer todo o uso do sistema
+ * @author Wesley
+ */
 public class TelaPrincipalView extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaPrincipal
+     * Cria uma nova forma TelaPrincipal
      */
     public TelaPrincipalView() {
         initComponents();
-        
         this.setExtendedState(MAXIMIZED_BOTH);
-        
     }
 
     /**

@@ -9,19 +9,27 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+/**
+ * Classe para cadastrar os produtos em interface
+ * @author Wesley
+ */
 public class CadastroProdutoView extends javax.swing.JFrame {
 
     int IdProduto = 0;
     String modo = "Criar";
     
     /**
-     * Creates new form CadastroProduto
+     * Cria uma nova forma de CadastroCliente
      */
     public CadastroProdutoView() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
+    
+    /**
+     * Verifica qual modo está sendo executado, se é o modo de criar um cadatro ou de alterar um cadastro
+     * @param IdProduto para cadastrar o produto
+     */
     public CadastroProdutoView(int IdProduto) {
         modo = "Alterar";
         initComponents();
@@ -514,7 +522,11 @@ public class CadastroProdutoView extends javax.swing.JFrame {
     private javax.swing.JTextField txtQuantidade;
     private javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
-
+    
+    /**
+     * Método pega o id do produto, chama uma função para verificar os dados com base naquele id e preenche o formulário
+     * @param IdProduto int a ser verificado 
+     */
     private void preencherFormulario(int IdProduto) {
         String[] prod = ProdutoController.ProdutoID(IdProduto);
   

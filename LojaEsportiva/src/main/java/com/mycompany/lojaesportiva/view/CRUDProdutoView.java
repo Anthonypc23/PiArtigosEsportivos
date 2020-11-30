@@ -9,10 +9,14 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * Classe para fazer o CRUD dos produtos cadastrados
+ * @author Wesley
+ */
 public class CRUDProdutoView extends javax.swing.JFrame {
 
     /**
-     * Creates new form CadastroProdutoView
+     * Cria uma nova forma de CadastroCliente
      */
     public CRUDProdutoView() {
         initComponents();

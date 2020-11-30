@@ -34,6 +34,6 @@ public class VendaController {
         
         venda.setListaVenda(ListaItemVenda);
         
-  return VendaDAO.CadastrarVenda(venda);  
+    return VendaDAO.CadastrarVenda(venda);  
     }
 }

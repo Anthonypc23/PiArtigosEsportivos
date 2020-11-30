@@ -1,9 +1,13 @@
 package com.mycompany.lojaesportiva.view;
 
+/**
+ * Classe para mostrar os detalhes da venda
+ * @author Gabriel
+ */
 public class TelaRelatorioAnaliticoView extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaRelatorioAnalitico
+     * Cria uma nova forma TelaRelatorioAnalitico
      */
     public TelaRelatorioAnaliticoView() {
         initComponents();
