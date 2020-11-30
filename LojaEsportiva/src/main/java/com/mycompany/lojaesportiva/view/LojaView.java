@@ -12,7 +12,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableModel;
 
 public class LojaView extends javax.swing.JFrame {
-    double ValorTotal = 0;
+    float ValorTotal = 0;
     /**
      * Creates new form Loja
      */
@@ -141,7 +141,7 @@ public class LojaView extends javax.swing.JFrame {
                     .addGroup(jpLojaLayout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addComponent(jButton3)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jpLojaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCodProd, txtTamanho});
@@ -189,11 +189,11 @@ public class LojaView extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Quantidade", "Tamanho", "Valor"
+                "Id Produto", "Nome", "Quantidade", "Tamanho", "Valor"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true, true
+                false, false, true, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -255,7 +255,7 @@ public class LojaView extends javax.swing.JFrame {
                                 .addGap(55, 55, 55)
                                 .addComponent(jButton5)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(0, 27, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jpCarinhoLayout.setVerticalGroup(
             jpCarinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,7 +281,7 @@ public class LojaView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jtpLoja, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jtpLoja, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -305,11 +305,11 @@ public class LojaView extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         String Quantidade = spnQuantidade.getValue().toString();
-        double Valor = (Double.parseDouble(lblValor.getText()))*(Integer.parseInt(Quantidade));
-        ValorTotal += Valor;
         if(VerificaQTd(Integer.parseInt(Quantidade),Integer.parseInt(txtCodProd.getText()))){
+        float Valor = (Float.parseFloat(lblValor.getText()))*(Integer.parseInt(Quantidade));
+        ValorTotal += Valor;
         DefaultTableModel model = (DefaultTableModel) jtbCarrinho.getModel();
-        model.addRow(new Object[]{lblNome.getText(),Quantidade,txtTamanho.getText(),String.valueOf(Valor)});
+        model.addRow(new Object[]{txtCodProd.getText(),lblNome.getText(),Quantidade,txtTamanho.getText(),String.valueOf(Valor)});
         lblValorTotal.setText(String.valueOf(ValorTotal));
         jtpLoja.setSelectedIndex(1);
         }else{
@@ -329,11 +329,14 @@ public class LojaView extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
      DefaultTableModel modelo = (DefaultTableModel) jtbCarrinho.getModel();
             int indiceLinha = -1;
-            double Valor = 0;
+            float Valor = 0;
              indiceLinha = jtbCarrinho.getSelectedRow();
              if(indiceLinha>=0){
-                 Valor = Double.parseDouble(jtbCarrinho.getValueAt(indiceLinha, 3).toString());
+                 Valor = Float.parseFloat(jtbCarrinho.getValueAt(indiceLinha, 4).toString());
                  ValorTotal -= Valor;
+//                 if(ValorTotal<0){
+//                     ValorTotal = 0;
+//                 }
                  lblValorTotal.setText(String.valueOf(ValorTotal));
                  modelo.removeRow(indiceLinha);
              }else{
@@ -366,10 +369,11 @@ public class LojaView extends javax.swing.JFrame {
                 jtbCarrinho.getValueAt(i, 1).toString(),
                 jtbCarrinho.getValueAt(i, 2).toString(),
                 jtbCarrinho.getValueAt(i, 3).toString(),
+                jtbCarrinho.getValueAt(i, 4).toString(),
             });
         }
          
-        if(VendaController.CadastrarVenda(data, Double.parseDouble(lblValorTotal.getText()), idCliente,itensVenda)){
+        if(VendaController.CadastrarVenda(data, Float.parseFloat(lblValorTotal.getText()), idCliente,itensVenda)){
           JOptionPane.showMessageDialog(this, "Venda realizada com Sucesso"+vend.getIdVenda());
         }else{
           JOptionPane.showMessageDialog(this, "Erro ao Realizar a Venda");

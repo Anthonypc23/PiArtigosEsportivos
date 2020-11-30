@@ -12,7 +12,7 @@ import java.util.Date;
  */
 public class VendaController {
     
-    public static boolean CadastrarVenda(Date pData,double pValorTotal,int pFKIDCLiente,ArrayList<String[]> pItensVenda){
+    public static boolean CadastrarVenda(Date pData,float pValorTotal,int pFKIDCLiente,ArrayList<String[]> pItensVenda){
      
     Vendas venda = new Vendas();
     venda.setData(pData);
@@ -23,10 +23,11 @@ public class VendaController {
         
         for (String[] item : pItensVenda) {
             itemVenda itemAdicionar = new itemVenda();
-            itemAdicionar.setDescricao(item[0]);
-            itemAdicionar.setQuantidade(Integer.parseInt(item[1]));
-            itemAdicionar.setTamanho(item[2]);
-            itemAdicionar.setValor(Double.parseDouble(item[3]));
+            itemAdicionar.setIdProduto(Integer.parseInt(item[0]));
+            itemAdicionar.setDescricao(item[1]);
+            itemAdicionar.setQuantidade(Integer.parseInt(item[2]));
+            itemAdicionar.setTamanho(item[3]);
+            itemAdicionar.setValor(Float.parseFloat(item[4]));
             
             ListaItemVenda.add(itemAdicionar);
         }

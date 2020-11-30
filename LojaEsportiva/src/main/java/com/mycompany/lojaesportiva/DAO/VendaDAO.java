@@ -31,7 +31,7 @@ public class VendaDAO {
            
            InstrucaoSQL = conexao.prepareStatement("INSERT INTO Venda(dataVenda,ValorTotal,idCliente) VALUES(?,?,?)", Statement.RETURN_GENERATED_KEYS);
            InstrucaoSQL.setDate(1, new java.sql.Date(venda.getData().getTime()));
-           InstrucaoSQL.setDouble(2, venda.getValorFinal());
+           InstrucaoSQL.setFloat(2, venda.getValorFinal());
            InstrucaoSQL.setInt(3, venda.getFKIDCLiente());
            int linhasafetadas = InstrucaoSQL.executeUpdate();
            
@@ -44,16 +44,23 @@ public class VendaDAO {
                         
                         for (itemVenda item : venda.getListaVenda()) {
                             
-                             PreparedStatement instrucaoSQLDetalhe = conexao.prepareStatement("INSERT INTO itemVenda (idVenda,descricao,qtd) VALUES(?,?,?)"
+                             PreparedStatement instrucaoSQLItem = conexao.prepareStatement("INSERT INTO itemVenda (idVenda,descricao,qtd,valor,idProduto) VALUES(?,?,?,?,?)"
                                                     , Statement.RETURN_GENERATED_KEYS);  //Caso queira retornar o ID
             
                             //Adiciono os parâmetros ao meu comando SQL
-                            instrucaoSQLDetalhe.setInt(1, venda.getIdVenda());
-                            instrucaoSQLDetalhe.setString(2, item.getDescricao());
-                            instrucaoSQLDetalhe.setInt(3, item.getQuantidade());
+                            instrucaoSQLItem.setInt(1, venda.getIdVenda());
+                            instrucaoSQLItem.setString(2, item.getDescricao());
+                            instrucaoSQLItem.setInt(3, item.getQuantidade());
+                            instrucaoSQLItem.setFloat(4, item.getValor());
+                            instrucaoSQLItem.setInt(5, item.getIdProduto());
                             
+                          PreparedStatement  instrucaoSQLDecrementacao = conexao.prepareStatement("UPDATE Produto SET QuantidadeProduto = QuantidadeProduto-? where idProduto = ?;");
+                            instrucaoSQLDecrementacao.setInt(1, item.getQuantidade());
+                            instrucaoSQLDecrementacao.setInt(2, item.getIdProduto());
+//                            
                             
-                             int itensAfetados = instrucaoSQLDetalhe.executeUpdate();
+                             int itensAfetados = instrucaoSQLItem.executeUpdate();
+                             int itensAfetados2 = instrucaoSQLDecrementacao.executeUpdate();
                              if(itensAfetados<0){
                                  throw new SQLException("Falha ao inserir itens da Nota Fiscal!.");
                              }
