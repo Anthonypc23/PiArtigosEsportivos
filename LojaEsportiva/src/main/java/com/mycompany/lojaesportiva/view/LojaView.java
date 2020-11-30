@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.lojaesportiva.view;
 
 import com.mycompany.lojaesportiva.controller.Clientecontroller;
@@ -10,19 +5,14 @@ import com.mycompany.lojaesportiva.controller.ProdutoController;
 import com.mycompany.lojaesportiva.controller.VendaController;
 import com.mycompany.lojaesportiva.model.Vendas;
 import com.mycompany.lojaesportiva.utils.Check;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author rrmat
- */
 public class LojaView extends javax.swing.JFrame {
-double ValorTotal = 0;
+    double ValorTotal = 0;
     /**
      * Creates new form Loja
      */

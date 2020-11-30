@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.lojaesportiva.controller;
 
 import com.mycompany.lojaesportiva.DAO.VendaDAO;
-import static com.mycompany.lojaesportiva.controller.VendaController.CadastrarVenda;
 import com.mycompany.lojaesportiva.model.Vendas;
 import com.mycompany.lojaesportiva.model.itemVenda;
 import java.util.ArrayList;
