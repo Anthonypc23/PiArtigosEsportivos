@@ -7,6 +7,7 @@ package com.mycompany.lojaesportiva.DAO;
 
 import static com.mycompany.lojaesportiva.DAO.ClienteDAO.URL;
 import com.mycompany.lojaesportiva.model.Vendas;
+import com.mycompany.lojaesportiva.model.itemVenda;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -43,9 +44,27 @@ public class VendaDAO {
            if(linhasafetadas>0){
                retorno = true;
                
-                ResultSet generatedKeys = InstrucaoSQL.getGeneratedKeys(); //Recupero o ID do cliente
-                if (generatedKeys.next()) {
-                        venda.setIdVenda(generatedKeys.getInt(1));
+               ResultSet chavesGeradas = InstrucaoSQL.getGeneratedKeys(); //Recupero o ID da nota fiscal
+                if (chavesGeradas.next()) {
+                        venda.setIdVenda(chavesGeradas.getInt(1));
+                        
+                        for (itemVenda item : venda.getListaVenda()) {
+                            
+                             PreparedStatement instrucaoSQLDetalhe = conexao.prepareStatement("INSERT INTO itemVenda (idVenda,descricao,qtd) VALUES(?,?,?)"
+                                                    , Statement.RETURN_GENERATED_KEYS);  //Caso queira retornar o ID
+            
+                            //Adiciono os parâmetros ao meu comando SQL
+                            instrucaoSQLDetalhe.setInt(1, venda.getIdVenda());
+                            instrucaoSQLDetalhe.setString(2, item.getDescricao());
+                            instrucaoSQLDetalhe.setInt(3, item.getQuantidade());
+                            
+                            
+                             int itensAfetados = instrucaoSQLDetalhe.executeUpdate();
+                             if(itensAfetados<0){
+                                 throw new SQLException("Falha ao inserir itens da Nota Fiscal!.");
+                             }
+                        }
+                        
                 }else {
                         throw new SQLException("Falha ao obter o ID da Nota Fiscal!.");
                 }

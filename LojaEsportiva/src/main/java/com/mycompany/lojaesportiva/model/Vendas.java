@@ -1,6 +1,7 @@
 
 package com.mycompany.lojaesportiva.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Vendas {
@@ -10,7 +11,17 @@ public class Vendas {
     private double[] Valor;
     private int []  quantidade;
     private int IdVenda;
-    
+    ArrayList<itemVenda> ListaVenda;
+
+    public ArrayList<itemVenda> getListaVenda() {
+        return ListaVenda;
+    }
+
+    public void setListaVenda(ArrayList<itemVenda> ListaVenda) {
+        this.ListaVenda = ListaVenda;
+    }
+
+   
     
     public Vendas() {
     }
