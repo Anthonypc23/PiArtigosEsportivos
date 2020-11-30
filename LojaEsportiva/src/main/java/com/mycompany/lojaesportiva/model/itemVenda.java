@@ -7,8 +7,17 @@ package com.mycompany.lojaesportiva.model;
 public class itemVenda {
     private String descricao;
     private int quantidade;
-    private double Valor;
+    private float Valor;
     private String tamanho;
+    private int IdProduto;
+
+    public int getIdProduto() {
+        return IdProduto;
+    }
+
+    public void setIdProduto(int IdProduto) {
+        this.IdProduto = IdProduto;
+    }
 
     public String getDescricao() {
         return descricao;
@@ -26,11 +35,11 @@ public class itemVenda {
         this.quantidade = quantidade;
     }
 
-    public double getValor() {
+    public float getValor() {
         return Valor;
     }
 
-    public void setValor(double Valor) {
+    public void setValor(float Valor) {
         this.Valor = Valor;
     }
 

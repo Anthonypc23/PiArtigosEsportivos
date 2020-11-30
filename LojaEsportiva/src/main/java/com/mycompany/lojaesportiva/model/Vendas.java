@@ -6,9 +6,7 @@ import java.util.Date;
 public class Vendas {
     private Date data;
     private int FKIDCLiente;
-    private double ValorFinal;
-    private double[] Valor;
-    private int []  quantidade;
+    private float ValorFinal;
     private int IdVenda;
     ArrayList<itemVenda> ListaVenda;
 
@@ -34,11 +32,11 @@ public class Vendas {
     }
     
     
-    public double getValorFinal() {
+    public float getValorFinal() {
         return ValorFinal;
     }
 
-    public void setValorFinal(double ValorFinal) {
+    public void setValorFinal(float ValorFinal) {
         this.ValorFinal = ValorFinal;
     }
 
@@ -57,26 +55,5 @@ public class Vendas {
     public void setFKIDCLiente(int FKIDCLiente) {
         this.FKIDCLiente = FKIDCLiente;
     }
-    
-    
-
-    public double[] getValor() {
-        return Valor;
-    }
-
-    public void setValor(double[] Valor) {
-        this.Valor = Valor;
-    }
-
-    public int[] getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int[] quantidade) {
-        this.quantidade = quantidade;
-    }
-
- 
-
-    
+   
 }
