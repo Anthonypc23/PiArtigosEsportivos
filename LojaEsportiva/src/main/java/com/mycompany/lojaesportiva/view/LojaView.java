@@ -11,6 +11,7 @@ import com.mycompany.lojaesportiva.controller.VendaController;
 import com.mycompany.lojaesportiva.model.Vendas;
 import com.mycompany.lojaesportiva.utils.Check;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
@@ -159,10 +160,11 @@ double ValorTotal = 0;
             jpLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpLojaLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addGroup(jpLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtCodProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
+                .addGroup(jpLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4)
+                    .addGroup(jpLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(txtCodProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
@@ -267,10 +269,10 @@ double ValorTotal = 0;
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jpCarinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                    .addComponent(jLabel7)
-                    .addComponent(jButton2)
-                    .addComponent(lblValorTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jpCarinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblValorTotal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(jpCarinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -358,7 +360,22 @@ double ValorTotal = 0;
           if(idCliente<=0){
               JOptionPane.showMessageDialog(this, "CPF Invalido");
           }else{
-        if(VendaController.CadastrarVenda(data, Double.parseDouble(lblValorTotal.getText()), ConsultaCPF(txtCPF.getText()))){
+         
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo = (DefaultTableModel) jtbCarrinho.getModel();
+        
+        ArrayList<String[]> itensVenda = new ArrayList<>();
+        
+        for (int i = 0; i < jtbCarrinho.getRowCount(); i++) {
+            itensVenda.add(new String[]{
+                jtbCarrinho.getValueAt(i, 0).toString(),
+                jtbCarrinho.getValueAt(i, 1).toString(),
+                jtbCarrinho.getValueAt(i, 2).toString(),
+                jtbCarrinho.getValueAt(i, 3).toString(),
+            });
+        }
+         
+        if(VendaController.CadastrarVenda(data, Double.parseDouble(lblValorTotal.getText()), idCliente,itensVenda)){
           JOptionPane.showMessageDialog(this, "Venda realizada com Sucesso"+vend.getIdVenda());
         }else{
           JOptionPane.showMessageDialog(this, "Erro ao Realizar a Venda");
