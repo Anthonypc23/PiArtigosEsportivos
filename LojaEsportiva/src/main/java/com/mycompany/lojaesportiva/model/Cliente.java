@@ -3,8 +3,8 @@ package com.mycompany.lojaesportiva.model;
 import java.util.Date;
 
 /**
- *
- * @author rrmat
+ * Classe cria os atributos e métodos especiais do cliente
+ * @author Anthony
  */
 public class Cliente {
     private int IdCliente;
@@ -16,7 +16,10 @@ public class Cliente {
     private String EstadoCivil;
     private String Telefone;
     private String Endereço;
-
+ 
+    /**
+     * Método cria um contrutor vazio
+     */
     public Cliente() {
    
     }

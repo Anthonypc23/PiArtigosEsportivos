@@ -9,10 +9,14 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * Classe fazer o CRUD dos clientes cadastrados
+ * @author Anthony
+ */
 public class CRUDClienteView extends javax.swing.JFrame {
 
     /**
-     * Creates new form CRUDCliente
+     * Cria uma nova forma de CRUDCliente
      */
     public CRUDClienteView() {
         initComponents();
@@ -172,17 +176,14 @@ public class CRUDClienteView extends javax.swing.JFrame {
         for (String[] Cliente : ListarCliente) {
             model.addRow(Cliente);
         }
-       
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void txtNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusGained
         this.txtNome.setBackground(Color.lightGray);
- ;
     }//GEN-LAST:event_txtNomeFocusGained
 
     private void txtNomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusLost
         this.txtNome.setBackground(Color.white);
-     
     }//GEN-LAST:event_txtNomeFocusLost
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed

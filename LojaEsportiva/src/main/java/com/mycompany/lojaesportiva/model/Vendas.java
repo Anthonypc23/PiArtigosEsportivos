@@ -17,8 +17,6 @@ public class Vendas {
     public void setListaVenda(ArrayList<itemVenda> ListaVenda) {
         this.ListaVenda = ListaVenda;
     }
-
-   
     
     public Vendas() {
     }
@@ -30,7 +28,6 @@ public class Vendas {
     public void setIdVenda(int IdVenda) {
         this.IdVenda = IdVenda;
     }
-    
     
     public float getValorFinal() {
         return ValorFinal;
@@ -55,5 +52,4 @@ public class Vendas {
     public void setFKIDCLiente(int FKIDCLiente) {
         this.FKIDCLiente = FKIDCLiente;
     }
-   
 }

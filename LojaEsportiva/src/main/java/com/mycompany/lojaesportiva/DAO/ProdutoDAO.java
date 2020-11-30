@@ -10,12 +10,22 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Classe responsável para fazer todas as manipulações com o jdbc
+ * @author Wesley
+ */
 public class ProdutoDAO {
 
     static String URL = "jdbc:mysql://localhost:3306/lojaesportiva?useTimezone=true&serverTimezone=UTC&useSSL=false";
     static String LOGIN = "root";
     static String SENHA = "";
     
+    /**
+     * Método resgata o objeto e faz o cadastro no jdbc
+     * @param prod objeto da classe produto
+     * @return boolean true: insere o cliente no banco de dados | false: erro no cadastro
+     * @throws SQLException lança para fora a exceção
+     */
     public static boolean Cadastrar (Produto prod) throws SQLException{
         boolean retorno = false;
         Connection conexao = null;
@@ -50,6 +60,12 @@ public class ProdutoDAO {
         return retorno;
     }
     
+    /**
+     * Método resgata os dados e cria uma lista de clientes
+     * @param pnome string a ser verificada
+     * @param pdescricao string a ser verificada
+     * @return arrayList uma lista de produtos
+     */
     public static ArrayList <Produto> ListarProduto (String pnome, String pdescricao){
        Connection conexao = null;
        PreparedStatement InstrucaoSQL = null;
@@ -96,6 +112,11 @@ public class ProdutoDAO {
         return ListaProduto;
     }
     
+    /**
+     * Método resgata o id e faz as alterações
+     * @param IdProduto int a ser verificado
+     * @return retorna um objeto 
+     */
     public static Produto ProdutoId(int IdProduto){
        Connection conexao = null;
        PreparedStatement InstrucaoSQL = null;
@@ -143,6 +164,12 @@ public class ProdutoDAO {
         return produto;
     }
     
+    /**
+     * Método resgata o objeto e faz a alteração no jdbc
+     * @param prod objeto da classe produto
+     * @return boolean true: altera os dados | false: erro na alteração 
+     * @throws SQLException lança para fora a exceção
+     */
     public static boolean Alterar(Produto prod) throws SQLException {
         boolean retorno = false;
         Connection conexao = null;
@@ -179,6 +206,12 @@ public class ProdutoDAO {
         return retorno;
     }
     
+    /**
+     * Método restaga o id e faz a exclução no jdbc
+     * @param pID
+     * @return
+     * @throws SQLException 
+     */
     public static boolean Excluir(int pID) throws SQLException{
       boolean retorno = false;
       Connection conexao = null;

@@ -11,19 +11,27 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+/**
+ * Classe para cadastrar os clientes em interface
+ * @author Anthony
+ */
 public class CadastroClienteView extends javax.swing.JFrame {
     
     int IdCliente = 0;
     String modo = "Criar";
     
     /**
-     * Creates new form CadastroCliente
+     * Cria uma nova forma de CadastroCliente
      */
     public CadastroClienteView() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
     
+    /**
+     * Verifica qual modo está sendo executado, se é o modo de criar um cadatro ou de alterar um cadastro
+     * @param IdCliente para preencher o formulário
+     */
     public CadastroClienteView(int IdCliente) {
         modo = "Alterar";
         initComponents();
@@ -640,8 +648,6 @@ public class CadastroClienteView extends javax.swing.JFrame {
             new CadastroClienteView().setVisible(true);
             }
         });
-        
-        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -675,6 +681,10 @@ public class CadastroClienteView extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Método pega o id do cliente, chama uma função para verificar os dados com base naquele id e preenche o formulário
+     * @param IdCliente int a ser verificado
+     */
     private void preencherFormulario(int IdCliente) {
     String[] cli = Clientecontroller.CLienteID(IdCliente);
     lblid.setText("ID:");
@@ -682,7 +692,6 @@ public class CadastroClienteView extends javax.swing.JFrame {
     txtNome.setText(cli[1]);
     txtEmail.setText(cli[2]);
     txtCPF.setText(cli[3]);
-//    txtNascimento.setDateFormatString(cli[4]);
     switch(cli[5]){
         case "M":
             jrbMasculino.setSelected(true);

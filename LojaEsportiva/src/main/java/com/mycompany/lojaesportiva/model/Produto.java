@@ -1,5 +1,9 @@
 package com.mycompany.lojaesportiva.model;
 
+/**
+ * Classe cria os atributos e métodos especiais do produto
+ * @author Wesley
+ */
 public class Produto {
     
     private int IdProduto;
@@ -8,6 +12,9 @@ public class Produto {
     private String descricao;
     private double valor;
 
+    /**
+     * Método cria um construtor vazio
+     */
     public Produto() {
     }
 
