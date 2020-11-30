@@ -374,6 +374,8 @@ public class CadastroProdutoView extends javax.swing.JFrame {
                 try {
                 if(ProdutoController.Cadastrar(nome, quantidade, descricao, valor)){
                     JOptionPane.showMessageDialog(this, "Cadastrado com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                    CRUDProdutoView tela = new  CRUDProdutoView();
+                    tela.setVisible(true);
                 }else{
                     JOptionPane.showMessageDialog(this, "Erro ao finalizar o cadastro!", "Aviso!", JOptionPane.ERROR_MESSAGE);
                 }  
@@ -412,7 +414,8 @@ public class CadastroProdutoView extends javax.swing.JFrame {
         if(confirm == 0){
                 try {
                 if(ProdutoController.Alterar(Id, nome, quantidade, descricao, valor)){
-                     JOptionPane.showMessageDialog(this, "Alterado com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                    JOptionPane.showMessageDialog(this, "Alterado com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                    this.dispose();
                 }else{
                      JOptionPane.showMessageDialog(this, "Erro ao finalizar a alteração!", "Aviso!", JOptionPane.ERROR_MESSAGE);
                 }  

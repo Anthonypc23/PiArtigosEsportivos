@@ -32,35 +32,31 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblStatus" min="-2" pref="294" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="lblNomeProd" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblQuantProd1" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtDescricao" linkSize="3" max="32767" attributes="0"/>
-                                  <Component id="txtNome" linkSize="3" min="-2" pref="359" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Component id="btnPesquisaTipo" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jScrollPane1" pref="493" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="636" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnExcluir" linkSize="1" min="-2" max="-2" attributes="0"/>
                           <Component id="btnInserir" linkSize="1" min="-2" pref="90" max="-2" attributes="0"/>
                           <Component id="btnAlterar" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="lblStatus" min="-2" pref="294" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lblNomeProd" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblQuantProd1" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtNome" max="32767" attributes="0"/>
+                          <Component id="txtDescricao" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnPesquisaTipo" min="-2" pref="147" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -167,15 +163,21 @@
         <Component class="javax.swing.JTable" name="tabelaProduto">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="0">
+              <Table columnCount="5" rowCount="0">
+                <Column editable="false" title="C&#xf3;digo" type="java.lang.Object"/>
                 <Column editable="false" title="Nome do Produto" type="java.lang.Object"/>
-                <Column editable="false" title="Quantidade do Produto" type="java.lang.Object"/>
-                <Column editable="false" title="Descri&#xe7;&#xe3;o do Produto" type="java.lang.Object"/>
-                <Column editable="false" title="Valor do produto" type="java.lang.Object"/>
+                <Column editable="false" title="Quantidade do produto" type="java.lang.Object"/>
+                <Column editable="false" title="Descri&#xe7;&#xe3;o do produto" type="java.lang.Object"/>
+                <Column editable="true" title="Valor do produto" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>

@@ -19,7 +19,6 @@ public class ProdutoController {
     }
     
     public static ArrayList<String[]> ListarProduto(String pnome, String pdescricao){
-        
         ArrayList <Produto> ListaProduto = ProdutoDAO.ListarProduto(pnome, pdescricao);
         ArrayList <String[]> ListaProdutoRetorno = new ArrayList<>();
         for (Produto prod : ListaProduto) {

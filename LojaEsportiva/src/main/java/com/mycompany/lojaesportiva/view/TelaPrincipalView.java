@@ -38,7 +38,6 @@ public class TelaPrincipalView extends javax.swing.JFrame {
         jmiCRUDProduto = new javax.swing.JMenuItem();
         jmiSair = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jmiCliente = new javax.swing.JMenuItem();
         jmiProduto = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -94,16 +93,6 @@ public class TelaPrincipalView extends javax.swing.JFrame {
         jMenu1.setMnemonic('u');
         jMenu1.setText("Cadastro");
         jMenu1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/User-icon.png"))); // NOI18N
-        jMenuItem2.setText("Login");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
 
         jmiCliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
         jmiCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/person-icon (1).png"))); // NOI18N
@@ -216,11 +205,6 @@ public class TelaPrincipalView extends javax.swing.JFrame {
        TelaR.setVisible(true);
     }//GEN-LAST:event_jmiRelatorioActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-       LoginView log = new LoginView(this, true);
-       log.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu4ActionPerformed
@@ -268,7 +252,6 @@ public class TelaPrincipalView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jmiCRUDCliente;
     private javax.swing.JMenuItem jmiCRUDProduto;
