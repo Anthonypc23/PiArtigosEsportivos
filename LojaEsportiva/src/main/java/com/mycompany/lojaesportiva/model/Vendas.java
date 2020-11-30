@@ -1,90 +1,72 @@
 
 package com.mycompany.lojaesportiva.model;
 
-public class Vendas {
-    
-    private String cliente;
-    private String produto;
-    private int descricao;
-    private float preco;
-    private int quantidade;
-    private String servicos;
-    private String tipoParcela;
-    private String marca;
-    private String tamanho;
+import java.util.Date;
 
+public class Vendas {
+    private Date data;
+    private int FKIDCLiente;
+    private double ValorFinal;
+    private double[] Valor;
+    private int []  quantidade;
+    private int IdVenda;
+    
+    
     public Vendas() {
     }
 
-    public String getCliente() {
-        return cliente;
+    public int getIdVenda() {
+        return IdVenda;
     }
 
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public void setIdVenda(int IdVenda) {
+        this.IdVenda = IdVenda;
+    }
+    
+    
+    public double getValorFinal() {
+        return ValorFinal;
     }
 
-    public String getProduto() {
-        return produto;
+    public void setValorFinal(double ValorFinal) {
+        this.ValorFinal = ValorFinal;
     }
 
-    public void setProduto(String produto) {
-        this.produto = produto;
+    public Date getData() {
+        return data;
     }
 
-    public int getDescricao() {
-        return descricao;
+    public void setData(Date data) {
+        this.data = data;
     }
 
-    public void setDescricao(int descricao) {
-        this.descricao = descricao;
+    public int getFKIDCLiente() {
+        return FKIDCLiente;
     }
 
-    public float getPreco() {
-        return preco;
+    public void setFKIDCLiente(int FKIDCLiente) {
+        this.FKIDCLiente = FKIDCLiente;
+    }
+    
+    
+
+    public double[] getValor() {
+        return Valor;
     }
 
-    public void setPreco(float preco) {
-        this.preco = preco;
+    public void setValor(double[] Valor) {
+        this.Valor = Valor;
     }
 
-    public int getQuantidade() {
+    public int[] getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(int[] quantidade) {
         this.quantidade = quantidade;
     }
 
-    public String getServicos() {
-        return servicos;
-    }
+ 
 
-    public void setServicos(String servicos) {
-        this.servicos = servicos;
-    }
-
-    public String getTipoParcela() {
-        return tipoParcela;
-    }
-
-    public void setTipoParcela(String tipoParcela) {
-        this.tipoParcela = tipoParcela;
-    }
-
-    public String getTamanho() {
-        return tamanho;
-    }
-
-    public void setTamanho(String tamanho) {
-        this.tamanho = tamanho;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
+    
 }
