@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.lojaesportiva.view;
 
 import com.mycompany.lojaesportiva.controller.Clientecontroller;
@@ -14,10 +9,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author k
- */
 public class CRUDClienteView extends javax.swing.JFrame {
 
     /**

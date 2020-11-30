@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.lojaesportiva.DAO;
 
-import static com.mycompany.lojaesportiva.DAO.ClienteDAO.URL;
 import com.mycompany.lojaesportiva.model.Vendas;
 import com.mycompany.lojaesportiva.model.itemVenda;
 import java.sql.Connection;
