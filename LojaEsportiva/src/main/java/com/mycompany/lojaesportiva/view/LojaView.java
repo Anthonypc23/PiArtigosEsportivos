@@ -5,6 +5,8 @@ import com.mycompany.lojaesportiva.controller.ProdutoController;
 import com.mycompany.lojaesportiva.controller.VendaController;
 import com.mycompany.lojaesportiva.model.Vendas;
 import com.mycompany.lojaesportiva.utils.Check;
+import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -77,6 +79,15 @@ public class LojaView extends javax.swing.JFrame {
         });
 
         txtCodProd.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtCodProd.setName("Codigo do Produto"); // NOI18N
+        txtCodProd.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtCodProdFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCodProdFocusLost(evt);
+            }
+        });
         txtCodProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodProdActionPerformed(evt);
@@ -224,6 +235,24 @@ public class LojaView extends javax.swing.JFrame {
 
         txtCPF.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtCPF.setName("CPF"); // NOI18N
+        txtCPF.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtCPFFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCPFFocusLost(evt);
+            }
+        });
+        txtCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCPFActionPerformed(evt);
+            }
+        });
+        txtCPF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCPFKeyTyped(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setText("CPF:");
@@ -312,7 +341,13 @@ public class LojaView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodProdActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Check valid = new Check();
+        valid.ValidVoid(txtCodProd);
+        if(valid.temErro()){
+            JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
+        }else{
         String Quantidade = spnQuantidade.getValue().toString();
+        if(Integer.parseInt(Quantidade) > 0){
         if(VerificaQTd(Integer.parseInt(Quantidade),Integer.parseInt(txtCodProd.getText()))){
         float Valor = (Float.parseFloat(lblValor.getText()))*(Integer.parseInt(Quantidade));
         ValorTotal += Valor;
@@ -323,14 +358,29 @@ public class LojaView extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "Quantidade insuficiente no Estoque");
         }
+      }else{
+          JOptionPane.showMessageDialog(this, "Você não selecionou a quantidade do produto");  
+        }
+    }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Check valid = new Check();
+        valid.ValidVoid(txtCodProd);
+        if(valid.temErro()){
+            JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
+        }else{
         preencherFormulario(Integer.parseInt(txtCodProd.getText()));
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jtpLoja.setSelectedIndex(0);
+        txtCodProd.setText("");
+        lblNome.setText("");
+        lblValor.setText("");
+        txtTamanho.setText("");
+        spnQuantidade.setValue(0);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -378,16 +428,55 @@ public class LojaView extends javax.swing.JFrame {
         }
          
              try {
+                 int cont = jtbCarrinho.getRowCount();
+                 if(cont > 0){
+                     
+                 
                  if(VendaController.CadastrarVenda(data, Float.parseFloat(lblValorTotal.getText()), idCliente,itensVenda)){
-                     JOptionPane.showMessageDialog(this, "Venda realizada com Sucesso"+vend.getIdVenda());
+                     JOptionPane.showMessageDialog(this, "Venda realizada com Sucesso");
                  }else{
                      JOptionPane.showMessageDialog(this, "Erro ao Realizar a Venda");
-                 }    } catch (SQLException ex) {
+                 }
+                }else{
+                    JOptionPane.showMessageDialog(this, "Não à produtos no carrinho"); 
+                 }
+             }catch (SQLException ex) {
                  Logger.getLogger(LojaView.class.getName()).log(Level.SEVERE, null, ex);
              }
       }
     }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCPFActionPerformed
+
+    private void txtCPFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCPFKeyTyped
+       if(txtCPF.getText().length()>=11){
+            evt.consume();
+            JOptionPane.showMessageDialog(this,"Máximo de 11 caracteres atingidos!");
+                }
+        char c = evt.getKeyChar();
+        if ( ((c < '0') || (c > '9')) && (c !=KeyEvent.VK_BACK_SPACE)){
+        evt.consume(); 
+          JOptionPane.showMessageDialog(this,"Digite apenas números!");}
+    }//GEN-LAST:event_txtCPFKeyTyped
+
+    private void txtCPFFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCPFFocusGained
+        txtCPF.setBackground(Color.lightGray);
+    }//GEN-LAST:event_txtCPFFocusGained
+
+    private void txtCPFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCPFFocusLost
+        txtCPF.setBackground(Color.white);
+    }//GEN-LAST:event_txtCPFFocusLost
+
+    private void txtCodProdFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCodProdFocusGained
+        txtCodProd.setBackground(Color.lightGray);
+    }//GEN-LAST:event_txtCodProdFocusGained
+
+    private void txtCodProdFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCodProdFocusLost
+        txtCodProd.setBackground(Color.white);
+    }//GEN-LAST:event_txtCodProdFocusLost
 
     /**
      * @param args the command line arguments
