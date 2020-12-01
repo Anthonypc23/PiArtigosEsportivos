@@ -478,6 +478,9 @@ public class CadastroClienteView extends javax.swing.JFrame {
             try {
                 if(Clientecontroller.Cadastrar(nome, email, cpf, nascimento, sexo, estadocivil, telefone, endereco)){
                      JOptionPane.showMessageDialog(this, "Cadastro concluído com sucesso!","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                     CRUDClienteView tela = new CRUDClienteView();
+                     tela.setVisible(true);
+                     this.dispose();
                 }else{
                      JOptionPane.showMessageDialog(this, "Erro ao finalizar o cadastro!", "Aviso!", JOptionPane.ERROR_MESSAGE);
                 }  } catch (SQLException ex) {
@@ -524,7 +527,6 @@ public class CadastroClienteView extends javax.swing.JFrame {
                  if(Clientecontroller.Alterar(nome, email, cpf, nascimento, sexo, estadocivil, telefone, endereco, IdCliente)){
                      JOptionPane.showMessageDialog(this, "Dados alterados com sucesso!", "Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
                      this.dispose();
-                    
                  }else{
                      JOptionPane.showMessageDialog(this, "Erro ao finalizar o cadastro!", "Aviso!", JOptionPane.ERROR_MESSAGE);
                  }  } catch (SQLException ex) {

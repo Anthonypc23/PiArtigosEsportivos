@@ -192,7 +192,7 @@ public class CRUDClienteView extends javax.swing.JFrame {
         if(linhaSelecionada>-1){
             IdCliente = Integer.parseInt( tabelaCliente.getValueAt(linhaSelecionada, 0).toString());
         }else{
-            JOptionPane.showMessageDialog(this, "Você não selecionou uma linha");
+            JOptionPane.showMessageDialog(this, "Você não selecionou nenhuma linha!");
             return;
         }
         if(IdCliente > 0){
@@ -213,7 +213,7 @@ public class CRUDClienteView extends javax.swing.JFrame {
              if(indiceLinha>=0){
                  idselecionado = Integer.parseInt(tabelaCliente.getValueAt(indiceLinha, 0).toString());
              }else{
-                 JOptionPane.showMessageDialog(this, "Você nao selecionou uma linha");
+                 JOptionPane.showMessageDialog(this, "Você não selecionou nenhuma linha!");
              }
             
         try {
@@ -221,7 +221,7 @@ public class CRUDClienteView extends javax.swing.JFrame {
                 modelo.removeRow(indiceLinha);
                 JOptionPane.showMessageDialog(this, "Dados excluídos com sucesso!", "Alerta!", JOptionPane.WARNING_MESSAGE);    
             }else{
-                JOptionPane.showMessageDialog(this, "Erro ao Excluir dados", "Alerta!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Erro ao excluir os dados!", "Alerta!", JOptionPane.WARNING_MESSAGE);
             }
         } catch (SQLException ex) {
             Logger.getLogger(CRUDClienteView.class.getName()).log(Level.SEVERE, null, ex);

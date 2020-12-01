@@ -337,7 +337,7 @@ public class CadastroProdutoView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtQuantidadeFocusLost
 
     private void txtQuantidadeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtQuantidadeMouseEntered
-        lblStatus.setText("Digite o tipo do produto");
+        lblStatus.setText("Digite o tipo do produto!");
     }//GEN-LAST:event_txtQuantidadeMouseEntered
 
     private void txtQuantidadeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantidadeKeyReleased
@@ -372,9 +372,10 @@ public class CadastroProdutoView extends javax.swing.JFrame {
             if(confirm == 0){
                 try {
                 if(ProdutoController.Cadastrar(nome, quantidade, descricao, valor)){
-                    JOptionPane.showMessageDialog(this, "Cadastrado com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                    JOptionPane.showMessageDialog(this, "Cadastrado com sucesso!","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
                     CRUDProdutoView tela = new  CRUDProdutoView();
                     tela.setVisible(true);
+                    this.dispose();
                 }else{
                     JOptionPane.showMessageDialog(this, "Erro ao finalizar o cadastro!", "Aviso!", JOptionPane.ERROR_MESSAGE);
                 }  
@@ -413,7 +414,7 @@ public class CadastroProdutoView extends javax.swing.JFrame {
         if(confirm == 0){
                 try {
                 if(ProdutoController.Alterar(Id, nome, quantidade, descricao, valor)){
-                    JOptionPane.showMessageDialog(this, "Alterado com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                    JOptionPane.showMessageDialog(this, "Alterado com sucesso!","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
                     this.dispose();
                 }else{
                      JOptionPane.showMessageDialog(this, "Erro ao finalizar a alteração!", "Aviso!", JOptionPane.ERROR_MESSAGE);
@@ -439,7 +440,7 @@ public class CadastroProdutoView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDescricaoFocusLost
 
     private void txtDescricaoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDescricaoMouseEntered
-        lblStatus.setText("Digite a descrição do produto");
+        lblStatus.setText("Digite a descrição do produto!");
     }//GEN-LAST:event_txtDescricaoMouseEntered
 
     private void txtDescricaoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescricaoKeyReleased
@@ -455,7 +456,7 @@ public class CadastroProdutoView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtValorFocusLost
 
     private void txtValorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtValorMouseEntered
-        lblStatus.setText("Digite o valor do produto");
+        lblStatus.setText("Digite o valor do produto!");
     }//GEN-LAST:event_txtValorMouseEntered
 
     private void txtValorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtValorKeyReleased
