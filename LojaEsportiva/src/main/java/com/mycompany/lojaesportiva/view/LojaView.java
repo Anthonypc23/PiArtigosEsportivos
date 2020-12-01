@@ -21,7 +21,6 @@ import javax.swing.table.DefaultTableModel;
  * @author Wesley
  */
 public class LojaView extends javax.swing.JFrame {
-    
     float ValorTotal = 0;
     
     /**
