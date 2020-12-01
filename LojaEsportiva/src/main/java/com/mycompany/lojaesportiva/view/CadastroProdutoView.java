@@ -463,7 +463,6 @@ public class CadastroProdutoView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtValorKeyReleased
 
     private void txtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtValorActionPerformed
 
     /**

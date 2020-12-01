@@ -1,8 +1,8 @@
 package com.mycompany.lojaesportiva.model;
 
 /**
- *
- * @author rrmat
+ * Classe cria os atributos e métodos especiais dos ítens da venda
+ * @author Wesley
  */
 public class itemVenda {
     private String descricao;
@@ -50,6 +50,4 @@ public class itemVenda {
     public void setTamanho(String tamanho) {
         this.tamanho = tamanho;
     }
-    
-    
 }

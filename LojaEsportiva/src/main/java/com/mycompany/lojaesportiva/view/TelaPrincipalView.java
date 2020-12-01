@@ -199,7 +199,6 @@ public class TelaPrincipalView extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiRelatorioActionPerformed
 
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_jMenu4ActionPerformed
 
     /**

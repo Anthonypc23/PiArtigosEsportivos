@@ -23,7 +23,7 @@ public class ProdutoDAO {
     /**
      * Método resgata o objeto e faz o cadastro no jdbc
      * @param prod objeto da classe produto
-     * @return boolean true: insere o cliente no banco de dados | false: erro no cadastro
+     * @return boolean true: insere o produto no banco de dados | false: erro no cadastro
      * @throws SQLException lança para fora a exceção
      */
     public static boolean Cadastrar (Produto prod) throws SQLException{
@@ -61,7 +61,7 @@ public class ProdutoDAO {
     }
     
     /**
-     * Método resgata os dados e cria uma lista de clientes
+     * Método resgata os dados e cria uma lista de produtos
      * @param pnome string a ser verificada
      * @param pdescricao string a ser verificada
      * @return arrayList uma lista de produtos
@@ -208,9 +208,9 @@ public class ProdutoDAO {
     
     /**
      * Método restaga o id e faz a exclução no jdbc
-     * @param pID
-     * @return
-     * @throws SQLException 
+     * @param pID int a ser verificado
+     * @return boolean true: apaga os dados | false: erro na deleção
+     * @throws SQLException lança para fora as exceções
      */
     public static boolean Excluir(int pID) throws SQLException{
       boolean retorno = false;

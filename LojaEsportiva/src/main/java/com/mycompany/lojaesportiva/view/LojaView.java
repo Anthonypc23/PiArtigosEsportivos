@@ -5,16 +5,25 @@ import com.mycompany.lojaesportiva.controller.ProdutoController;
 import com.mycompany.lojaesportiva.controller.VendaController;
 import com.mycompany.lojaesportiva.model.Vendas;
 import com.mycompany.lojaesportiva.utils.Check;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * Classe responsável por fazer a venda do sistema
+ * @author Wesley
+ */
 public class LojaView extends javax.swing.JFrame {
+    
     float ValorTotal = 0;
+    
     /**
-     * Creates new form Loja
+     * Cria uma nova forma Loja
      */
     public LojaView() {
         initComponents();
@@ -300,7 +309,6 @@ public class LojaView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCodProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodProdActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtCodProdActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -319,7 +327,6 @@ public class LojaView extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         preencherFormulario(Integer.parseInt(txtCodProd.getText()));
-
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -334,9 +341,6 @@ public class LojaView extends javax.swing.JFrame {
              if(indiceLinha>=0){
                  Valor = Float.parseFloat(jtbCarrinho.getValueAt(indiceLinha, 4).toString());
                  ValorTotal -= Valor;
-//                 if(ValorTotal<0){
-//                     ValorTotal = 0;
-//                 }
                  lblValorTotal.setText(String.valueOf(ValorTotal));
                  modelo.removeRow(indiceLinha);
              }else{
@@ -373,15 +377,16 @@ public class LojaView extends javax.swing.JFrame {
             });
         }
          
-        if(VendaController.CadastrarVenda(data, Float.parseFloat(lblValorTotal.getText()), idCliente,itensVenda)){
-          JOptionPane.showMessageDialog(this, "Venda realizada com Sucesso"+vend.getIdVenda());
-        }else{
-          JOptionPane.showMessageDialog(this, "Erro ao Realizar a Venda");
-        }
+             try {
+                 if(VendaController.CadastrarVenda(data, Float.parseFloat(lblValorTotal.getText()), idCliente,itensVenda)){
+                     JOptionPane.showMessageDialog(this, "Venda realizada com Sucesso"+vend.getIdVenda());
+                 }else{
+                     JOptionPane.showMessageDialog(this, "Erro ao Realizar a Venda");
+                 }    } catch (SQLException ex) {
+                 Logger.getLogger(LojaView.class.getName()).log(Level.SEVERE, null, ex);
+             }
       }
     }
-    
-    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -447,6 +452,12 @@ public class LojaView extends javax.swing.JFrame {
     private javax.swing.JTextField txtTamanho;
     // End of variables declaration//GEN-END:variables
     
+    /**
+     * Método resgata os dados e verifica a quantidade
+     * @param Qtd int a ser verificado
+     * @param IdProduto int a ser verificado
+     * @return boolean true: quantidade válida | false: erro na verificação
+     */
     public static boolean VerificaQTd(int Qtd, int IdProduto){
         boolean retorno = false;
         String[] prod = ProdutoController.ProdutoID(IdProduto);
@@ -457,11 +468,20 @@ public class LojaView extends javax.swing.JFrame {
         return retorno;
     }
     
+    /**
+     * Método resgata a string e faz consulta, retornando o id
+     * @param CPF string a ser verificada
+     * @return int retorna o id do cliente
+     */
     private static int ConsultaCPF(String CPF) {
     int cli = Clientecontroller.ConsultaCPF(CPF);
     return cli;
     }
     
+    /**
+     * Método pega o id do produto, chama uma função para verificar os dados com base naquele id e preenche o formulário
+     * @param IdProduto int a ser verificado
+     */
     private void preencherFormulario(int IdProduto) {
         String[] prod = ProdutoController.ProdutoID(IdProduto);
 
