@@ -201,7 +201,6 @@ public class ClienteDAO {
            InstrucaoSQL.setString(8, cli.getEndereço());
            InstrucaoSQL.setInt(9, cli.getIdCliente());
 
-           
            int linhasafetadas = InstrucaoSQL.executeUpdate();
            
            if(linhasafetadas>0){

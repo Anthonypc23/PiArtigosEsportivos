@@ -1,7 +1,5 @@
 package com.mycompany.lojaesportiva.DAO;
 
-import static com.mycompany.lojaesportiva.DAO.ClienteDAO.URL;
-import com.mycompany.lojaesportiva.model.Cliente;
 import com.mycompany.lojaesportiva.model.Vendas;
 import com.mycompany.lojaesportiva.model.itemVenda;
 import java.sql.Connection;
@@ -16,15 +14,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author rrmat
+ * Classe responsável para fazer todas as manipulações com o jdbc
+ * @author Wesley
  */
 public class VendaDAO {
-  static String URL = "jdbc:mysql://localhost:3307/lojaesportiva?useTimezone=true&serverTimezone=UTC&useSSL=false";
+   static String URL = "jdbc:mysql://localhost:3307/lojaesportiva?useTimezone=true&serverTimezone=UTC&useSSL=false";
     static String LOGIN = "root";
     static String SENHA = "";
     
-    public static boolean CadastrarVenda(Vendas venda){
+    /**
+     * Método resgata o objeto e faz o cadastro no jdbc
+     * @param venda objeto da classe vendas
+     * @return boolean true: insere a venda no banco de dados | false: erro no cadastro
+     * @throws SQLException lança para fora a exceção
+     */
+    public static boolean CadastrarVenda(Vendas venda) throws SQLException{
       boolean retorno = false;
         Connection conexao = null;
         PreparedStatement InstrucaoSQL = null;
@@ -61,15 +65,13 @@ public class VendaDAO {
                           PreparedStatement  instrucaoSQLDecrementacao = conexao.prepareStatement("UPDATE Produto SET QuantidadeProduto = QuantidadeProduto-? where idProduto = ?;");
                             instrucaoSQLDecrementacao.setInt(1, item.getQuantidade());
                             instrucaoSQLDecrementacao.setInt(2, item.getIdProduto());
-//                            
-                            
-                             int itensAfetados = instrucaoSQLItem.executeUpdate();
+
+                            int itensAfetados = instrucaoSQLItem.executeUpdate();
                              int itensAfetados2 = instrucaoSQLDecrementacao.executeUpdate();
                              if(itensAfetados<0){
                                  throw new SQLException("Falha ao inserir itens da Nota Fiscal!.");
                              }
                         }
-                        
                 }else {
                         throw new SQLException("Falha ao obter o ID da Nota Fiscal!.");
                 }
@@ -95,6 +97,13 @@ public class VendaDAO {
         
         return retorno;
     }
+    
+    /**
+     * Método resgata os dados e cria uma lista de vendas
+     * @param pInicial date a ser vefificada
+     * @param pFinal date a ser vefificada
+     * @return arrayList uma lista da venda
+     */
     public static ArrayList <Vendas> ListarVendas (Date pInicial,Date pFinal){
        Connection conexao = null;
        PreparedStatement InstrucaoSQL = null;
@@ -109,8 +118,6 @@ public class VendaDAO {
             InstrucaoSQL.setDate(1, new java.sql.Date(pInicial.getTime()));
             InstrucaoSQL.setDate(2, new java.sql.Date(pFinal.getTime()));
             
-            
-            
             rs = InstrucaoSQL.executeQuery();
             
             while(rs.next()){
@@ -120,8 +127,6 @@ public class VendaDAO {
             vend.setValorFinal(rs.getFloat("valorTotal"));
             vend.setFKIDCLiente(rs.getInt("IdCliente"));
             ListarVenda.add(vend);
-            
-            
             }
             
         } catch (Exception e) {
@@ -145,6 +150,11 @@ public class VendaDAO {
         return ListarVenda;
     }
     
+    /**
+     * Método pega os ítens da venda e faz uma lista
+     * @param pIdVenda int a ser verificado
+     * @return retorna a lista dos itens da venda
+     */
     public static ArrayList <itemVenda> ListarItemVenda (int pIdVenda){
        Connection conexao = null;
        PreparedStatement InstrucaoSQL = null;
@@ -158,8 +168,6 @@ public class VendaDAO {
             InstrucaoSQL = conexao.prepareStatement("SELECT * FROM ItemVenda WHERE IdVenda = ?");
             InstrucaoSQL.setInt(1,pIdVenda);
             
-            
-            
             rs = InstrucaoSQL.executeQuery();
             
             while(rs.next()){
@@ -167,8 +175,6 @@ public class VendaDAO {
             itemV.setDescricao(rs.getString("descricao"));
             itemV.setQuantidade(rs.getInt("qtd"));
             ListarItemVenda.add(itemV);
-            
-            
             }
             
         } catch (Exception e) {
@@ -191,5 +197,4 @@ public class VendaDAO {
         
         return ListarItemVenda;
     }
-    
 }

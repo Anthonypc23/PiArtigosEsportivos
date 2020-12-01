@@ -583,7 +583,6 @@ public class CadastroClienteView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEndereçoMouseEntered
 
     private void txtExemploMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtExemploMouseExited
-        
     }//GEN-LAST:event_txtExemploMouseExited
 
     private void txtNomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusLost
@@ -611,7 +610,6 @@ public class CadastroClienteView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefoneFocusLost
 
     private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefoneActionPerformed
 
     /**

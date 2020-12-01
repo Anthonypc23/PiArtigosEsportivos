@@ -18,6 +18,10 @@ public class TelaRelatorioAnaliticoView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
+    /**
+     *  Método cria uma lista com os itens vendidos
+     * @param pIdVenda int a ser verificado 
+     */
     public TelaRelatorioAnaliticoView(int pIdVenda) {
         initComponents();
         this.setLocationRelativeTo(null);

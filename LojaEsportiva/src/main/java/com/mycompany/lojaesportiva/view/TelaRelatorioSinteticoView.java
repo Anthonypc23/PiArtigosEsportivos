@@ -1,6 +1,5 @@
 package com.mycompany.lojaesportiva.view;
 
-import com.mycompany.lojaesportiva.controller.Clientecontroller;
 import com.mycompany.lojaesportiva.controller.VendaController;
 import java.util.ArrayList;
 import java.util.Date;
@@ -179,8 +178,6 @@ public class TelaRelatorioSinteticoView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        
         int linhaSelecionada = tabelaSintetico.getSelectedRow();
         int IdVenda = 0;
         if(linhaSelecionada>-1){
@@ -210,7 +207,6 @@ public class TelaRelatorioSinteticoView extends javax.swing.JFrame {
         for (String[] venda : ListarVendas) {
             modelo.addRow(venda);
         }
-        
         
         int cont = tabelaSintetico.getRowCount();
         float ValorTotal = 0;

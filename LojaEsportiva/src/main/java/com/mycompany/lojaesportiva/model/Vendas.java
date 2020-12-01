@@ -3,7 +3,12 @@ package com.mycompany.lojaesportiva.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Classe cria atributos e métodos especiais da venda
+ * @author Ingrid
+ */
 public class Vendas {
+    
     private Date data;
     private int FKIDCLiente;
     private float ValorFinal;
@@ -20,6 +25,9 @@ public class Vendas {
         this.ListaVenda = ListaVenda;
     }
     
+    /**
+     * Método cria um construtor vazio
+     */
     public Vendas() {
     }
 

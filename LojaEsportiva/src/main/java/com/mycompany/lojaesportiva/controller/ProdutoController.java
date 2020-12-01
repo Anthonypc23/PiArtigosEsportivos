@@ -90,7 +90,6 @@ public class ProdutoController {
      */
     public static boolean Excluir(int pID) throws SQLException{
         Produto prod = new Produto();
-        
         prod.setIdProduto(pID);
         
         return ProdutoDAO.Excluir(pID);
