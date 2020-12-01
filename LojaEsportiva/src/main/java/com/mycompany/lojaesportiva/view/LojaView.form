@@ -252,8 +252,8 @@
         <Container class="javax.swing.JPanel" name="jpCarinho">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Carinho">
-                <Property name="tabTitle" type="java.lang.String" value="Carinho"/>
+              <JTabbedPaneConstraints tabName="Carrinho">
+                <Property name="tabTitle" type="java.lang.String" value="Carrinho"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
