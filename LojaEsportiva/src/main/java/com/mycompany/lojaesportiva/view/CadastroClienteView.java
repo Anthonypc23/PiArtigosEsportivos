@@ -477,9 +477,9 @@ public class CadastroClienteView extends javax.swing.JFrame {
         if(confirm == 0){
             try {
                 if(Clientecontroller.Cadastrar(nome, email, cpf, nascimento, sexo, estadocivil, telefone, endereco)){
-                     JOptionPane.showMessageDialog(this, "Cadastro concluido com sucesso","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                     JOptionPane.showMessageDialog(this, "Cadastro concluído com sucesso!","Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
                 }else{
-                     JOptionPane.showMessageDialog(this, "Erro ao finalizar cadastrar", "Aviso!", JOptionPane.ERROR_MESSAGE);
+                     JOptionPane.showMessageDialog(this, "Erro ao finalizar o cadastro!", "Aviso!", JOptionPane.ERROR_MESSAGE);
                 }  } catch (SQLException ex) {
                 Logger.getLogger(CadastroClienteView.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -522,11 +522,11 @@ public class CadastroClienteView extends javax.swing.JFrame {
         if(confirm == 0){
              try {
                  if(Clientecontroller.Alterar(nome, email, cpf, nascimento, sexo, estadocivil, telefone, endereco, IdCliente)){
-                     JOptionPane.showMessageDialog(this, "Cadastro Alterado com sucesso", "Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
+                     JOptionPane.showMessageDialog(this, "Dados alterados com sucesso!", "Aviso!",JOptionPane.INFORMATION_MESSAGE,icon);
                      this.dispose();
                     
                  }else{
-                     JOptionPane.showMessageDialog(this, "Erro ao finalizar cadastrar", "Aviso!", JOptionPane.ERROR_MESSAGE);
+                     JOptionPane.showMessageDialog(this, "Erro ao finalizar o cadastro!", "Aviso!", JOptionPane.ERROR_MESSAGE);
                  }  } catch (SQLException ex) {
                  Logger.getLogger(CadastroClienteView.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -562,12 +562,12 @@ public class CadastroClienteView extends javax.swing.JFrame {
     private void txtCPFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCPFKeyTyped
         if(txtCPF.getText().length()>=11){
             evt.consume();
-            JOptionPane.showMessageDialog(this,"Máximo de 11 caracteres atingido!");
+            JOptionPane.showMessageDialog(this,"Máximo de 11 caracteres atingidos!");
                 }
         char c = evt.getKeyChar();
         if ( ((c < '0') || (c > '9')) && (c !=KeyEvent.VK_BACK_SPACE)){
         evt.consume(); 
-          JOptionPane.showMessageDialog(this,"Digite Apenas numeros");}
+          JOptionPane.showMessageDialog(this,"Digite apenas números!");}
     }//GEN-LAST:event_txtCPFKeyTyped
 
     private void txtEmailMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEmailMouseEntered
