@@ -284,7 +284,7 @@ public class LojaView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jtpLoja.addTab("Carinho", jpCarinho);
+        jtpLoja.addTab("Carrinho", jpCarinho);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
