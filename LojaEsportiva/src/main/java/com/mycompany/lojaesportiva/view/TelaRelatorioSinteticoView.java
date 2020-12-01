@@ -1,5 +1,12 @@
 package com.mycompany.lojaesportiva.view;
 
+import com.mycompany.lojaesportiva.controller.Clientecontroller;
+import com.mycompany.lojaesportiva.controller.VendaController;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  * Classe para resgatar os dados da venda
  * @author Gabriel
@@ -25,31 +32,16 @@ public class TelaRelatorioSinteticoView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        try{
-            javax.swing.text.MaskFormatter data=
-            new javax.swing.text.MaskFormatter("##/##/####");
-            jTextField1 = new javax.swing.JFormattedTextField(data);
-        }
-        catch (Exception e){
-
-        }
-        jLabel2 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        try{
-            javax.swing.text.MaskFormatter data=
-            new javax.swing.text.MaskFormatter("##/##/####");
-            jTextField3 = new javax.swing.JFormattedTextField(data);
-        }
-        catch (Exception e){
-
-        }
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        tabelaSintetico = new javax.swing.JTable();
+        BtnPesquisar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        periodoFinal = new com.toedter.calendar.JDateChooser();
+        periodoInicial = new com.toedter.calendar.JDateChooser();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        LblValorTotal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Relatorio Sintetico");
@@ -59,31 +51,19 @@ public class TelaRelatorioSinteticoView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel1.setText("Período:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel2.setText("Até");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaSintetico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "Cliente", "Data da Compra", "Valor"
+                "ID", "Cliente", "Data da Compra", "Valor"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true
+                true, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -94,12 +74,17 @@ public class TelaRelatorioSinteticoView extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        tabelaSintetico.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tabelaSintetico.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tabelaSintetico);
 
-        jButton1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jButton1.setText("Pesquisar");
+        BtnPesquisar.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        BtnPesquisar.setText("Pesquisar");
+        BtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPesquisarActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jButton2.setText("Detalhes da Venda");
@@ -112,13 +97,19 @@ public class TelaRelatorioSinteticoView extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel3.setText("Valor Total no Periodo:");
 
+        jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel2.setText("Inicial:");
+
+        jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel4.setText("Final:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -126,43 +117,45 @@ public class TelaRelatorioSinteticoView extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
                                         .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(periodoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton1))))
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(periodoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(BtnPesquisar))))
                             .addComponent(jButton2)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(LblValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 146, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField1, jTextField3});
-
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(periodoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(periodoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LblValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2))
+                    .addComponent(BtnPesquisar))
                 .addGap(181, 181, 181))
         );
 
@@ -185,15 +178,49 @@ public class TelaRelatorioSinteticoView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        TelaRelatorioAnaliticoView objRelatorioAna = new TelaRelatorioAnaliticoView();
-        objRelatorioAna.setVisible(true);
+
+        
+        int linhaSelecionada = tabelaSintetico.getSelectedRow();
+        int IdVenda = 0;
+        if(linhaSelecionada>-1){
+            IdVenda = Integer.parseInt( tabelaSintetico.getValueAt(linhaSelecionada, 0).toString());
+        }else{
+            JOptionPane.showMessageDialog(this, "Você não selecionou uma linha");
+            return;
+        }
+        if(IdVenda > 0){
+         TelaRelatorioAnaliticoView tv = new TelaRelatorioAnaliticoView(IdVenda);
+         tv.setVisible(true);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void BtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPesquisarActionPerformed
+        Date inicio = periodoInicial.getDate();
+        Date fim = periodoFinal.getDate();
+        
+        if(inicio.after(fim)){
+            JOptionPane.showMessageDialog(this, "A data inicial deve ser inferior a data final");
+        }
+        
+        ArrayList<String[]> ListarVendas = VendaController.ListarVenda(periodoInicial.getDate(), periodoFinal.getDate());
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo = (DefaultTableModel)tabelaSintetico.getModel();
+        modelo.setRowCount(0);
+        for (String[] venda : ListarVendas) {
+            modelo.addRow(venda);
+        }
+        
+        
+        int cont = tabelaSintetico.getRowCount();
+        float ValorTotal = 0;
+              for (int i = 0; i < cont; i++) {
+                ValorTotal += Float.parseFloat(tabelaSintetico.getValueAt(i, 3).toString());    
+              }
+              LblValorTotal.setText(String.valueOf(ValorTotal));
+        
+    }//GEN-LAST:event_BtnPesquisarActionPerformed
+        
     /**
      * @param args the command line arguments
      */
@@ -231,16 +258,17 @@ public class TelaRelatorioSinteticoView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton BtnPesquisar;
+    private javax.swing.JLabel LblValorTotal;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private com.toedter.calendar.JDateChooser periodoFinal;
+    private com.toedter.calendar.JDateChooser periodoInicial;
+    private javax.swing.JTable tabelaSintetico;
     // End of variables declaration//GEN-END:variables
 }

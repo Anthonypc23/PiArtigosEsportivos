@@ -1,5 +1,9 @@
 package com.mycompany.lojaesportiva.view;
 
+import com.mycompany.lojaesportiva.controller.VendaController;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  * Classe para mostrar os detalhes da venda
  * @author Gabriel
@@ -13,6 +17,19 @@ public class TelaRelatorioAnaliticoView extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
+    
+    public TelaRelatorioAnaliticoView(int pIdVenda) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        
+        ArrayList<String[]> ListarItemVendas = VendaController.ListarItemVenda(pIdVenda);
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo = (DefaultTableModel)tabelaAnalitico.getModel();
+        modelo.setRowCount(0);
+        for (String[] venda : ListarItemVendas) {
+            modelo.addRow(venda);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -25,19 +42,16 @@ public class TelaRelatorioAnaliticoView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaAnalitico = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Relatorio Analitico");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relatório Detalhado de Vendas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sitka Text", 1, 14))); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaAnalitico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Descrição do Produto", "Quantidade"
@@ -51,8 +65,8 @@ public class TelaRelatorioAnaliticoView extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        tabelaAnalitico.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tabelaAnalitico);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -128,6 +142,6 @@ public class TelaRelatorioAnaliticoView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tabelaAnalitico;
     // End of variables declaration//GEN-END:variables
 }

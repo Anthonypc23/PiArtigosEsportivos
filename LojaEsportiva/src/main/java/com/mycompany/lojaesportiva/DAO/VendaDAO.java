@@ -1,5 +1,7 @@
 package com.mycompany.lojaesportiva.DAO;
 
+import static com.mycompany.lojaesportiva.DAO.ClienteDAO.URL;
+import com.mycompany.lojaesportiva.model.Cliente;
 import com.mycompany.lojaesportiva.model.Vendas;
 import com.mycompany.lojaesportiva.model.itemVenda;
 import java.sql.Connection;
@@ -8,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,7 +20,7 @@ import java.util.logging.Logger;
  * @author rrmat
  */
 public class VendaDAO {
-  static String URL = "jdbc:mysql://localhost:3306/lojaesportiva?useTimezone=true&serverTimezone=UTC&useSSL=false";
+  static String URL = "jdbc:mysql://localhost:3307/lojaesportiva?useTimezone=true&serverTimezone=UTC&useSSL=false";
     static String LOGIN = "root";
     static String SENHA = "";
     
@@ -90,6 +94,102 @@ public class VendaDAO {
         }
         
         return retorno;
+    }
+    public static ArrayList <Vendas> ListarVendas (Date pInicial,Date pFinal){
+       Connection conexao = null;
+       PreparedStatement InstrucaoSQL = null;
+       ResultSet rs = null;
+       ArrayList<Vendas> ListarVenda = new ArrayList<>();
+       
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conexao = DriverManager.getConnection(URL,LOGIN,SENHA);
+            
+            InstrucaoSQL = conexao.prepareStatement("SELECT * FROM Venda WHERE dataVenda between ? and ?");
+            InstrucaoSQL.setDate(1, new java.sql.Date(pInicial.getTime()));
+            InstrucaoSQL.setDate(2, new java.sql.Date(pFinal.getTime()));
+            
+            
+            
+            rs = InstrucaoSQL.executeQuery();
+            
+            while(rs.next()){
+            Vendas vend = new Vendas();
+            vend.setIdVenda(rs.getInt("IdVenda"));
+            vend.setData(new Date (rs.getDate("dataVenda").getTime()));
+            vend.setValorFinal(rs.getFloat("valorTotal"));
+            vend.setFKIDCLiente(rs.getInt("IdCliente"));
+            ListarVenda.add(vend);
+            
+            
+            }
+            
+        } catch (Exception e) {
+        }finally{
+            if(InstrucaoSQL!=null){
+                try {
+                    InstrucaoSQL.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if(conexao!=null){
+                try {
+                    conexao.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        
+        return ListarVenda;
+    }
+    
+    public static ArrayList <itemVenda> ListarItemVenda (int pIdVenda){
+       Connection conexao = null;
+       PreparedStatement InstrucaoSQL = null;
+       ResultSet rs = null;
+       ArrayList<itemVenda> ListarItemVenda = new ArrayList<>();
+       
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conexao = DriverManager.getConnection(URL,LOGIN,SENHA);
+            
+            InstrucaoSQL = conexao.prepareStatement("SELECT * FROM ItemVenda WHERE IdVenda = ?");
+            InstrucaoSQL.setInt(1,pIdVenda);
+            
+            
+            
+            rs = InstrucaoSQL.executeQuery();
+            
+            while(rs.next()){
+            itemVenda itemV = new itemVenda();
+            itemV.setDescricao(rs.getString("descricao"));
+            itemV.setQuantidade(rs.getInt("qtd"));
+            ListarItemVenda.add(itemV);
+            
+            
+            }
+            
+        } catch (Exception e) {
+        }finally{
+            if(InstrucaoSQL!=null){
+                try {
+                    InstrucaoSQL.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if(conexao!=null){
+                try {
+                    conexao.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        
+        return ListarItemVenda;
     }
     
 }

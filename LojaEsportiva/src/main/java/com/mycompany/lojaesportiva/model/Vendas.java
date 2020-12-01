@@ -8,6 +8,8 @@ public class Vendas {
     private int FKIDCLiente;
     private float ValorFinal;
     private int IdVenda;
+    private Date pInicial;
+    private Date pFinal;
     ArrayList<itemVenda> ListaVenda;
 
     public ArrayList<itemVenda> getListaVenda() {

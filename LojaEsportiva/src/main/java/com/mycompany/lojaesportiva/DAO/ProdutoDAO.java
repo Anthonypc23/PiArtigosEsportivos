@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  */
 public class ProdutoDAO {
 
-    static String URL = "jdbc:mysql://localhost:3306/lojaesportiva?useTimezone=true&serverTimezone=UTC&useSSL=false";
+    static String URL = "jdbc:mysql://localhost:3307/lojaesportiva?useTimezone=true&serverTimezone=UTC&useSSL=false";
     static String LOGIN = "root";
     static String SENHA = "";
     
