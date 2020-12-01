@@ -206,7 +206,7 @@ public class CRUDProdutoView extends javax.swing.JFrame {
              if(indiceLinha>=0){
                  idselecionado = Integer.parseInt(tabelaProduto.getValueAt(indiceLinha, 0).toString());
              }else{
-                 JOptionPane.showMessageDialog(this, "Você nao selecionou uma linha!");
+                 JOptionPane.showMessageDialog(this, "Você não selecionou nenhuma linha!");
              }
             
         try {
@@ -214,7 +214,7 @@ public class CRUDProdutoView extends javax.swing.JFrame {
                 modelo.removeRow(indiceLinha);
                 JOptionPane.showMessageDialog(this, "Dados excluídos com sucesso!", "Alerta!", JOptionPane.WARNING_MESSAGE);    
             }else{
-                JOptionPane.showMessageDialog(this, "Erro ao Excluir dados", "Alerta!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Erro ao excluir os dados!", "Alerta!", JOptionPane.WARNING_MESSAGE);
             }
         } catch (SQLException ex) {
             Logger.getLogger(CRUDProdutoView.class.getName()).log(Level.SEVERE, null, ex);
@@ -223,7 +223,7 @@ public class CRUDProdutoView extends javax.swing.JFrame {
 
     private void txtNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusGained
         this.txtNome.setBackground(Color.lightGray);
-        lblStatus.setText("Digite o nome do produto");
+        lblStatus.setText("Digite o nome do produto!");
     }//GEN-LAST:event_txtNomeFocusGained
 
     private void txtNomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusLost
@@ -233,7 +233,7 @@ public class CRUDProdutoView extends javax.swing.JFrame {
 
     private void txtDescricaoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDescricaoFocusGained
         this.txtDescricao.setBackground(Color.lightGray);
-        lblStatus.setText("Digite a descrição do produto");
+        lblStatus.setText("Digite a descrição do produto!");
     }//GEN-LAST:event_txtDescricaoFocusGained
 
     private void txtDescricaoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDescricaoFocusLost
@@ -252,7 +252,7 @@ public class CRUDProdutoView extends javax.swing.JFrame {
         if(linhaSelecionada>-1){
             IdProduto = Integer.parseInt(tabelaProduto.getValueAt(linhaSelecionada, 0).toString());
         }else{
-            JOptionPane.showMessageDialog(this, "Você não selecionou uma linha");
+            JOptionPane.showMessageDialog(this, "Você não selecionou nenhuma linha!");
             return;
         }
         if(IdProduto > 0){

@@ -169,20 +169,16 @@ public class LojaView extends javax.swing.JFrame {
         jpLojaLayout.setVerticalGroup(
             jpLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpLojaLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
                 .addGroup(jpLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpLojaLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jpLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(txtCodProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(16, 16, 16))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpLojaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)))
+                    .addGroup(jpLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtCodProd, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1))
+                    .addComponent(jButton4))
+                .addGap(16, 16, 16)
                 .addGroup(jpLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(lblNome, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE))
+                    .addComponent(lblNome, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblValor, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,10 +193,8 @@ public class LojaView extends javax.swing.JFrame {
                     .addComponent(spnQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
-
-        jpLojaLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCodProd, txtTamanho});
 
         jtpLoja.addTab("Loja", jpLoja);
 
@@ -233,7 +227,7 @@ public class LojaView extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setText("Valor Total:");
 
-        txtCPF.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtCPF.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtCPF.setName("CPF"); // NOI18N
         txtCPF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -302,9 +296,9 @@ public class LojaView extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jpCarinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblValorTotal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jpCarinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -356,10 +350,10 @@ public class LojaView extends javax.swing.JFrame {
         lblValorTotal.setText(String.valueOf(ValorTotal));
         jtpLoja.setSelectedIndex(1);
         }else{
-            JOptionPane.showMessageDialog(this, "Quantidade insuficiente no Estoque");
+            JOptionPane.showMessageDialog(this, "Quantidade insuficiente no Estoque!");
         }
       }else{
-          JOptionPane.showMessageDialog(this, "Você não selecionou a quantidade do produto");  
+          JOptionPane.showMessageDialog(this, "Você não selecionou a quantidade do produto!");  
         }
     }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -394,7 +388,7 @@ public class LojaView extends javax.swing.JFrame {
                  lblValorTotal.setText(String.valueOf(ValorTotal));
                  modelo.removeRow(indiceLinha);
              }else{
-                 JOptionPane.showMessageDialog(this, "Você nao selecionou uma linha!");
+                 JOptionPane.showMessageDialog(this, "Você não selecionou nenhuma linha!");
              }
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -409,7 +403,7 @@ public class LojaView extends javax.swing.JFrame {
          Date data = new Date();
           int idCliente = ConsultaCPF(txtCPF.getText());
           if(idCliente<=0){
-              JOptionPane.showMessageDialog(this, "CPF Invalido");
+              JOptionPane.showMessageDialog(this, "CPF inválido!");
           }else{
          
         DefaultTableModel modelo = new DefaultTableModel();
@@ -433,12 +427,13 @@ public class LojaView extends javax.swing.JFrame {
                      
                  
                  if(VendaController.CadastrarVenda(data, Float.parseFloat(lblValorTotal.getText()), idCliente,itensVenda)){
-                     JOptionPane.showMessageDialog(this, "Venda realizada com Sucesso");
+                     JOptionPane.showMessageDialog(this, "Venda realizada com sucesso!");
+                     this.dispose();
                  }else{
-                     JOptionPane.showMessageDialog(this, "Erro ao Realizar a Venda");
+                     JOptionPane.showMessageDialog(this, "Erro ao realizar a venda!");
                  }
                 }else{
-                    JOptionPane.showMessageDialog(this, "Não à produtos no carrinho"); 
+                    JOptionPane.showMessageDialog(this, "Não à produtos no carrinho!"); 
                  }
              }catch (SQLException ex) {
                  Logger.getLogger(LojaView.class.getName()).log(Level.SEVERE, null, ex);

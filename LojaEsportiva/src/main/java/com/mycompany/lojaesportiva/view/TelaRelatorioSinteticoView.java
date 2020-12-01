@@ -183,7 +183,7 @@ public class TelaRelatorioSinteticoView extends javax.swing.JFrame {
         if(linhaSelecionada>-1){
             IdVenda = Integer.parseInt( tabelaSintetico.getValueAt(linhaSelecionada, 0).toString());
         }else{
-            JOptionPane.showMessageDialog(this, "Você não selecionou uma linha");
+            JOptionPane.showMessageDialog(this, "Você não selecionou nenhuma linha!");
             return;
         }
         if(IdVenda > 0){
@@ -197,7 +197,7 @@ public class TelaRelatorioSinteticoView extends javax.swing.JFrame {
         Date fim = periodoFinal.getDate();
         
         if(inicio.after(fim)){
-            JOptionPane.showMessageDialog(this, "A data inicial deve ser inferior a data final");
+            JOptionPane.showMessageDialog(this, "A data inicial deve ser inferior à data final");
         }
         
         ArrayList<String[]> ListarVendas = VendaController.ListarVenda(periodoInicial.getDate(), periodoFinal.getDate());
